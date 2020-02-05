@@ -12,21 +12,32 @@ struct SegmentView : UIViewRepresentable {
     func makeCoordinator() -> SegmentView.Coordinator {
         Coordinator(self)
     }
-    
    
     var titles:[String]
     @Binding var currentPage: Int
-    
     func makeUIView(context: Context) -> UISegmentedControl
     {
         let segment = UISegmentedControl(items: titles)
         segment.addTarget(context.coordinator, action:#selector(Coordinator.updateCurrentPage(sender:)) , for: .valueChanged)
+         print(segment.selectedSegmentIndex)
         return segment
     }
     
     func updateUIView(_ segment: UISegmentedControl, context: Context) {
-        
         segment.selectedSegmentIndex = currentPage
+      //  switch segmentedControl.selectedSegmentIndex {
+     //       case 0:
+      //          ProfileView.isHidden = true
+       //         ProfileView.isHidden = false
+       //     case 1:
+      //        PreferencesView.isHidden = false
+       //       PreferencesView.isHidden = true
+      //      case 1:
+      //          QuizResultsView.isHidden = false
+      //          PreferencesView.isHidden = true
+      //    default:
+      //        break;
+      //    }//
     }
     
     class Coordinator: NSObject {
@@ -38,6 +49,9 @@ struct SegmentView : UIViewRepresentable {
         
         @objc func updateCurrentPage(sender: UISegmentedControl) {
             control.currentPage = sender.selectedSegmentIndex
+              print(control.currentPage)
+            print(sender.selectedSegmentIndex)
+            
         }
     }
 }

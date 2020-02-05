@@ -10,18 +10,17 @@ import SwiftUI
 
 struct ProfileView: View {
     @ObservedObject var profile = Profile()
-    @State private var changeView = "Basic"
+    //@ObservedObject var index: Index
+    @State private var changeView = 0
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
                 ProfileHeaderView(name: "\(profile.name)" )
                 HStack{
-                    SegmentView(titles: ["  Your Profile  ","  Preferences  "," Quiz Results  "], currentPage: .constant(0))
-                        .onTapGesture {
-                            print("Tapped")
-                    }
-               
+                    SegmentView(titles: ["  Your Profile  ","  Preferences  "," Quiz Results  "], currentPage: self.$changeView)
                 }
+                
+                Text("\(changeView)").padding()
             }
         }
     }

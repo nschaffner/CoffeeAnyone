@@ -35,11 +35,12 @@
 		DAF14DEC23EA3E4200CDCD05 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DEB23EA3E4200CDCD05 /* SegmentedViewController.swift */; };
 		DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */; };
 		DAF14DF123EA478C00CDCD05 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */; };
-		DAF14DF323EA47F600CDCD05 /* QuizResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF223EA47F600CDCD05 /* QuizResults.swift */; };
+		DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */; };
 		DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF423EA49B800CDCD05 /* CircleImage.swift */; };
 		DAF14DF723EA49EE00CDCD05 /* 000002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DF623EA49EE00CDCD05 /* 000002.jpg */; };
 		DAF14DF923EA49F900CDCD05 /* coffeecupheart.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */; };
 		DAF14DFB23EA546300CDCD05 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */; };
+		DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,11 +95,12 @@
 		DAF14DEB23EA3E4200CDCD05 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
 		DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		DAF14DF223EA47F600CDCD05 /* QuizResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResults.swift; sourceTree = "<group>"; };
+		DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsView.swift; sourceTree = "<group>"; };
 		DAF14DF423EA49B800CDCD05 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		DAF14DF623EA49EE00CDCD05 /* 000002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000002.jpg; sourceTree = "<group>"; };
 		DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffeecupheart.jpeg; sourceTree = "<group>"; };
 		DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */,
-				DAF14DF223EA47F600CDCD05 /* QuizResults.swift */,
+				DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */,
+				DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,9 +408,10 @@
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
 				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
+				DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */,
 				DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */,
 				DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */,
-				DAF14DF323EA47F600CDCD05 /* QuizResults.swift in Sources */,
+				DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */,
 				DAF14DCD23E9F53B00CDCD05 /* ProfileView.swift in Sources */,
 				DAF14DDA23EA30AB00CDCD05 /* Age.swift in Sources */,
 				DAF14DEC23EA3E4200CDCD05 /* SegmentedViewController.swift in Sources */,

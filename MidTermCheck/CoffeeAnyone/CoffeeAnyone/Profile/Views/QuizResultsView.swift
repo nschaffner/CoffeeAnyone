@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-struct QuizResults: View {
+struct QuizResultsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
-                 
             HStack{
                 SegmentView(titles: ["Your Profile","Your Preferences","Quiz Results"], currentPage: .constant(2))
                     .frame(width: 150, height: 450,alignment: .leading)
@@ -23,8 +22,8 @@ struct QuizResults: View {
     }
 }
 
-struct QuizResults_Previews: PreviewProvider {
+struct QuizResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizResults()
+        QuizResultsView()
     }
 }
