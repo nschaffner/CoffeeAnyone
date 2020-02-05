@@ -9,8 +9,37 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var profile = Profile()
+    //@ObservedObject var index: Index
+    @State private var changeView = 0
     var body: some View {
-        Text("Profile View")
+        VStack(alignment: .leading) {
+            ProfileHeaderView(name: "\(profile.name)" )
+                HStack{
+                    SegmentView(titles: ["  Your Profile  ","  Preferences  "," Quiz Results  "], currentPage: self.$changeView)
+
+                }
+            //changes the bottom view based on which button is selected
+            if self.changeView == 0{
+                ProfileInfoView()
+            }
+            else {
+                ProfileInfoView().hidden()
+            }
+            if self.changeView == 1 {
+                PreferencesView()
+            }
+            else {
+                PreferencesView().hidden()
+            }
+            if self.changeView == 2 {
+                QuizResultsView()
+            }
+            else {
+                QuizResultsView().hidden()
+            }
+            Spacer()
+        }
     }
 }
 
