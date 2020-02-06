@@ -10,9 +10,7 @@ import SwiftUI
 
 struct QuizResultsView: View {
     var body: some View {
-  
         Text("Im the quiz view")
-    
     }
 }
 
