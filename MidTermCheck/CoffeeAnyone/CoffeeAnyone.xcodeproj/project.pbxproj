@@ -22,6 +22,25 @@
 		DAF14DCB23E9F53B00CDCD05 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DC723E9F53B00CDCD05 /* MatchesView.swift */; };
 		DAF14DCC23E9F53B00CDCD05 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DC823E9F53B00CDCD05 /* ChatView.swift */; };
 		DAF14DCD23E9F53B00CDCD05 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DC923E9F53B00CDCD05 /* ProfileView.swift */; };
+		DAF14DD423EA2D1D00CDCD05 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DD123EA2D1D00CDCD05 /* Http.swift */; };
+		DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DD223EA2D1D00CDCD05 /* Profile.swift */; };
+		DAF14DDA23EA30AB00CDCD05 /* Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DD923EA30AB00CDCD05 /* Age.swift */; };
+		DAF14DDC23EA30B100CDCD05 /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DDB23EA30B100CDCD05 /* BodyType.swift */; };
+		DAF14DDE23EA30B500CDCD05 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DDD23EA30B500CDCD05 /* Education.swift */; };
+		DAF14DE023EA30B800CDCD05 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DDF23EA30B800CDCD05 /* Gender.swift */; };
+		DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DE123EA30BB00CDCD05 /* Jobs.swift */; };
+		DAF14DE423EA30C000CDCD05 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DE323EA30C000CDCD05 /* Status.swift */; };
+		DAF14DE623EA30C200CDCD05 /* Hobbies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DE523EA30C200CDCD05 /* Hobbies.swift */; };
+		DAF14DE923EA34A800CDCD05 /* coffeecup.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DE823EA34A800CDCD05 /* coffeecup.png */; };
+		DAF14DEC23EA3E4200CDCD05 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DEB23EA3E4200CDCD05 /* SegmentedViewController.swift */; };
+		DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */; };
+		DAF14DF123EA478C00CDCD05 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */; };
+		DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */; };
+		DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF423EA49B800CDCD05 /* CircleImage.swift */; };
+		DAF14DF723EA49EE00CDCD05 /* 000002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DF623EA49EE00CDCD05 /* 000002.jpg */; };
+		DAF14DF923EA49F900CDCD05 /* coffeecupheart.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */; };
+		DAF14DFB23EA546300CDCD05 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */; };
+		DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +82,25 @@
 		DAF14DC723E9F53B00CDCD05 /* MatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		DAF14DC823E9F53B00CDCD05 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		DAF14DC923E9F53B00CDCD05 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DAF14DD123EA2D1D00CDCD05 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
+		DAF14DD223EA2D1D00CDCD05 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DAF14DD923EA30AB00CDCD05 /* Age.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Age.swift; sourceTree = "<group>"; };
+		DAF14DDB23EA30B100CDCD05 /* BodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		DAF14DDD23EA30B500CDCD05 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
+		DAF14DDF23EA30B800CDCD05 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		DAF14DE123EA30BB00CDCD05 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		DAF14DE323EA30C000CDCD05 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		DAF14DE523EA30C200CDCD05 /* Hobbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobbies.swift; sourceTree = "<group>"; };
+		DAF14DE823EA34A800CDCD05 /* coffeecup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeecup.png; sourceTree = "<group>"; };
+		DAF14DEB23EA3E4200CDCD05 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsView.swift; sourceTree = "<group>"; };
+		DAF14DF423EA49B800CDCD05 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		DAF14DF623EA49EE00CDCD05 /* 000002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000002.jpg; sourceTree = "<group>"; };
+		DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffeecupheart.jpeg; sourceTree = "<group>"; };
+		DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +151,12 @@
 		DAF14D8C23E9F29900CDCD05 /* CoffeeAnyone */ = {
 			isa = PBXGroup;
 			children = (
+				DAF14DE723EA348100CDCD05 /* Resources */,
+				DAF14DCE23EA2CD700CDCD05 /* Profile */,
 				DAF14DC823E9F53B00CDCD05 /* ChatView.swift */,
+				DAF14DC923E9F53B00CDCD05 /* ProfileView.swift */,
 				DAF14DC623E9F53B00CDCD05 /* HomeView.swift */,
 				DAF14DC723E9F53B00CDCD05 /* MatchesView.swift */,
-				DAF14DC923E9F53B00CDCD05 /* ProfileView.swift */,
 				DAF14DBF23E9F3B100CDCD05 /* Menu */,
 				DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */,
 				DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */,
@@ -163,6 +203,71 @@
 				DAF14DC023E9F3D700CDCD05 /* TabView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		DAF14DCE23EA2CD700CDCD05 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DAF14DEB23EA3E4200CDCD05 /* SegmentedViewController.swift */,
+				DAF14DEF23EA477800CDCD05 /* Views */,
+				DAF14DEA23EA36E900CDCD05 /* SupportingViews */,
+				DAF14DD823EA309600CDCD05 /* EmumFiles */,
+				DAF14DCF23EA2CEC00CDCD05 /* Models */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DAF14DCF23EA2CEC00CDCD05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAF14DD123EA2D1D00CDCD05 /* Http.swift */,
+				DAF14DD223EA2D1D00CDCD05 /* Profile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAF14DD823EA309600CDCD05 /* EmumFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DAF14DD923EA30AB00CDCD05 /* Age.swift */,
+				DAF14DDB23EA30B100CDCD05 /* BodyType.swift */,
+				DAF14DDD23EA30B500CDCD05 /* Education.swift */,
+				DAF14DDF23EA30B800CDCD05 /* Gender.swift */,
+				DAF14DE123EA30BB00CDCD05 /* Jobs.swift */,
+				DAF14DE323EA30C000CDCD05 /* Status.swift */,
+				DAF14DE523EA30C200CDCD05 /* Hobbies.swift */,
+			);
+			path = EmumFiles;
+			sourceTree = "<group>";
+		};
+		DAF14DE723EA348100CDCD05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */,
+				DAF14DE823EA34A800CDCD05 /* coffeecup.png */,
+				DAF14DF623EA49EE00CDCD05 /* 000002.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DAF14DEA23EA36E900CDCD05 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				DAF14DF423EA49B800CDCD05 /* CircleImage.swift */,
+				DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */,
+				DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		DAF14DEF23EA477800CDCD05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */,
+				DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */,
+				DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +374,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF14DE923EA34A800CDCD05 /* coffeecup.png in Resources */,
 				DAF14D9A23E9F29A00CDCD05 /* LaunchScreen.storyboard in Resources */,
 				DAF14D9723E9F29A00CDCD05 /* Preview Assets.xcassets in Resources */,
+				DAF14DF923EA49F900CDCD05 /* coffeecupheart.jpeg in Resources */,
+				DAF14DF723EA49EE00CDCD05 /* 000002.jpg in Resources */,
 				DAF14D9423E9F29A00CDCD05 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,16 +404,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF14DE623EA30C200CDCD05 /* Hobbies.swift in Sources */,
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
+				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
+				DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */,
+				DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */,
+				DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */,
+				DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */,
 				DAF14DCD23E9F53B00CDCD05 /* ProfileView.swift in Sources */,
+				DAF14DDA23EA30AB00CDCD05 /* Age.swift in Sources */,
+				DAF14DEC23EA3E4200CDCD05 /* SegmentedViewController.swift in Sources */,
+				DAF14DDE23EA30B500CDCD05 /* Education.swift in Sources */,
+				DAF14DDC23EA30B100CDCD05 /* BodyType.swift in Sources */,
+				DAF14DFB23EA546300CDCD05 /* ProfileHeaderView.swift in Sources */,
 				DAF14D8E23E9F29900CDCD05 /* AppDelegate.swift in Sources */,
+				DAF14DD423EA2D1D00CDCD05 /* Http.swift in Sources */,
 				DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */,
 				DAF14DCC23E9F53B00CDCD05 /* ChatView.swift in Sources */,
 				DAF14DCB23E9F53B00CDCD05 /* MatchesView.swift in Sources */,
+				DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */,
 				DAF14DC123E9F3D700CDCD05 /* TabView.swift in Sources */,
 				DAF14DC423E9F44E00CDCD05 /* TabBarViewController.swift in Sources */,
 				DAF14D9223E9F29900CDCD05 /* ContentView.swift in Sources */,
+				DAF14DE423EA30C000CDCD05 /* Status.swift in Sources */,
+				DAF14DE023EA30B800CDCD05 /* Gender.swift in Sources */,
+				DAF14DF123EA478C00CDCD05 /* PreferencesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
