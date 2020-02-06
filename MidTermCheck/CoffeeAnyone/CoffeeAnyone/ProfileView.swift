@@ -23,20 +23,11 @@ struct ProfileView: View {
             if self.changeView == 0{
                 ProfileInfoView()
             }
-            else {
-                ProfileInfoView().hidden()
-            }
             if self.changeView == 1 {
                 PreferencesView()
             }
-            else {
-                PreferencesView().hidden()
-            }
             if self.changeView == 2 {
                 QuizResultsView()
-            }
-            else {
-                QuizResultsView().hidden()
             }
             Spacer()
         }
