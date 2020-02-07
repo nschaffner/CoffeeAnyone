@@ -10,9 +10,7 @@ import SwiftUI
 
 struct ProfileInfoView: View {
     var body: some View {
-     
     Text("Im the basic profile view")
-            
     }
 }
 
