@@ -1,6 +1,0 @@
-framework module Pods_CoffeeAnyone_CoffeeAnyoneUITests {
-  umbrella header "Pods-CoffeeAnyone-CoffeeAnyoneUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
