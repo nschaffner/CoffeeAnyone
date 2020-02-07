@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct ChatMessage : Hashable{
     var message: String
     var createdAt: String
@@ -16,6 +15,25 @@ struct ChatMessage : Hashable{
     var timestamp: Int
     var senderId: String
 }
+
+struct ChatNav: View {
+    @State var isActive = true
+    let users = ["Fred"]
+    var body: some View {
+    NavigationView{
+    List(users, id: \.self) { discipline in
+        NavigationLink(
+        destination:ChatView(isActive: self.$isActive)){
+      Text(discipline)
+        }
+        .navigationBarTitle("Users")
+//        ChatView()
+    }
+    
+  }
+}
+
+
 
 struct ChatRow:View{
     var chatMessage: ChatMessage
@@ -57,6 +75,7 @@ struct ChatRow:View{
 struct ChatView: View {
     @State var composedMessage: String = ""
     @ObservedObject var session = FirebaseSession()
+    @Binding var isActive: Bool
     
     
     var body: some View {
@@ -86,5 +105,10 @@ struct ChatView: View {
     }
 }
 
+struct ChatView_Previews: PreviewProvider {
+    static var previews: some View {
+      ChatNav()
+    }
+}
 
-
+}

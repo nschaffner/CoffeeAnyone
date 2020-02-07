@@ -18,7 +18,7 @@ struct TabView<Page: View>: View {
         
         let vc0 = UIHostingController(rootView: HomeView())
         let vc1 = UIHostingController(rootView: MatchesView())
-        let vc2 = UIHostingController(rootView: ChatView())
+        let vc2 = UIHostingController(rootView: ChatNav())
         let vc3 = UIHostingController(rootView: ProfileView())
         self.viewControllers = [vc0,vc1,vc2,vc3] as! [UIHostingController<Page>]
         self.titles = titles
