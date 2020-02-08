@@ -19,10 +19,11 @@ import Combine
 final class Profile: ObservableObject, Codable {
     var name: String = "Elvis"
     var user_id: Int = 999999
-    var statement: String = "Hi I'm awesome because I'm Elvis and everyone wants a hunk a hunk of burning love."
+    var statement: String = "Hi I'm awesome because I'm Elvis and everyone wants a hunk a hunk a burning love."
     var bodyType: BodyType = .curvy
     var age: Age = .seventies
-    var hasKids: Bool = true
+    var height:String = "6'0"
+    var hasKids: String = "Yes"
     var gender: Gender = .male
     var status: Status = .separated
     var occupation: Jobs = .other

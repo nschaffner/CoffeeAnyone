@@ -10,11 +10,31 @@ import SwiftUI
 
 struct ProfileView: View {
     @ObservedObject var profile = Profile()
-    //@ObservedObject var index: Index
     @State private var changeView = 0
     var body: some View {
         VStack(alignment: .leading) {
             ProfileHeaderView(name: "\(profile.name)" )
+            Divider()
+            .padding(.leading,20)
+            HStack{
+                Spacer()
+                //future edit and camera use buttons
+                Button(action: {
+                    print("Edit button tapped!")
+                }) {
+                    Image(systemName: "pencil.circle")
+                        //.font(.title)
+                        .foregroundColor(.gray)
+                }
+                
+                Button(action: {
+                    print("Camera button tapped!")
+                }) {
+                    Image(systemName: "camera.circle")
+                        //.font(.title)
+                        .foregroundColor(.gray)
+                }.padding(.horizontal,10)
+            }
                 HStack{
                     SegmentView(titles: ["  Your Profile  ","  Preferences  "," Quiz Results  "], currentPage: self.$changeView)
 

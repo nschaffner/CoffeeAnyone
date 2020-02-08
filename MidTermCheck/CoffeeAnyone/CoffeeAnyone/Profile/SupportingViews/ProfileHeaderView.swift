@@ -15,7 +15,7 @@ struct ProfileHeaderView: View {
             VStack(alignment: .center){
                 HStack(alignment: .center){
                     Spacer()
-                    CircleImage(image:Image("000002"))
+                    CircleImage(image:Image("youngelvis"))
                         .padding( 15)
                         .frame(height: 200)
                     Spacer()

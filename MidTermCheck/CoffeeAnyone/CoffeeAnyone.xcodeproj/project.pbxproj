@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61DBCB23EEF2170059669B /* FieldView.swift */; };
+		DA61DBD023EF0F1D0059669B /* youngelvis.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DA61DBCF23EF0F1D0059669B /* youngelvis.jpeg */; };
 		DAF14D8E23E9F29900CDCD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */; };
 		DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */; };
 		DAF14D9223E9F29900CDCD05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D9123E9F29900CDCD05 /* ContentView.swift */; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA61DBCB23EEF2170059669B /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		DA61DBCF23EF0F1D0059669B /* youngelvis.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = youngelvis.jpeg; sourceTree = "<group>"; };
 		DAF14D8A23E9F29900CDCD05 /* CoffeeAnyone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeAnyone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		DAF14DE723EA348100CDCD05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA61DBCF23EF0F1D0059669B /* youngelvis.jpeg */,
 				DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */,
 				DAF14DE823EA34A800CDCD05 /* coffeecup.png */,
 				DAF14DF623EA49EE00CDCD05 /* 000002.jpg */,
@@ -256,6 +261,7 @@
 				DAF14DF423EA49B800CDCD05 /* CircleImage.swift */,
 				DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */,
 				DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */,
+				DA61DBCB23EEF2170059669B /* FieldView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				DAF14D9723E9F29A00CDCD05 /* Preview Assets.xcassets in Resources */,
 				DAF14DF923EA49F900CDCD05 /* coffeecupheart.jpeg in Resources */,
 				DAF14DF723EA49EE00CDCD05 /* 000002.jpg in Resources */,
+				DA61DBD023EF0F1D0059669B /* youngelvis.jpeg in Resources */,
 				DAF14D9423E9F29A00CDCD05 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +418,7 @@
 				DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */,
 				DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */,
 				DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */,
+				DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */,
 				DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */,
 				DAF14DCD23E9F53B00CDCD05 /* ProfileView.swift in Sources */,
 				DAF14DDA23EA30AB00CDCD05 /* Age.swift in Sources */,
@@ -596,6 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeAnyone/Preview Content\"";
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoffeeAnyone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,6 +624,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeAnyone/Preview Content\"";
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoffeeAnyone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
