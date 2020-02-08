@@ -24,12 +24,11 @@ struct FieldView: View {
                      Text(fieldvalue)
                          .font(Font.system(size: 16))
                         .padding(.horizontal, 20)
+              
                
              }
             .background(Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
         }
-        //.padding(.horizontal, 15)
-         //.border(Color.gray,width:0.5)
     }
 }
 

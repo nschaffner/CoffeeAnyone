@@ -23,16 +23,20 @@ struct ProfileView: View {
                     print("Edit button tapped!")
                 }) {
                     Image(systemName: "pencil.circle")
-                        //.font(.title)
+                        .font(.title)
                         .foregroundColor(.gray)
+                    Text("Edit Profile")
+                        .font(.caption)
                 }
                 
                 Button(action: {
                     print("Camera button tapped!")
                 }) {
                     Image(systemName: "camera.circle")
-                        //.font(.title)
+                        .font(.title)
                         .foregroundColor(.gray)
+                    Text("Edit Photo")
+                        .font(.caption)
                 }.padding(.horizontal,10)
             }
                 HStack{

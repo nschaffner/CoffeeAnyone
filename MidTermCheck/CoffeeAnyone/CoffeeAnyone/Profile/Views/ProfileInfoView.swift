@@ -11,13 +11,15 @@ import SwiftUI
 struct ProfileInfoView: View {
      @ObservedObject var profile = Profile()
     var body: some View {
-<<<<<<< HEAD
         VStack(alignment: .leading) {
             ScrollView {
-                Section(header: Text("Personal Statement").bold()) {
+                Section(header: Text("Personal Statement").bold().background(Color.white)) {
                     Spacer()
-                    FieldView(fieldname:" ",fieldvalue: profile.statement)
-                }
+                    Text(profile.statement)
+                        .padding(20)
+                    Spacer()
+                    
+                }.background(Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
                 Section(header: Text("Basics").bold()) {
                     FieldView(fieldname:"Status",fieldvalue: profile.status.rawValue)
                     FieldView(fieldname:"Gender",fieldvalue: profile.gender.rawValue)
@@ -44,9 +46,6 @@ struct ProfileInfoView: View {
                 }
             }
         }
-=======
-    Text("Im the basic profile view")
->>>>>>> e9f71064a8e8696b5edfee4b4784626393e14799
     }
 }
 
