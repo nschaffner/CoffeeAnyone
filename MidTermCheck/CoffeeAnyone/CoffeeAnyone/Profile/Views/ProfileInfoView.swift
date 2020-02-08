@@ -11,6 +11,7 @@ import SwiftUI
 struct ProfileInfoView: View {
      @ObservedObject var profile = Profile()
     var body: some View {
+<<<<<<< HEAD
         VStack(alignment: .leading) {
             ScrollView {
                 Section(header: Text("Personal Statement").bold()) {
@@ -43,6 +44,9 @@ struct ProfileInfoView: View {
                 }
             }
         }
+=======
+    Text("Im the basic profile view")
+>>>>>>> e9f71064a8e8696b5edfee4b4784626393e14799
     }
 }
 
