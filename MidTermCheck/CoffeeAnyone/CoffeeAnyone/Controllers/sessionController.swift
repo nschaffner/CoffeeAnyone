@@ -16,7 +16,6 @@ protocol MyDelegate{
 
 class FirebaseSession: ObservableObject{
     @Published var session: User?
-    @Published var items: [Messages] = []
     @Published var messages: [ChatMessage] = []
     var msgkey: String?
     var msgDict = [String:AnyObject]()
@@ -24,37 +23,36 @@ class FirebaseSession: ObservableObject{
         self.msgDict = [String:AnyObject]()
     }
     
-    func messageSender(fromUser:String, toUser:String, message:String,newConvo:Bool) {
+    func messageSender(fromUser:String, toUser:String, text:String,newConvo:Bool) {
         let date = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
         K.refs.databaseUsers.child(fromUser).child("conversations").child(toUser).child("conversationId").observeSingleEvent(of: .value, with: {(snapshot) in
             let val = snapshot.value as? NSDictionary
             let convoKey = val!.allKeys[0]
-            guard let key = K.refs.databaseChats.child(convoKey as! String).child("messages").childByAutoId().key else{return}
-            let post = ["text": message,
+            guard let key = K.refs.databaseChats.child(convoKey as! String).child("text").childByAutoId().key else{return}
+            let post = ["text": text,
                         "senderId":fromUser,
                         "createdAt":date,
                         "timestamp":[".sv":"timestamp"]] as [String : Any]
             let childUpdates = ["\(key)/":post]
-            K.refs.databaseChats.child(convoKey as! String).child("messages").updateChildValues(childUpdates)
+            K.refs.databaseChats.child(convoKey as! String).child("text").updateChildValues(childUpdates)
             if newConvo{
                 K.refs.databaseUsers.child(toUser).child("conversations").child(fromUser).child("conversationId").child("\(convoKey)").setValue(fromUser)
             }
         })
     }
     
-    func sendMessage(message:String){
+    func sendMessage(text:String){
         let ref = K.refs.databaseUsers
         let userID = "Fred"
         let love = "Eric"
         ref.child(userID).child("conversations").observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
             if value?[love] != nil{
-                print("love found")
-                self.messageSender(fromUser: userID, toUser: love, message: message,newConvo:false)
+                self.messageSender(fromUser: userID, toUser: love, text: text,newConvo:false)
             }
             else{
                 ref.child(userID).child("conversations").child(love).child("conversationId").childByAutoId().setValue(love)
-                self.messageSender(fromUser: userID, toUser: love, message: message, newConvo: true)
+                self.messageSender(fromUser: userID, toUser: love, text: text, newConvo: true)
             }
         })
     }
@@ -68,8 +66,7 @@ class FirebaseSession: ObservableObject{
         return formatter.string(from: date as Date)
     }
     
-    func receiveMessage(user:String) -> [[String:AnyObject]]{
-        let messageArray: [[String:AnyObject]] = []
+    func receiveMessage(user:String){
         let convoId = K.refs.databaseUsers.child(user).child("conversations").child("Fred").child("conversationId")
         convoId.observeSingleEvent(of: .value, with: { (snapshot) in
           let postDict = snapshot.value as? [String : AnyObject] ?? [:]
@@ -77,28 +74,28 @@ class FirebaseSession: ObservableObject{
                 self.didFetchData(data: key)
             }}
         )
-        return messageArray
-        }
+    }
 
     func didFetchData(data:String){
         self.msgkey = data
         loadMessages(convoKey: self.msgkey!)
+        print(data)
     }
 
-    func gotData(msgs:[String:AnyObject])->[ChatMessage]{
-        var newMsgs:[ChatMessage] = []
-        for (_,v) in msgs{
+    func getData(msgs:[String:AnyObject])->[ChatMessage]{
+        var conversationData:[ChatMessage] = []
+        for (_,value) in msgs{
             let chatStruct = ChatMessage(
-                    message:"\(v["text"]as! String)",
-                    createdAt: "\(v["createdAt"] as! String)",
-                    isMe: true, timestamp:v["timestamp"] as! Int,
-                    senderId: "\(v["senderId"]as! String)"
+                    text:"\(value["text"]as! String)",
+                    createdAt: "\(value["createdAt"] as! String)",
+                    isMe: true, timestamp:value["timestamp"] as! Int,
+                    senderId: "\(value["senderId"]as! String)"
             )
-            newMsgs.append(chatStruct)
+            conversationData.append(chatStruct)
         }
-        newMsgs.sort{$0.timestamp < $1.timestamp}
-        print(newMsgs)
-        return newMsgs
+        conversationData.sort{$0.timestamp < $1.timestamp}
+        print("newMsgs", conversationData)
+        return conversationData
     }
     
     func loadMessages(convoKey:String){
@@ -109,7 +106,7 @@ class FirebaseSession: ObservableObject{
                  let child = child as! DataSnapshot
                  if let childVal = child.value as? [String: AnyObject] {
                      messageData.append(childVal)
-                    let cleanData = self.gotData(msgs: messageData[0])
+                    let cleanData = self.getData(msgs: messageData[0])
                     self.messages = cleanData
                  }
                  else{
@@ -122,8 +119,8 @@ class FirebaseSession: ObservableObject{
     func getMsgKey(messageKey:String){
         self.msgkey = messageKey
     }
-
-    func loadMsg(){
-        print(receiveMessage(user:"Eric"))
+    
+    func loadMsgToView(){
+        receiveMessage(user:"Eric")
     }
 }

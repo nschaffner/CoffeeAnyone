@@ -8,44 +8,31 @@
 
 import SwiftUI
 
-struct ChatMessage : Hashable{
-    var message: String
-    var createdAt: String
-    var isMe: Bool = false
-    var timestamp: Int
-    var senderId: String
-}
-
 struct ChatNav: View {
     @State var isActive = true
     let users = ["Fred"]
     var body: some View {
     NavigationView{
-    List(users, id: \.self) { discipline in
+    List(users, id: \.self) { user in
         NavigationLink(
         destination:ChatView(isActive: self.$isActive)){
-      Text(discipline)
+      Text(user)
         }
         .navigationBarTitle("Users")
-//        ChatView()
+        }
+      }
     }
-    
-  }
 }
-
-
 
 struct ChatRow:View{
     var chatMessage: ChatMessage
-    
     var body: some View{
         Group {
             if (chatMessage.senderId as String == "Eric") {
-                
                 HStack {
                     Group{
                         Text(chatMessage.senderId)
-                        Text(chatMessage.message)
+                        Text(chatMessage.text)
                             .bold()
                             .foregroundColor(Color.white)
                             .padding(10)
@@ -58,7 +45,7 @@ struct ChatRow:View{
                 HStack{
                     Group{
                         Spacer()
-                        Text(chatMessage.message)
+                        Text(chatMessage.text)
                             .bold()
                             .foregroundColor(Color.white)
                             .padding(10)
@@ -77,7 +64,6 @@ struct ChatView: View {
     @ObservedObject var session = FirebaseSession()
     @Binding var isActive: Bool
     
-    
     var body: some View {
         VStack {
             List {
@@ -85,30 +71,25 @@ struct ChatView: View {
                     ChatRow(chatMessage: msg)
                 }
                 EmptyView()
-            }.onAppear(perform: session.loadMsg)
+            }.onAppear(perform: session.loadMsgToView)
             HStack{
                 TextField("Message...", text: $composedMessage).frame(minHeight: CGFloat(30))
                 Button(action:SendMessage){
                     Text("Send")
                 }
             }.frame(minHeight: CGFloat(50)).padding()
-        }
+        }.navigationBarItems(leading: Button(action: { self.isActive = true }, label: { Text("Back") }))
     }
     
     func SendMessage(){
-        session.sendMessage(message:composedMessage)
+        session.sendMessage(text:composedMessage)
         composedMessage = ""
     }
-    
-    func recieveMessage(){
-        session.receiveMessage(user: "Fred")
-    }
+
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
       ChatNav()
     }
-}
-
 }
