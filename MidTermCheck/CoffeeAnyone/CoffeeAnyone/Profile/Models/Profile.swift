@@ -33,12 +33,13 @@ final class Profile: ObservableObject, Codable {
     var hobbies1: Hobbies = .food
     var hobbies2: Hobbies = .music
     var hobbies3: Hobbies = .socializing
-    var hobbies4: Hobbies = .undefined
-    var hobbies5: Hobbies = .undefined
+    var hobbies4: Hobbies = .drinking
+    var hobbies5: Hobbies = .dancing
     var bodyTypePref: BodyType = .average
     var genderPref: Gender = .female
     var educationPref: Education = .undefined
     var agePref: Age = Age.twenty
+    var personalitytype:String = "ENFP"
 }
 
     //doing this because I have different cites for different states,

@@ -14,8 +14,6 @@ struct ProfileView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ProfileHeaderView(name: "\(profile.name)" )
-            Divider()
-            .padding(.leading,20)
             HStack{
                 Spacer()
                 //future edit and camera use buttons
@@ -28,7 +26,16 @@ struct ProfileView: View {
                     Text("Edit Profile")
                         .font(.caption)
                 }
-                
+                Spacer()
+                Button(action: {
+                    print("Pref Edit button tapped!")
+                }) {
+                    Image(systemName: "pencil.circle")
+                        .font(.title)
+                        .foregroundColor(.gray)
+                    Text("Edit Preferences")
+                        .font(.caption)
+                }
                 Button(action: {
                     print("Camera button tapped!")
                 }) {
@@ -38,6 +45,7 @@ struct ProfileView: View {
                     Text("Edit Photo")
                         .font(.caption)
                 }.padding(.horizontal,10)
+                Spacer()
             }
                 HStack{
                     SegmentView(titles: ["  Your Profile  ","  Preferences  "," Quiz Results  "], currentPage: self.$changeView)

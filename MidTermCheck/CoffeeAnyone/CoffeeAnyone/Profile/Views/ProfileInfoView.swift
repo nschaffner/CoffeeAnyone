@@ -37,13 +37,24 @@ struct ProfileInfoView: View {
                     FieldView(fieldname:"Area",fieldvalue: profile.city.rawValue)
                     FieldView(fieldname:"State",fieldvalue: profile.state.rawValue)
                 }
-                Section(header: Text("Hobbies").bold()) {
+                Section(header: Text("Hobbies").bold().background(Color.white)) {
+                    VStack{
                     HStack{
-                        Text(profile.hobbies1.rawValue)
+                        Text(profile.hobbies1.rawValue).padding(.leading,10)
+                          Spacer()
                         Text(profile.hobbies2.rawValue)
-                        Text(profile.hobbies3.rawValue)
-                    }
-                }
+                        Spacer()
+                        Text(profile.hobbies3.rawValue).padding(.trailing,10)
+                    }.padding(.bottom,10)
+                    HStack{
+                        Text(profile.hobbies4.rawValue).padding(.leading,10)
+                        Spacer()
+                        Text(profile.hobbies5.rawValue)
+                        Spacer()
+                        }
+                    }.padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                }.background(Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
+
             }
         }
     }
