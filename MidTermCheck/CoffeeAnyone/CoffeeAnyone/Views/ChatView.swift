@@ -9,26 +9,28 @@
 import SwiftUI
 
 struct ChatNav: View {
-    @State var isActive = true
-    let users = ["Fred"]
+    @EnvironmentObject var fb: FirebaseSession
+    
     var body: some View {
     NavigationView{
-    List(users, id: \.self) { user in
+        List(fb.Contacts, id: \.self) { user in
         NavigationLink(
-        destination:ChatView(isActive: self.$isActive)){
+        destination:ChatView(contactName:user)){
       Text(user)
         }
         .navigationBarTitle("Users")
-        }
+        }.onAppear(perform:fb.getConversations)
       }
     }
 }
 
 struct ChatRow:View{
+    @EnvironmentObject var fb: FirebaseSession
     var chatMessage: ChatMessage
+    var contact:String
     var body: some View{
         Group {
-            if (chatMessage.senderId as String == "Eric") {
+            if (chatMessage.senderId as String == contact) {
                 HStack {
                     Group{
                         Text(chatMessage.senderId)
@@ -38,6 +40,12 @@ struct ChatRow:View{
                             .padding(10)
                             .background(Color.red)
                             .cornerRadius(10)
+                            .contextMenu {
+                                Button(action:DeleteMessage) {
+                                    Text("Remove")
+                                    Image(systemName: "trash")
+                                }
+                            }
                     }
                 }
             }
@@ -51,45 +59,68 @@ struct ChatRow:View{
                             .padding(10)
                             .background(Color.green)
                             .cornerRadius(10)
+                            .contextMenu{
+                                Button(action:DeleteMessage) {
+                                    Text("Remove")
+                                    Image(systemName: "trash")
+                                }
+                        }
                         Text(chatMessage.senderId )
                     }
+                    
+                    
                 }
             }
         }
     }
+    func DeleteMessage(){
+        fb.deleteMessage(messageId:chatMessage.messageId, convoId:chatMessage.conversationId)
+    }
 }
 
 struct ChatView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var composedMessage: String = ""
-    @ObservedObject var session = FirebaseSession()
-    @Binding var isActive: Bool
+    @EnvironmentObject var fb: FirebaseSession
+    
+    var contactName:String
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Text("Go back")
+            }
+        }
+    }
     
     var body: some View {
         VStack {
+            Text(contactName)
             List {
-                ForEach(session.messages, id:\.self){msg in
-                    ChatRow(chatMessage: msg)
+                ForEach(fb.Messages, id:\.self){msg in
+                    ChatRow(chatMessage: msg, contact:self.contactName)
                 }
                 EmptyView()
-            }.onAppear(perform: session.loadMsgToView)
+            }.onAppear(perform: {self.fb.loadMsgToView(contactName:self.contactName)})
             HStack{
                 TextField("Message...", text: $composedMessage).frame(minHeight: CGFloat(30))
                 Button(action:SendMessage){
                     Text("Send")
                 }
             }.frame(minHeight: CGFloat(50)).padding()
-        }.navigationBarItems(leading: Button(action: { self.isActive = true }, label: { Text("Back") }))
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
     }
     
     func SendMessage(){
-        session.sendMessage(text:composedMessage)
+        fb.sendMessage(text:composedMessage, match:contactName)
         composedMessage = ""
     }
-
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-      ChatNav()
+        ChatView(contactName:"Eric")
     }
 }
