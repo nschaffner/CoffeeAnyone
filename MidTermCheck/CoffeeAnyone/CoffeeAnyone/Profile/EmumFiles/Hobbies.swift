@@ -28,6 +28,7 @@ enum Hobbies: String, CaseIterable, Codable, Hashable {
         case trivia = "Trivia"
         case running = "Running/Jogging"
         case music = "Music"
+        case dancing = "Dancing"
         case undefined = "Other"
 }
 let allHobbies = Hobbies.allCases
