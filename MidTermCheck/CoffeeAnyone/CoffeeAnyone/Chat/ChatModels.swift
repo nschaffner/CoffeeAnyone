@@ -1,5 +1,5 @@
 //
-//  Messages.swift
+//  Constants.swift
 //  chatView
 //
 //  Created by Eric Armstrong on 1/24/20.
@@ -55,10 +55,38 @@ struct Messages:Identifiable{
     }
 }
 
-//struct User:Codable:
-//{
-//    var firstName:
-//}
+struct ChatMessage : Hashable{
+    var text: String
+    var createdAt: String
+    var isMe: Bool = false
+    var timestamp: Int
+    var senderId: String
+    var messageId: String
+    var conversationId: String
+}
 
+struct User{
+    let uid: String?
+    let email: String?
+    let userName: String?
+    let conversationIds: String?
 
+    init(userDetails:Dictionary<String, Any>){
+        uid = userDetails["id"] as? String
+        email = userDetails["email"] as? String
+        userName = userDetails["userName"] as? String
+        conversationIds = userDetails["conversationIds"] as? String
+    }
+    
+    func getUserName()->String{
+        return self.userName!
+    }
+}
 
+struct K {
+    struct refs{
+        static let databaseRoot = Database.database().reference()
+        static let databaseUsers = databaseRoot.child("users")
+        static let databaseChats = databaseRoot.child("conversations")
+    }
+}

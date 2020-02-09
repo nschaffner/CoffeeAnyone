@@ -127,24 +127,6 @@ class FirebaseSession: ObservableObject{
         })
     }
     
-    func loadMessages(convoKey:String){
-        let message = K.refs.databaseChats.child(convoKey).queryOrdered(byChild: "timestamp")
-        _ = message.observe(DataEventType.value, with: { (snapshot) in
-            var messageData : [[String:AnyObject]] = []
-            for child in snapshot.children{
-                let child = child as! DataSnapshot
-                if let childVal = child.value as? [String: AnyObject] {
-                    messageData.append(childVal)
-                    let cleanData = self.formatMessages(msgs: messageData[0], convoId: convoKey)
-                    self.Messages = cleanData
-                }
-                else{
-                    print("no data sent")
-                }
-            }
-        })
-    }
-    
     func formatMessages(msgs:[String:AnyObject], convoId:String)->[ChatMessage]{
         var conversationData:[ChatMessage] = []
         for (key,value) in msgs{
