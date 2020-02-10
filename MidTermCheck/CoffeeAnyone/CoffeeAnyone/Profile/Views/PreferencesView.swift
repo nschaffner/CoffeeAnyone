@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PreferencesView: View {
     @ObservedObject var profile = Profile()
+     @Environment(\.colorScheme) var colorScheme
        var body: some View {
            VStack(alignment: .leading) {
                ScrollView {
@@ -21,7 +22,7 @@ struct PreferencesView: View {
                     FieldView(fieldname:"Body Type",fieldvalue:profile.bodyTypePref.rawValue)
                     FieldView(fieldname:"Kids",fieldvalue:profile.hasKids)
                        }.padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                   }.background(Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
+                   }.background(colorScheme == .dark ? Color.black : Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
        }
 }
 

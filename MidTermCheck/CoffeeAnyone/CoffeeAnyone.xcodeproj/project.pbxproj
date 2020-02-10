@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61DBCB23EEF2170059669B /* FieldView.swift */; };
-		DA61DBD023EF0F1D0059669B /* youngelvis.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DA61DBCF23EF0F1D0059669B /* youngelvis.jpeg */; };
 		DAF14D8E23E9F29900CDCD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */; };
 		DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */; };
 		DAF14D9223E9F29900CDCD05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D9123E9F29900CDCD05 /* ContentView.swift */; };
@@ -33,14 +32,11 @@
 		DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DE123EA30BB00CDCD05 /* Jobs.swift */; };
 		DAF14DE423EA30C000CDCD05 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DE323EA30C000CDCD05 /* Status.swift */; };
 		DAF14DE623EA30C200CDCD05 /* Hobbies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DE523EA30C200CDCD05 /* Hobbies.swift */; };
-		DAF14DE923EA34A800CDCD05 /* coffeecup.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DE823EA34A800CDCD05 /* coffeecup.png */; };
 		DAF14DEC23EA3E4200CDCD05 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DEB23EA3E4200CDCD05 /* SegmentedViewController.swift */; };
 		DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */; };
 		DAF14DF123EA478C00CDCD05 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */; };
 		DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */; };
 		DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF423EA49B800CDCD05 /* CircleImage.swift */; };
-		DAF14DF723EA49EE00CDCD05 /* 000002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DF623EA49EE00CDCD05 /* 000002.jpg */; };
-		DAF14DF923EA49F900CDCD05 /* coffeecupheart.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */; };
 		DAF14DFB23EA546300CDCD05 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */; };
 		DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */; };
 /* End PBXBuildFile section */
@@ -64,7 +60,6 @@
 
 /* Begin PBXFileReference section */
 		DA61DBCB23EEF2170059669B /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
-		DA61DBCF23EF0F1D0059669B /* youngelvis.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = youngelvis.jpeg; sourceTree = "<group>"; };
 		DAF14D8A23E9F29900CDCD05 /* CoffeeAnyone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeAnyone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,14 +90,11 @@
 		DAF14DE123EA30BB00CDCD05 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
 		DAF14DE323EA30C000CDCD05 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		DAF14DE523EA30C200CDCD05 /* Hobbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobbies.swift; sourceTree = "<group>"; };
-		DAF14DE823EA34A800CDCD05 /* coffeecup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeecup.png; sourceTree = "<group>"; };
 		DAF14DEB23EA3E4200CDCD05 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
 		DAF14DED23EA3E5800CDCD05 /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsView.swift; sourceTree = "<group>"; };
 		DAF14DF423EA49B800CDCD05 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
-		DAF14DF623EA49EE00CDCD05 /* 000002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000002.jpg; sourceTree = "<group>"; };
-		DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffeecupheart.jpeg; sourceTree = "<group>"; };
 		DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,10 +239,6 @@
 		DAF14DE723EA348100CDCD05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DA61DBCF23EF0F1D0059669B /* youngelvis.jpeg */,
-				DAF14DF823EA49F900CDCD05 /* coffeecupheart.jpeg */,
-				DAF14DE823EA34A800CDCD05 /* coffeecup.png */,
-				DAF14DF623EA49EE00CDCD05 /* 000002.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -380,12 +368,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF14DE923EA34A800CDCD05 /* coffeecup.png in Resources */,
 				DAF14D9A23E9F29A00CDCD05 /* LaunchScreen.storyboard in Resources */,
 				DAF14D9723E9F29A00CDCD05 /* Preview Assets.xcassets in Resources */,
-				DAF14DF923EA49F900CDCD05 /* coffeecupheart.jpeg in Resources */,
-				DAF14DF723EA49EE00CDCD05 /* 000002.jpg in Resources */,
-				DA61DBD023EF0F1D0059669B /* youngelvis.jpeg in Resources */,
 				DAF14D9423E9F29A00CDCD05 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

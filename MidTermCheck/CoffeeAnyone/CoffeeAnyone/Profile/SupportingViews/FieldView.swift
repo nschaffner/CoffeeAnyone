@@ -11,6 +11,7 @@ import SwiftUI
 struct FieldView: View {
     var fieldname:String
     var fieldvalue:String
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
          VStack {
             HStack{
@@ -27,7 +28,7 @@ struct FieldView: View {
               
                
              }
-            .background(Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
+            .background(colorScheme == .dark ? Color.black : Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
         }
     }
 }
