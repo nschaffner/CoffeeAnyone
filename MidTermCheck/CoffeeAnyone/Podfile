@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '13.0'
+
+target 'CoffeeAnyone' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CoffeeAnyone
+
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+
+  target 'CoffeeAnyoneTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CoffeeAnyoneUITests' do
+    # Pods for testing
+  end
+
+end
