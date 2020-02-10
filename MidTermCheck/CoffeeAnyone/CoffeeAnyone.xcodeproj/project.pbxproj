@@ -14,7 +14,7 @@
 		59D95A1A23F1124A00585B9F /* 000002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D95A1723F1124900585B9F /* 000002.jpg */; };
 		59D95A1B23F1124A00585B9F /* coffeecupheart.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59D95A1823F1124900585B9F /* coffeecupheart.jpeg */; };
 		59D95A1C23F1124A00585B9F /* coffeecup.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D95A1923F1124A00585B9F /* coffeecup.png */; };
-		59D95A1E23F1131000585B9F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D95A1D23F1131000585B9F /* ChatView.swift */; };
+		59D95A2023F119EC00585B9F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D95A1F23F119EC00585B9F /* ChatView.swift */; };
 		B7FBF8AB409C4B46B0FEDF68 /* Pods_CoffeeAnyoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6E74D5B9CBFA1E69A4BA88 /* Pods_CoffeeAnyoneTests.framework */; };
 		C9806D7D08DCABAB8B770D2F /* Pods_CoffeeAnyone_CoffeeAnyoneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02487DD3FC4FD8E167B4F10A /* Pods_CoffeeAnyone_CoffeeAnyoneUITests.framework */; };
 		DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61DBCB23EEF2170059669B /* FieldView.swift */; };
@@ -76,7 +76,7 @@
 		59D95A1723F1124900585B9F /* 000002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000002.jpg; sourceTree = "<group>"; };
 		59D95A1823F1124900585B9F /* coffeecupheart.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffeecupheart.jpeg; sourceTree = "<group>"; };
 		59D95A1923F1124A00585B9F /* coffeecup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeecup.png; sourceTree = "<group>"; };
-		59D95A1D23F1131000585B9F /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatView.swift; path = /Users/ericarmstrong/Desktop/test4/CoffeeAnyone/MidTermCheck/CoffeeAnyone/CoffeeAnyone/Chat/ChatView.swift; sourceTree = "<absolute>"; };
+		59D95A1F23F119EC00585B9F /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatView.swift; path = /Users/ericarmstrong/Desktop/test5/CoffeeAnyone/MidTermCheck/CoffeeAnyone/CoffeeAnyone/Chat/ChatView.swift; sourceTree = "<absolute>"; };
 		5D0B79FF276630F584D866BB /* Pods-CoffeeAnyone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAnyone.release.xcconfig"; path = "Target Support Files/Pods-CoffeeAnyone/Pods-CoffeeAnyone.release.xcconfig"; sourceTree = "<group>"; };
 		5FFF45BDFD34FEA5CD0DD6E1 /* Pods-CoffeeAnyone-CoffeeAnyoneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAnyone-CoffeeAnyoneUITests.release.xcconfig"; path = "Target Support Files/Pods-CoffeeAnyone-CoffeeAnyoneUITests/Pods-CoffeeAnyone-CoffeeAnyoneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		84CAB23A93890D12828E6809 /* Pods-CoffeeAnyoneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAnyoneTests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeAnyoneTests/Pods-CoffeeAnyoneTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 		59D95A1623F1121200585B9F /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				59D95A1F23F119EC00585B9F /* ChatView.swift */,
 				59D95A1223F1120800585B9F /* ChatController.swift */,
-				59D95A1D23F1131000585B9F /* ChatView.swift */,
 				59D95A1123F1120800585B9F /* ChatModels.swift */,
 			);
 			path = Chat;
@@ -574,7 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF14DE623EA30C200CDCD05 /* Hobbies.swift in Sources */,
-				59D95A1E23F1131000585B9F /* ChatView.swift in Sources */,
+				59D95A2023F119EC00585B9F /* ChatView.swift in Sources */,
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
 				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
