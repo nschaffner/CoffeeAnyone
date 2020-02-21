@@ -8,9 +8,16 @@
 
 import SwiftUI
 
+extension Color{
+    static let chatGrey = Color("chatGrey")
+}
+
 struct ChatNav: View {
     @EnvironmentObject var fb: FirebaseSession
-    
+    init() {
+        UITableView.appearance().tableFooterView = UIView()
+        UITableView.appearance().separatorStyle = .none
+    }
     var body: some View {
     NavigationView{
         List(fb.Contacts, id: \.self) { user in
@@ -18,7 +25,7 @@ struct ChatNav: View {
         destination:ChatView(contactName:user)){
       Text(user)
         }
-        .navigationBarTitle("Users")
+        .navigationBarTitle("Matches")
         }.onAppear(perform:fb.getConversations)
       }
     }
@@ -35,11 +42,10 @@ struct ChatRow:View{
                     Group{
                         Text(chatMessage.senderId)
                         Text(chatMessage.text)
-                            .bold()
-                            .foregroundColor(Color.white)
                             .padding(10)
-                            .background(Color.red)
-                            .cornerRadius(10)
+                            .foregroundColor(Color.black)
+                            .background(Color.chatGrey)
+                            .clipShape(TextBubble(chat:false))
                             .contextMenu {
                                 Button(action:DeleteMessage) {
                                     Text("Remove")
@@ -54,11 +60,10 @@ struct ChatRow:View{
                     Group{
                         Spacer()
                         Text(chatMessage.text)
-                            .bold()
-                            .foregroundColor(Color.white)
                             .padding(10)
-                            .background(Color.green)
-                            .cornerRadius(10)
+                            .foregroundColor(Color.white)
+                            .background(Color.blue)
+                            .clipShape(TextBubble(chat:true))
                             .contextMenu{
                                 Button(action:DeleteMessage) {
                                     Text("Remove")
@@ -116,6 +121,15 @@ struct ChatView: View {
     func SendMessage(){
         fb.sendMessage(text:composedMessage, match:contactName)
         composedMessage = ""
+    }
+}
+
+struct TextBubble: Shape{
+    var chat: Bool
+    func path(in rect: CGRect) -> Path{
+        let path = UIBezierPath(roundedRect: rect,
+                                byRoundingCorners: [.topRight, .topLeft, chat ? .bottomLeft : .bottomRight], cornerRadii: CGSize(width: 20, height: 20))
+        return Path(path.cgPath)
     }
 }
 
