@@ -109,27 +109,40 @@ def queryRelationship(userid):
         if entity['match_id2'] == userid:
             profiles = client.query(kind='profiles')
             profiles.add_filter('userid', '=', entity['match_id1'])
-            listofMatches.extend(list(profiles.fetch()))
+            match = list(profiles.fetch())
+            match[0]["date"] = entity["date"]
+            match[0]['matchtype'] = entity["match_type"]
+            listofMatches.extend(match)
         elif entity['match_id1'] == userid:
             profiles = client.query(kind='profiles')
             profiles.add_filter('userid', '=', entity['match_id2'])
-            listofMatches.extend(profiles.fetch())
+            match = list(profiles.fetch())
+            match[0]["date"] = entity["date"]
+            match[0]['matchtype'] = entity["match_type"]
+            listofMatches.extend(match)
     for entity in results2:
         if entity['match_id2'] == userid:
             profiles = client.query(kind='profiles')
             profiles.add_filter('userid', '=', entity['match_id1'])
-            listofMatches.extend(profiles.fetch())
+            match = list(profiles.fetch())
+            match[0]["date"] = entity["date"]
+            match[0]['matchtype'] = entity["match_type"]
+            listofMatches.extend(match)
 
         elif entity['match_id1'] != userid:
             profiles = client.query(kind='profiles')
             profiles.add_filter('userid', '==', entity['match_id2'])
-            listofMatches.extend(profiles.fetch())
+            match = list(profiles.fetch())
+            match[0]["date"] = entity["date"]
+            match[0]['matchtype'] = entity["match_type"]
+            listofMatches.extend(match)
 
     return listofMatches
 
 def date():
     date = datetime.datetime.now()
-    return date.strftime("%x")
+    #date.strftime("%x") store instead in utc
+    return date.utcnow()
 
 def CheckValInt(value):
     returnval = True
