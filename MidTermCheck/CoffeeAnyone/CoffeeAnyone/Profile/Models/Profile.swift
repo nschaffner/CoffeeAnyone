@@ -19,10 +19,11 @@ import Combine
 final class Profile: ObservableObject, Codable {
     var name: String = "Elvis"
     var user_id: Int = 999999
-    var statement: String = "Hi I'm awesome because I'm Elvis and everyone wants a hunk a hunk of burning love."
+    var statement: String = "Hi I'm awesome because I'm Elvis and everyone wants a hunk a hunk a burning love."
     var bodyType: BodyType = .curvy
     var age: Age = .seventies
-    var hasKids: Bool = true
+    var height:String = "6'0"
+    var hasKids: String = "Yes"
     var gender: Gender = .male
     var status: Status = .separated
     var occupation: Jobs = .other
@@ -32,12 +33,13 @@ final class Profile: ObservableObject, Codable {
     var hobbies1: Hobbies = .food
     var hobbies2: Hobbies = .music
     var hobbies3: Hobbies = .socializing
-    var hobbies4: Hobbies = .undefined
-    var hobbies5: Hobbies = .undefined
+    var hobbies4: Hobbies = .drinking
+    var hobbies5: Hobbies = .dancing
     var bodyTypePref: BodyType = .average
     var genderPref: Gender = .female
     var educationPref: Education = .undefined
     var agePref: Age = Age.twenty
+    var personalitytype:String = "ENFP"
 }
 
     //doing this because I have different cites for different states,
