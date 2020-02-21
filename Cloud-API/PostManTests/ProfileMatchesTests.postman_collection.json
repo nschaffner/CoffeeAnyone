@@ -1,0 +1,1769 @@
+{
+	"info": {
+		"_postman_id": "999a57f1-54ec-4ac3-8194-9034087b107f",
+		"name": "Profile Matches Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create profile1 200 ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.environment.set(\"profile_id\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Elvis Melvis\",\r\n  \"statement\": \"Hi I'm Elvis Melvis with the swigging pelvis.\",\r\n  \"bodytype\": \"Curvy\",\r\n  \"userid\": \"00000\",\r\n  \"age\": \"42-49\",\r\n  \"height\": \"5'6''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"INFJ\",\r\n  \"lovelang1\": \"1\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"6\",\r\n  \"lovelang4\": \"2\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 2 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id2\", pm.response.json()[\"id\"]);",
+							"pm.environment.set(\"match_id\", pm.response.json()[\"userid\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Kurt Cobain\",\r\n  \"statement\": \"Hi I'm Kurt I'm from Washington.\",\r\n  \"bodytype\": \"Athletic\",\r\n  \"userid\": \"000001\",\r\n  \"age\": \"42-49\",\r\n  \"height\": \"6'1''\",\r\n  \"haskids\": \"yes\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Curvy\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"34-41\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 3 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id3\", pm.response.json()[\"id\"]);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bob Dylan\",\r\n  \"statement\": \"Hi I'm soulful and hard to understand.\",\r\n  \"bodytype\": \"Slim\",\r\n  \"userid\": \"000002\",\r\n  \"age\": \"35-45\",\r\n  \"height\": \"6'1''\",\r\n  \"haskids\": \"yes\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Curvy\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"34-41\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 4 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id4\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Mike Stan\",\r\n  \"statement\": \"I stand for courage because I'm Mike Stan.\",\r\n  \"bodytype\": \"Curvy\",\r\n  \"userid\": \"000003\",\r\n  \"age\": \"34-41\",\r\n  \"height\": \"6'5''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 5 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id5\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Milon Stan\",\r\n  \"statement\": \"I'm Mike's twin brother.\",\r\n  \"bodytype\": \"Curvy\",\r\n  \"userid\": \"000004\",\r\n  \"age\": \"34-41\",\r\n  \"height\": \"6'4''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Female\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 6 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id6\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bill Bobo\",\r\n  \"statement\": \"Ice carving is my favorite hobbie. I can't believe it's not listed on this site.\",\r\n  \"bodytype\": \"Slim\",\r\n  \"userid\": \"000005\",\r\n  \"age\": \"34-41\",\r\n  \"height\": \"5'4''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 7 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id7\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Tik Tokkie\",\r\n  \"statement\": \"Social media is the best thing next to peanut butter and jelly.\",\r\n  \"bodytype\": \"Curvy\",\r\n  \"userid\": \"000006\",\r\n  \"age\": \"34-41\",\r\n  \"height\": \"5'4''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Hiking\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 8 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id8\", pm.response.json()[\"id\"]);",
+							"pm.environment.set(\"match_id2\", pm.response.json()[\"userid\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Blake Lively\",\r\n  \"statement\": \"I'm a gossipy girl.\",\r\n  \"bodytype\": \"Slim\",\r\n  \"userid\": \"000007\",\r\n  \"age\": \"26-33\",\r\n  \"height\": \"5'8''\",\r\n  \"haskids\": \"yes\",\r\n  \"gender\":\"Female\",\r\n  \"status\": \"Separated\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Hiking\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 9 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id9\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Ryan Reynolds\",\r\n  \"statement\": \"I'm into gossipy girls.\",\r\n  \"bodytype\": \"Slim\",\r\n  \"userid\": \"000008\",\r\n  \"age\": \"42-49\",\r\n  \"height\": \"5'8''\",\r\n  \"haskids\": \"yes\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Separated\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Hiking\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Female\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"26-33\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 10 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id10\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jelly Bean\",\r\n  \"statement\": \"I like candy.\",\r\n  \"bodytype\": \"Slim\",\r\n  \"userid\": \"000009\",\r\n  \"age\": \"34-41\",\r\n  \"height\": \"5'4''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"ESFJ\",\r\n  \"lovelang1\": \"3\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"4\",\r\n  \"lovelang4\": \"0\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 11 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id11\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bob The Builder\",\r\n  \"statement\": \"Hi I'm Bob and I build things.\",\r\n  \"bodytype\": \"Curvy\",\r\n  \"userid\": \"00010\",\r\n  \"age\": \"42-49\",\r\n  \"height\": \"5'6''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"INFJ\",\r\n  \"lovelang1\": \"1\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"6\",\r\n  \"lovelang4\": \"2\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create profile 12 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ecff411-7a3b-42dc-b33a-52116065953c",
+						"exec": [
+							"pm.test(\"201 status code\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.environment.set(\"profile_id12\", pm.response.json()[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bill Meme\",\r\n  \"statement\": \"check out my profile.\",\r\n  \"bodytype\": \"Curvy\",\r\n  \"userid\": \"00011\",\r\n  \"age\": \"42-49\",\r\n  \"height\": \"5'6''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"INFJ\",\r\n  \"lovelang1\": \"1\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"6\",\r\n  \"lovelang4\": \"2\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET profile 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00b996e8-52af-4a08-8ce2-22097177a90f",
+						"exec": [
+							"pm.test(\"200 status code\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET one profile 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00b996e8-52af-4a08-8ce2-22097177a90f",
+						"exec": [
+							"pm.test(\"200 status code\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET matches 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00b996e8-52af-4a08-8ce2-22097177a90f",
+						"exec": [
+							"pm.test(\"200 status code\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}/matches/{{match_id}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"matches",
+						"{{match_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET matches 200 diff profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00b996e8-52af-4a08-8ce2-22097177a90f",
+						"exec": [
+							"pm.test(\"200 status code\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}/matches/{{match_id2}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"matches",
+						"{{match_id2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit profiles at Root URL 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"405 status code\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete profiles at Root URL 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"405 status code\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit profiles PUT 303",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"303 status code\", function () {",
+							"    pm.response.to.have.status(303);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bill Meme\",\r\n  \"statement\": \"I have a new statement now!!.\",\r\n  \"bodytype\": \"Curvy\",\r\n  \"userid\": \"00011\",\r\n  \"age\": \"50-57\",\r\n  \"height\": \"5'6''\",\r\n  \"haskids\": \"no\",\r\n  \"gender\":\"Male\",\r\n  \"status\": \"Single\",\r\n  \"occupation\": \"Technical\",\r\n  \"education\": \"High School\",\r\n  \"city\": \"Savanna\",\r\n  \"state\": \"Georgia\",\r\n  \"hobbies1\": \"Food Cooking/Eating\",\r\n  \"hobbies2\": \"Soccer\",\r\n  \"hobbies3\": \"Drinking\",\r\n  \"hobbies4\":\"Social Events\",\r\n  \"hobbies5\": \"Trivia\",\r\n  \"bodytypePref\": \"Athletic\",\r\n  \"genderPref\": \"Male\",\r\n  \"educationPref\": \"High School\",\r\n  \"agePref\": \"42-49\",\r\n  \"personalitytype\": \"INFJ\",\r\n  \"lovelang1\": \"1\",\r\n  \"lovelang2\": \"5\",\r\n  \"lovelang3\": \"6\",\r\n  \"lovelang4\": \"2\",\r\n  \"lovelang5\": \"5\",\r\n  \"photo_url\": \"https://bit.ly/fcc-relaxing-cat\",\r\n  \"email\": \"emailaddress@email.com\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id12}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id12}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 1  204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 2 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id2}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 3 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id3}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id3}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 4 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id4}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id4}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 5 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id5}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id5}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 6 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id6}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id6}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 7 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id7}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id7}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 8 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id8}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id8}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 9 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id9}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id9}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 10 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id10}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id10}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 11 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id11}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id11}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete profile 12 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24735bb1-3d60-4e6e-9ebd-868df58b2f14",
+						"exec": [
+							"pm.test(\"204 status code\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{valid_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 2,\r\n  \"date\": \"12/08/2019\"\r\n}"
+				},
+				"url": {
+					"raw": "{{app_url}}/profiles/{{profile_id12}}",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"profiles",
+						"{{profile_id12}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
