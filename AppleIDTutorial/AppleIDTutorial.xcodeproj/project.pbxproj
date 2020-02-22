@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA1A457B23FC8EEB005088AF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A457A23FC8EEB005088AF /* Profile.swift */; };
+		DA1A458023FC8F9F005088AF /* Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A457F23FC8F9F005088AF /* Age.swift */; };
+		DA1A458223FC8FA0005088AF /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458123FC8FA0005088AF /* BodyType.swift */; };
+		DA1A458423FC8FA4005088AF /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458323FC8FA4005088AF /* Education.swift */; };
+		DA1A458623FC8FA8005088AF /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458523FC8FA8005088AF /* Gender.swift */; };
+		DA1A458823FC8FA9005088AF /* Hobbies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458723FC8FA9005088AF /* Hobbies.swift */; };
+		DA1A458A23FC8FAB005088AF /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458923FC8FAB005088AF /* Jobs.swift */; };
+		DA1A458C23FC8FAD005088AF /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458B23FC8FAD005088AF /* Status.swift */; };
+		DADCC60523DF6121000D7C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC60423DF6121000D7C5E /* AppDelegate.swift */; };
+		DADCC60723DF6121000D7C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC60623DF6121000D7C5E /* SceneDelegate.swift */; };
+		DADCC60B23DF6123000D7C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADCC60A23DF6123000D7C5E /* Assets.xcassets */; };
+		DADCC60E23DF6123000D7C5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADCC60D23DF6123000D7C5E /* Preview Assets.xcassets */; };
+		DADCC61123DF6123000D7C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADCC60F23DF6123000D7C5E /* LaunchScreen.storyboard */; };
+		DADCC61C23DF6123000D7C5E /* AppleIDTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC61B23DF6123000D7C5E /* AppleIDTutorialTests.swift */; };
+		DADCC62723DF6123000D7C5E /* AppleIDTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC62623DF6123000D7C5E /* AppleIDTutorialUITests.swift */; };
+		DADCC63723DF61C1000D7C5E /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC63623DF61C1000D7C5E /* AppleSignInButton.swift */; };
+		DADCC63923DF6320000D7C5E /* CircleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC63823DF6320000D7C5E /* CircleLogo.swift */; };
+		DADCC63B23DF6841000D7C5E /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = DADCC63A23DF6841000D7C5E /* download.png */; };
+		DADCC63D23DF6930000D7C5E /* coffeecupheart.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DADCC63C23DF6930000D7C5E /* coffeecupheart.jpeg */; };
+		DADCC63F23DF699F000D7C5E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC63E23DF699F000D7C5E /* SignInView.swift */; };
+		DADCC64C23DFAB00000D7C5E /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC64B23DFAB00000D7C5E /* SignInWithAppleDelegates.swift */; };
+		DADCC64E23DFB18B000D7C5E /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC64D23DFB18B000D7C5E /* EnvironmentWindowKey.swift */; };
+		DADCC65123DFEDBB000D7C5E /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65023DFEDBB000D7C5E /* AuthState.swift */; };
+		DADCC65323DFEE28000D7C5E /* SignInWithAppleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65223DFEE28000D7C5E /* SignInWithAppleManager.swift */; };
+		DADCC65523DFF3DC000D7C5E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65423DFF3DC000D7C5E /* MainView.swift */; };
+		DADCC65923DFF491000D7C5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65823DFF491000D7C5E /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DADCC61823DF6123000D7C5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADCC5F923DF6121000D7C5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DADCC60023DF6121000D7C5E;
+			remoteInfo = AppleIDTutorial;
+		};
+		DADCC62323DF6123000D7C5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADCC5F923DF6121000D7C5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DADCC60023DF6121000D7C5E;
+			remoteInfo = AppleIDTutorial;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA1A457A23FC8EEB005088AF /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DA1A457F23FC8F9F005088AF /* Age.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Age.swift; sourceTree = "<group>"; };
+		DA1A458123FC8FA0005088AF /* BodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		DA1A458323FC8FA4005088AF /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
+		DA1A458523FC8FA8005088AF /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		DA1A458723FC8FA9005088AF /* Hobbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobbies.swift; sourceTree = "<group>"; };
+		DA1A458923FC8FAB005088AF /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		DA1A458B23FC8FAD005088AF /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		DADCC60123DF6121000D7C5E /* AppleIDTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleIDTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADCC60423DF6121000D7C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DADCC60623DF6121000D7C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DADCC60A23DF6123000D7C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DADCC60D23DF6123000D7C5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DADCC61023DF6123000D7C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DADCC61223DF6123000D7C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADCC61723DF6123000D7C5E /* AppleIDTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleIDTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADCC61B23DF6123000D7C5E /* AppleIDTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDTutorialTests.swift; sourceTree = "<group>"; };
+		DADCC61D23DF6123000D7C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADCC62223DF6123000D7C5E /* AppleIDTutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleIDTutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADCC62623DF6123000D7C5E /* AppleIDTutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDTutorialUITests.swift; sourceTree = "<group>"; };
+		DADCC62823DF6123000D7C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADCC63623DF61C1000D7C5E /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
+		DADCC63823DF6320000D7C5E /* CircleLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLogo.swift; sourceTree = "<group>"; };
+		DADCC63A23DF6841000D7C5E /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = download.png; path = Assets.xcassets/download.png; sourceTree = "<group>"; };
+		DADCC63C23DF6930000D7C5E /* coffeecupheart.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffeecupheart.jpeg; sourceTree = "<group>"; };
+		DADCC63E23DF699F000D7C5E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		DADCC64023DF6B4E000D7C5E /* AppleIDTutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppleIDTutorial.entitlements; sourceTree = "<group>"; };
+		DADCC64B23DFAB00000D7C5E /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
+		DADCC64D23DFB18B000D7C5E /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
+		DADCC65023DFEDBB000D7C5E /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		DADCC65223DFEE28000D7C5E /* SignInWithAppleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleManager.swift; sourceTree = "<group>"; };
+		DADCC65423DFF3DC000D7C5E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DADCC65823DFF491000D7C5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DADCC5FE23DF6121000D7C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADCC61423DF6123000D7C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADCC61F23DF6123000D7C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA1A457E23FC8F8E005088AF /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				DA1A457F23FC8F9F005088AF /* Age.swift */,
+				DA1A458123FC8FA0005088AF /* BodyType.swift */,
+				DA1A458323FC8FA4005088AF /* Education.swift */,
+				DA1A458523FC8FA8005088AF /* Gender.swift */,
+				DA1A458723FC8FA9005088AF /* Hobbies.swift */,
+				DA1A458923FC8FAB005088AF /* Jobs.swift */,
+				DA1A458B23FC8FAD005088AF /* Status.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		DADCC5F823DF6121000D7C5E = {
+			isa = PBXGroup;
+			children = (
+				DADCC60323DF6121000D7C5E /* AppleIDTutorial */,
+				DADCC61A23DF6123000D7C5E /* AppleIDTutorialTests */,
+				DADCC62523DF6123000D7C5E /* AppleIDTutorialUITests */,
+				DADCC60223DF6121000D7C5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DADCC60223DF6121000D7C5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DADCC60123DF6121000D7C5E /* AppleIDTutorial.app */,
+				DADCC61723DF6123000D7C5E /* AppleIDTutorialTests.xctest */,
+				DADCC62223DF6123000D7C5E /* AppleIDTutorialUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DADCC60323DF6121000D7C5E /* AppleIDTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				DA1A457E23FC8F8E005088AF /* Enum */,
+				DADCC64023DF6B4E000D7C5E /* AppleIDTutorial.entitlements */,
+				DADCC63523DF6141000D7C5E /* Views */,
+				DADCC63423DF6134000D7C5E /* Models */,
+				DADCC60423DF6121000D7C5E /* AppDelegate.swift */,
+				DADCC60623DF6121000D7C5E /* SceneDelegate.swift */,
+				DADCC60A23DF6123000D7C5E /* Assets.xcassets */,
+				DADCC63C23DF6930000D7C5E /* coffeecupheart.jpeg */,
+				DADCC63A23DF6841000D7C5E /* download.png */,
+				DADCC60F23DF6123000D7C5E /* LaunchScreen.storyboard */,
+				DADCC61223DF6123000D7C5E /* Info.plist */,
+				DADCC60C23DF6123000D7C5E /* Preview Content */,
+				DADCC64B23DFAB00000D7C5E /* SignInWithAppleDelegates.swift */,
+				DADCC64D23DFB18B000D7C5E /* EnvironmentWindowKey.swift */,
+			);
+			path = AppleIDTutorial;
+			sourceTree = "<group>";
+		};
+		DADCC60C23DF6123000D7C5E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DADCC60D23DF6123000D7C5E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DADCC61A23DF6123000D7C5E /* AppleIDTutorialTests */ = {
+			isa = PBXGroup;
+			children = (
+				DADCC61B23DF6123000D7C5E /* AppleIDTutorialTests.swift */,
+				DADCC61D23DF6123000D7C5E /* Info.plist */,
+			);
+			path = AppleIDTutorialTests;
+			sourceTree = "<group>";
+		};
+		DADCC62523DF6123000D7C5E /* AppleIDTutorialUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DADCC62623DF6123000D7C5E /* AppleIDTutorialUITests.swift */,
+				DADCC62823DF6123000D7C5E /* Info.plist */,
+			);
+			path = AppleIDTutorialUITests;
+			sourceTree = "<group>";
+		};
+		DADCC63423DF6134000D7C5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA1A457A23FC8EEB005088AF /* Profile.swift */,
+				DADCC65023DFEDBB000D7C5E /* AuthState.swift */,
+				DADCC65223DFEE28000D7C5E /* SignInWithAppleManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DADCC63523DF6141000D7C5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DADCC63623DF61C1000D7C5E /* AppleSignInButton.swift */,
+				DADCC63823DF6320000D7C5E /* CircleLogo.swift */,
+				DADCC63E23DF699F000D7C5E /* SignInView.swift */,
+				DADCC65423DFF3DC000D7C5E /* MainView.swift */,
+				DADCC65823DFF491000D7C5E /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DADCC60023DF6121000D7C5E /* AppleIDTutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADCC62B23DF6123000D7C5E /* Build configuration list for PBXNativeTarget "AppleIDTutorial" */;
+			buildPhases = (
+				DADCC5FD23DF6121000D7C5E /* Sources */,
+				DADCC5FE23DF6121000D7C5E /* Frameworks */,
+				DADCC5FF23DF6121000D7C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleIDTutorial;
+			productName = AppleIDTutorial;
+			productReference = DADCC60123DF6121000D7C5E /* AppleIDTutorial.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DADCC61623DF6123000D7C5E /* AppleIDTutorialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADCC62E23DF6123000D7C5E /* Build configuration list for PBXNativeTarget "AppleIDTutorialTests" */;
+			buildPhases = (
+				DADCC61323DF6123000D7C5E /* Sources */,
+				DADCC61423DF6123000D7C5E /* Frameworks */,
+				DADCC61523DF6123000D7C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DADCC61923DF6123000D7C5E /* PBXTargetDependency */,
+			);
+			name = AppleIDTutorialTests;
+			productName = AppleIDTutorialTests;
+			productReference = DADCC61723DF6123000D7C5E /* AppleIDTutorialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DADCC62123DF6123000D7C5E /* AppleIDTutorialUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADCC63123DF6123000D7C5E /* Build configuration list for PBXNativeTarget "AppleIDTutorialUITests" */;
+			buildPhases = (
+				DADCC61E23DF6123000D7C5E /* Sources */,
+				DADCC61F23DF6123000D7C5E /* Frameworks */,
+				DADCC62023DF6123000D7C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DADCC62423DF6123000D7C5E /* PBXTargetDependency */,
+			);
+			name = AppleIDTutorialUITests;
+			productName = AppleIDTutorialUITests;
+			productReference = DADCC62223DF6123000D7C5E /* AppleIDTutorialUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DADCC5F923DF6121000D7C5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Carrie Davis";
+				TargetAttributes = {
+					DADCC60023DF6121000D7C5E = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					DADCC61623DF6123000D7C5E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DADCC60023DF6121000D7C5E;
+					};
+					DADCC62123DF6123000D7C5E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DADCC60023DF6121000D7C5E;
+					};
+				};
+			};
+			buildConfigurationList = DADCC5FC23DF6121000D7C5E /* Build configuration list for PBXProject "AppleIDTutorial" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DADCC5F823DF6121000D7C5E;
+			productRefGroup = DADCC60223DF6121000D7C5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DADCC60023DF6121000D7C5E /* AppleIDTutorial */,
+				DADCC61623DF6123000D7C5E /* AppleIDTutorialTests */,
+				DADCC62123DF6123000D7C5E /* AppleIDTutorialUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DADCC5FF23DF6121000D7C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADCC61123DF6123000D7C5E /* LaunchScreen.storyboard in Resources */,
+				DADCC60E23DF6123000D7C5E /* Preview Assets.xcassets in Resources */,
+				DADCC60B23DF6123000D7C5E /* Assets.xcassets in Resources */,
+				DADCC63B23DF6841000D7C5E /* download.png in Resources */,
+				DADCC63D23DF6930000D7C5E /* coffeecupheart.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADCC61523DF6123000D7C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADCC62023DF6123000D7C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DADCC5FD23DF6121000D7C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADCC65323DFEE28000D7C5E /* SignInWithAppleManager.swift in Sources */,
+				DADCC64C23DFAB00000D7C5E /* SignInWithAppleDelegates.swift in Sources */,
+				DA1A458823FC8FA9005088AF /* Hobbies.swift in Sources */,
+				DA1A458A23FC8FAB005088AF /* Jobs.swift in Sources */,
+				DA1A458423FC8FA4005088AF /* Education.swift in Sources */,
+				DADCC65123DFEDBB000D7C5E /* AuthState.swift in Sources */,
+				DA1A458023FC8F9F005088AF /* Age.swift in Sources */,
+				DA1A457B23FC8EEB005088AF /* Profile.swift in Sources */,
+				DADCC63F23DF699F000D7C5E /* SignInView.swift in Sources */,
+				DADCC63723DF61C1000D7C5E /* AppleSignInButton.swift in Sources */,
+				DADCC64E23DFB18B000D7C5E /* EnvironmentWindowKey.swift in Sources */,
+				DADCC63923DF6320000D7C5E /* CircleLogo.swift in Sources */,
+				DA1A458223FC8FA0005088AF /* BodyType.swift in Sources */,
+				DADCC65523DFF3DC000D7C5E /* MainView.swift in Sources */,
+				DA1A458623FC8FA8005088AF /* Gender.swift in Sources */,
+				DADCC60523DF6121000D7C5E /* AppDelegate.swift in Sources */,
+				DADCC65923DFF491000D7C5E /* ContentView.swift in Sources */,
+				DA1A458C23FC8FAD005088AF /* Status.swift in Sources */,
+				DADCC60723DF6121000D7C5E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADCC61323DF6123000D7C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADCC61C23DF6123000D7C5E /* AppleIDTutorialTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADCC61E23DF6123000D7C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADCC62723DF6123000D7C5E /* AppleIDTutorialUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DADCC61923DF6123000D7C5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DADCC60023DF6121000D7C5E /* AppleIDTutorial */;
+			targetProxy = DADCC61823DF6123000D7C5E /* PBXContainerItemProxy */;
+		};
+		DADCC62423DF6123000D7C5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DADCC60023DF6121000D7C5E /* AppleIDTutorial */;
+			targetProxy = DADCC62323DF6123000D7C5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DADCC60F23DF6123000D7C5E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DADCC61023DF6123000D7C5E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DADCC62923DF6123000D7C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DADCC62A23DF6123000D7C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DADCC62C23DF6123000D7C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppleIDTutorial/AppleIDTutorial.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"AppleIDTutorial/Preview Content\"";
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = AppleIDTutorial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstonetest.CoffeeAnyone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DADCC62D23DF6123000D7C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppleIDTutorial/AppleIDTutorial.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"AppleIDTutorial/Preview Content\"";
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = AppleIDTutorial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstonetest.CoffeeAnyone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DADCC62F23DF6123000D7C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
+				INFOPLIST_FILE = AppleIDTutorialTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.examples.AppleIDTutorialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleIDTutorial.app/AppleIDTutorial";
+			};
+			name = Debug;
+		};
+		DADCC63023DF6123000D7C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
+				INFOPLIST_FILE = AppleIDTutorialTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.examples.AppleIDTutorialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleIDTutorial.app/AppleIDTutorial";
+			};
+			name = Release;
+		};
+		DADCC63223DF6123000D7C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
+				INFOPLIST_FILE = AppleIDTutorialUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.examples.AppleIDTutorialUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AppleIDTutorial;
+			};
+			name = Debug;
+		};
+		DADCC63323DF6123000D7C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5L8LL7D5N;
+				INFOPLIST_FILE = AppleIDTutorialUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.examples.AppleIDTutorialUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AppleIDTutorial;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DADCC5FC23DF6121000D7C5E /* Build configuration list for PBXProject "AppleIDTutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADCC62923DF6123000D7C5E /* Debug */,
+				DADCC62A23DF6123000D7C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADCC62B23DF6123000D7C5E /* Build configuration list for PBXNativeTarget "AppleIDTutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADCC62C23DF6123000D7C5E /* Debug */,
+				DADCC62D23DF6123000D7C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADCC62E23DF6123000D7C5E /* Build configuration list for PBXNativeTarget "AppleIDTutorialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADCC62F23DF6123000D7C5E /* Debug */,
+				DADCC63023DF6123000D7C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADCC63123DF6123000D7C5E /* Build configuration list for PBXNativeTarget "AppleIDTutorialUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADCC63223DF6123000D7C5E /* Debug */,
+				DADCC63323DF6123000D7C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DADCC5F923DF6121000D7C5E /* Project object */;
+}
