@@ -41,7 +41,7 @@ struct ProfileInfoView: View {
                     FieldView(fieldname:"Area",fieldvalue: profile.city.rawValue)
                     FieldView(fieldname:"State",fieldvalue: profile.state.rawValue)
                 }
-                Section(header: Text("Hobbies").bold()) {
+                Section(header: Text("Hobbies").bold().background((colorScheme == .dark ? Color.black : Color.white))) {
                     VStack{
                     HStack{
                         Text(profile.hobbies1.rawValue).padding(.leading,10)
