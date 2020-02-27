@@ -34,6 +34,11 @@
 		DA3A14CB2406DE2D005A8EB9 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */; };
 		DA3A14CF2406DFAD005A8EB9 /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */; };
 		DA3A14D12406E166005A8EB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14D02406E166005A8EB9 /* MainView.swift */; };
+		DA5C69C22408539500D79083 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69C12408539500D79083 /* CategoryItem.swift */; };
+		DA5C69C4240853B200D79083 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69C3240853B200D79083 /* CategoriesView.swift */; };
+		DA5C69C8240853F700D79083 /* PersonalityQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69C5240853F600D79083 /* PersonalityQuizView.swift */; };
+		DA5C69C9240853F700D79083 /* PersonalityResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69C6240853F700D79083 /* PersonalityResultsView.swift */; };
+		DA5C69CA240853F700D79083 /* PersonalityQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69C7240853F700D79083 /* PersonalityQuiz.swift */; };
 		DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61DBCB23EEF2170059669B /* FieldView.swift */; };
 		DAF14D8E23E9F29900CDCD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */; };
 		DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */; };
@@ -113,6 +118,11 @@
 		DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthState.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Models/AuthState.swift; sourceTree = "<group>"; };
 		DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
 		DA3A14D02406E166005A8EB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DA5C69C12408539500D79083 /* CategoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
+		DA5C69C3240853B200D79083 /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		DA5C69C5240853F600D79083 /* PersonalityQuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityQuizView.swift; sourceTree = "<group>"; };
+		DA5C69C6240853F700D79083 /* PersonalityResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityResultsView.swift; sourceTree = "<group>"; };
+		DA5C69C7240853F700D79083 /* PersonalityQuiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityQuiz.swift; sourceTree = "<group>"; };
 		DA61DBCB23EEF2170059669B /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		DAF14D8A23E9F29900CDCD05 /* CoffeeAnyone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeAnyone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +283,42 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		DA5C69BD2408532100D79083 /* SetUp */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C69C3240853B200D79083 /* CategoriesView.swift */,
+				DA5C69C02408537300D79083 /* SupportingViews */,
+				DA5C69BF2408534700D79083 /* CreateProfile */,
+				DA5C69BE2408533400D79083 /* PersonalityQuiz */,
+			);
+			path = SetUp;
+			sourceTree = "<group>";
+		};
+		DA5C69BE2408533400D79083 /* PersonalityQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C69C7240853F700D79083 /* PersonalityQuiz.swift */,
+				DA5C69C5240853F600D79083 /* PersonalityQuizView.swift */,
+				DA5C69C6240853F700D79083 /* PersonalityResultsView.swift */,
+			);
+			path = PersonalityQuiz;
+			sourceTree = "<group>";
+		};
+		DA5C69BF2408534700D79083 /* CreateProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CreateProfile;
+			sourceTree = "<group>";
+		};
+		DA5C69C02408537300D79083 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C69C12408539500D79083 /* CategoryItem.swift */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
 		DAF14D8123E9F29900CDCD05 = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +344,7 @@
 		DAF14D8C23E9F29900CDCD05 /* CoffeeAnyone */ = {
 			isa = PBXGroup;
 			children = (
+				DA5C69BD2408532100D79083 /* SetUp */,
 				DA3A14B82406DD0A005A8EB9 /* SignIn */,
 				DA3A14B72406D50F005A8EB9 /* CoffeeAnyone.entitlements */,
 				59D95A1623F1121200585B9F /* Chat */,
@@ -676,16 +723,20 @@
 			files = (
 				DAF14DE623EA30C200CDCD05 /* Hobbies.swift in Sources */,
 				59D95A2023F119EC00585B9F /* ChatView.swift in Sources */,
+				DA5C69C8240853F700D79083 /* PersonalityQuizView.swift in Sources */,
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
 				01D9346E240461C80028C2AF /* UpdateMediaView.swift in Sources */,
 				DA3A14CF2406DFAD005A8EB9 /* EnvironmentWindowKey.swift in Sources */,
 				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
 				DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */,
+				DA5C69C4240853B200D79083 /* CategoriesView.swift in Sources */,
 				DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */,
 				DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */,
+				DA5C69C9240853F700D79083 /* PersonalityResultsView.swift in Sources */,
 				DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */,
 				DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */,
+				DA5C69C22408539500D79083 /* CategoryItem.swift in Sources */,
 				DA3A14CB2406DE2D005A8EB9 /* AuthState.swift in Sources */,
 				DA3A14C42406DDCC005A8EB9 /* AppleSignInButton.swift in Sources */,
 				DA3A14C52406DDCC005A8EB9 /* SignInView.swift in Sources */,
@@ -696,6 +747,7 @@
 				DAF14DEC23EA3E4200CDCD05 /* SegmentedViewController.swift in Sources */,
 				DAF14DDE23EA30B500CDCD05 /* Education.swift in Sources */,
 				01D9346C240461B20028C2AF /* PhotoCaptureView.swift in Sources */,
+				DA5C69CA240853F700D79083 /* PersonalityQuiz.swift in Sources */,
 				DAF14DDC23EA30B100CDCD05 /* BodyType.swift in Sources */,
 				5953DD0E23F6FB8A00C25E73 /* MatchesView.swift in Sources */,
 				DAF14DFB23EA546300CDCD05 /* ProfileHeaderView.swift in Sources */,
