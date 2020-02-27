@@ -34,7 +34,7 @@ struct SignInView: View {
                 .frame(width: 280, height: 60)
                 .onTapGesture(perform:self.showAppleLogin)
         }
-        .frame(width: 350.0, height: 400.0)
+        .frame(width: 350.0, height: 350.0)
     }
    private func showAppleLogin() {
        let request = ASAuthorizationAppleIDProvider().createRequest()
