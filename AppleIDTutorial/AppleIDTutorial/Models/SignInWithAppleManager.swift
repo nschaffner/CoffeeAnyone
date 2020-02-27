@@ -12,10 +12,26 @@ class SignInWithAppleManager: ObservableObject {
     
     @Published var isUserAuthenticated: AuthState = .undefined
     let userIdentifierKey = ""
-  
+    
+    init() {
+            checkUserAuth { (authState) in
+                switch authState {
+                case .undefined:
+                    self.isUserAuthenticated = .undefined
+                    print("Auth State = .undefined")
+                case .signedOut:
+                    self.isUserAuthenticated = .signedOut
+                    print("Auth State = .signedOut")
+                case .signedIn:
+                    self.isUserAuthenticated = .signedIn
+                    print("Auth State = .signedIn")
+                }
+        }
+    }
+
     func checkUserAuth(completion: @escaping (AuthState) -> ()) {
          //completion handler defines authstate
-        guard let userIdentifier = UserDefaults.standard.string(forKey: "userid") else {
+        guard let userIdentifier = UserDefaults.standard.string(forKey:"userid") else {
             print("User identifier does not exist")
             self.isUserAuthenticated = .undefined
              //userid is not defined in User defaults bc error returned

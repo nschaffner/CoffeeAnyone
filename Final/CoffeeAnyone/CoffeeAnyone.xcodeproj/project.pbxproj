@@ -26,6 +26,14 @@
 		59D95A2023F119EC00585B9F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D95A1F23F119EC00585B9F /* ChatView.swift */; };
 		B7FBF8AB409C4B46B0FEDF68 /* Pods_CoffeeAnyoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6E74D5B9CBFA1E69A4BA88 /* Pods_CoffeeAnyoneTests.framework */; };
 		C9806D7D08DCABAB8B770D2F /* Pods_CoffeeAnyone_CoffeeAnyoneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02487DD3FC4FD8E167B4F10A /* Pods_CoffeeAnyone_CoffeeAnyoneUITests.framework */; };
+		DA3A14BA2406DD62005A8EB9 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14B92406DD62005A8EB9 /* SignInWithAppleDelegates.swift */; };
+		DA3A14C12406DDCC005A8EB9 /* CircleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14BC2406DDCC005A8EB9 /* CircleLogo.swift */; };
+		DA3A14C42406DDCC005A8EB9 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14BF2406DDCC005A8EB9 /* AppleSignInButton.swift */; };
+		DA3A14C52406DDCC005A8EB9 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14C02406DDCC005A8EB9 /* SignInView.swift */; };
+		DA3A14C82406DE11005A8EB9 /* SignInWithAppleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14C72406DE11005A8EB9 /* SignInWithAppleManager.swift */; };
+		DA3A14CB2406DE2D005A8EB9 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */; };
+		DA3A14CF2406DFAD005A8EB9 /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */; };
+		DA3A14D12406E166005A8EB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14D02406E166005A8EB9 /* MainView.swift */; };
 		DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61DBCB23EEF2170059669B /* FieldView.swift */; };
 		DAF14D8E23E9F29900CDCD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */; };
 		DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */; };
@@ -97,6 +105,14 @@
 		A8257D10ABBD592AB3922A1D /* Pods-CoffeeAnyoneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAnyoneTests.release.xcconfig"; path = "Target Support Files/Pods-CoffeeAnyoneTests/Pods-CoffeeAnyoneTests.release.xcconfig"; sourceTree = "<group>"; };
 		B50F0B12AF0DC36D9E8A25DE /* Pods_CoffeeAnyone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeAnyone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3A14B72406D50F005A8EB9 /* CoffeeAnyone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeAnyone.entitlements; sourceTree = "<group>"; };
+		DA3A14B92406DD62005A8EB9 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInWithAppleDelegates.swift; path = ../../../../AppleIDTutorial/AppleIDTutorial/SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
+		DA3A14BC2406DDCC005A8EB9 /* CircleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleLogo.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Views/CircleLogo.swift; sourceTree = "<group>"; };
+		DA3A14BF2406DDCC005A8EB9 /* AppleSignInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppleSignInButton.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Views/AppleSignInButton.swift; sourceTree = "<group>"; };
+		DA3A14C02406DDCC005A8EB9 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInView.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Views/SignInView.swift; sourceTree = "<group>"; };
+		DA3A14C72406DE11005A8EB9 /* SignInWithAppleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInWithAppleManager.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Models/SignInWithAppleManager.swift; sourceTree = "<group>"; };
+		DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthState.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Models/AuthState.swift; sourceTree = "<group>"; };
+		DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
+		DA3A14D02406E166005A8EB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DA61DBCB23EEF2170059669B /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		DAF14D8A23E9F29900CDCD05 /* CoffeeAnyone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeAnyone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +235,44 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA3A14B82406DD0A005A8EB9 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				DA3A14C92406DE1E005A8EB9 /* Enum */,
+				DA3A14C62406DDFA005A8EB9 /* Model */,
+				DA3A14BB2406DD6E005A8EB9 /* Views */,
+				DA3A14B92406DD62005A8EB9 /* SignInWithAppleDelegates.swift */,
+				DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		DA3A14BB2406DD6E005A8EB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA3A14BF2406DDCC005A8EB9 /* AppleSignInButton.swift */,
+				DA3A14BC2406DDCC005A8EB9 /* CircleLogo.swift */,
+				DA3A14C02406DDCC005A8EB9 /* SignInView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA3A14C62406DDFA005A8EB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA3A14C72406DE11005A8EB9 /* SignInWithAppleManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA3A14C92406DE1E005A8EB9 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		DAF14D8123E9F29900CDCD05 = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +298,7 @@
 		DAF14D8C23E9F29900CDCD05 /* CoffeeAnyone */ = {
 			isa = PBXGroup;
 			children = (
+				DA3A14B82406DD0A005A8EB9 /* SignIn */,
 				DA3A14B72406D50F005A8EB9 /* CoffeeAnyone.entitlements */,
 				59D95A1623F1121200585B9F /* Chat */,
 				5953DD0C23F6FB6700C25E73 /* Matches */,
@@ -296,6 +351,7 @@
 				DAF14DC223E9F44E00CDCD05 /* TabBarViewController.swift */,
 				DAF14DC323E9F44E00CDCD05 /* tabItems.swift */,
 				DAF14DC023E9F3D700CDCD05 /* TabView.swift */,
+				DA3A14D02406E166005A8EB9 /* MainView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -623,12 +679,16 @@
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
 				01D9346E240461C80028C2AF /* UpdateMediaView.swift in Sources */,
+				DA3A14CF2406DFAD005A8EB9 /* EnvironmentWindowKey.swift in Sources */,
 				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
 				DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */,
 				DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */,
 				DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */,
 				DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */,
 				DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */,
+				DA3A14CB2406DE2D005A8EB9 /* AuthState.swift in Sources */,
+				DA3A14C42406DDCC005A8EB9 /* AppleSignInButton.swift in Sources */,
+				DA3A14C52406DDCC005A8EB9 /* SignInView.swift in Sources */,
 				59D95A1423F1120800585B9F /* ChatModels.swift in Sources */,
 				DAF14DCD23E9F53B00CDCD05 /* ProfileView.swift in Sources */,
 				DAF14DDA23EA30AB00CDCD05 /* Age.swift in Sources */,
@@ -644,13 +704,17 @@
 				DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */,
 				DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */,
 				59D95A1523F1120800585B9F /* ChatController.swift in Sources */,
+				DA3A14C82406DE11005A8EB9 /* SignInWithAppleManager.swift in Sources */,
 				DAF14DC123E9F3D700CDCD05 /* TabView.swift in Sources */,
 				01D93468240461800028C2AF /* CaptureCameraView.swift in Sources */,
+				DA3A14BA2406DD62005A8EB9 /* SignInWithAppleDelegates.swift in Sources */,
 				DAF14DC423E9F44E00CDCD05 /* TabBarViewController.swift in Sources */,
 				DAF14D9223E9F29900CDCD05 /* ContentView.swift in Sources */,
 				DAF14DE423EA30C000CDCD05 /* Status.swift in Sources */,
+				DA3A14D12406E166005A8EB9 /* MainView.swift in Sources */,
 				DAF14DE023EA30B800CDCD05 /* Gender.swift in Sources */,
 				01D934662404614F0028C2AF /* CameraPicker.swift in Sources */,
+				DA3A14C12406DDCC005A8EB9 /* CircleLogo.swift in Sources */,
 				DAF14DF123EA478C00CDCD05 /* PreferencesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,6 +884,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoffeeAnyone/CoffeeAnyone.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2.3;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeAnyone/Preview Content\"";
 				DEVELOPMENT_TEAM = L5L8LL7D5N;
 				ENABLE_PREVIEWS = YES;
@@ -828,6 +893,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.capstonetest.CoffeeAnyone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -844,6 +910,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoffeeAnyone/CoffeeAnyone.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2.3;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeAnyone/Preview Content\"";
 				DEVELOPMENT_TEAM = L5L8LL7D5N;
 				ENABLE_PREVIEWS = YES;
@@ -852,6 +919,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.capstonetest.CoffeeAnyone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

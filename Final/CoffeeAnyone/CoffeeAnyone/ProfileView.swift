@@ -12,7 +12,6 @@ struct ProfileView: View {
     @ObservedObject var profile = Profile()
     @State private var changeView = 0
     @State var isNavigationBarHidden: Bool = true
-    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -22,6 +21,7 @@ struct ProfileView: View {
                     Spacer()
                     Button(action: {
                         print("Edit button tapped!")
+                        print("user id: \(self.profile.user_id)")
                     }) {
                         Image(systemName: "pencil.circle")
                             .font(.title)

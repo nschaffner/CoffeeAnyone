@@ -43,11 +43,13 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
          print("ID TOKEN \(idTokenString)")
         print("authorization code \(authcodeString)")
         //store this information locally
+        UserDefaults.standard.set(credential.user, forKey: "userid")
         UserDefaults.standard.set(idTokenString, forKey: "id_token")
         UserDefaults.standard.set(authcodeString, forKey: "auth_code")
-        UserDefaults.standard.set(credential.user, forKey: "userid")
+        print(UserDefaults.standard.string(forKey: "userid") ?? "NOtThere")
         UserDefaults.standard.set(credential.email, forKey: "email")
         UserDefaults.standard.set(credential.fullName?.givenName, forKey: "username")
+   
     }
     
     private func signInWithExistingAccount(credential: ASAuthorizationAppleIDCredential) {

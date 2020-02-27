@@ -15,6 +15,8 @@
 		DA1A458823FC8FA9005088AF /* Hobbies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458723FC8FA9005088AF /* Hobbies.swift */; };
 		DA1A458A23FC8FAB005088AF /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458923FC8FAB005088AF /* Jobs.swift */; };
 		DA1A458C23FC8FAD005088AF /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A458B23FC8FAD005088AF /* Status.swift */; };
+		DA3A14CD2406DF5E005A8EB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14CC2406DF5E005A8EB9 /* ContentView.swift */; };
+		DA3A14D32406E262005A8EB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14D22406E262005A8EB9 /* MainView.swift */; };
 		DADCC60523DF6121000D7C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC60423DF6121000D7C5E /* AppDelegate.swift */; };
 		DADCC60723DF6121000D7C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC60623DF6121000D7C5E /* SceneDelegate.swift */; };
 		DADCC60B23DF6123000D7C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADCC60A23DF6123000D7C5E /* Assets.xcassets */; };
@@ -32,7 +34,6 @@
 		DADCC65123DFEDBB000D7C5E /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65023DFEDBB000D7C5E /* AuthState.swift */; };
 		DADCC65323DFEE28000D7C5E /* SignInWithAppleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65223DFEE28000D7C5E /* SignInWithAppleManager.swift */; };
 		DADCC65523DFF3DC000D7C5E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65423DFF3DC000D7C5E /* MainView.swift */; };
-		DADCC65923DFF491000D7C5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCC65823DFF491000D7C5E /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		DA1A458723FC8FA9005088AF /* Hobbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobbies.swift; sourceTree = "<group>"; };
 		DA1A458923FC8FAB005088AF /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
 		DA1A458B23FC8FAD005088AF /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		DA3A14CC2406DF5E005A8EB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA3A14D22406E262005A8EB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DADCC60123DF6121000D7C5E /* AppleIDTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleIDTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADCC60423DF6121000D7C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DADCC60623DF6121000D7C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +88,6 @@
 		DADCC65023DFEDBB000D7C5E /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		DADCC65223DFEE28000D7C5E /* SignInWithAppleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleManager.swift; sourceTree = "<group>"; };
 		DADCC65423DFF3DC000D7C5E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		DADCC65823DFF491000D7C5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +213,8 @@
 				DADCC63823DF6320000D7C5E /* CircleLogo.swift */,
 				DADCC63E23DF699F000D7C5E /* SignInView.swift */,
 				DADCC65423DFF3DC000D7C5E /* MainView.swift */,
-				DADCC65823DFF491000D7C5E /* ContentView.swift */,
+				DA3A14CC2406DF5E005A8EB9 /* ContentView.swift */,
+				DA3A14D22406E262005A8EB9 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,15 +360,16 @@
 				DADCC65123DFEDBB000D7C5E /* AuthState.swift in Sources */,
 				DA1A458023FC8F9F005088AF /* Age.swift in Sources */,
 				DA1A457B23FC8EEB005088AF /* Profile.swift in Sources */,
+				DA3A14CD2406DF5E005A8EB9 /* ContentView.swift in Sources */,
 				DADCC63F23DF699F000D7C5E /* SignInView.swift in Sources */,
 				DADCC63723DF61C1000D7C5E /* AppleSignInButton.swift in Sources */,
 				DADCC64E23DFB18B000D7C5E /* EnvironmentWindowKey.swift in Sources */,
 				DADCC63923DF6320000D7C5E /* CircleLogo.swift in Sources */,
+				DA3A14D32406E262005A8EB9 /* MainView.swift in Sources */,
 				DA1A458223FC8FA0005088AF /* BodyType.swift in Sources */,
 				DADCC65523DFF3DC000D7C5E /* MainView.swift in Sources */,
 				DA1A458623FC8FA8005088AF /* Gender.swift in Sources */,
 				DADCC60523DF6121000D7C5E /* AppDelegate.swift in Sources */,
-				DADCC65923DFF491000D7C5E /* ContentView.swift in Sources */,
 				DA1A458C23FC8FAD005088AF /* Status.swift in Sources */,
 				DADCC60723DF6121000D7C5E /* SceneDelegate.swift in Sources */,
 			);

@@ -67,5 +67,6 @@ struct ProfileInfoView: View {
 struct ProfileInfoView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileInfoView().environment(\.colorScheme, .dark)
+      
     }
 }
