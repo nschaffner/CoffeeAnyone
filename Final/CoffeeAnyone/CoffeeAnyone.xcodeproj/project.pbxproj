@@ -18,6 +18,8 @@
 		59C424B523F8AA920085F2EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59C424B423F8AA920085F2EA /* GoogleService-Info.plist */; };
 		59C424B623F8AA920085F2EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59C424B423F8AA920085F2EA /* GoogleService-Info.plist */; };
 		59C424B723F8AA920085F2EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59C424B423F8AA920085F2EA /* GoogleService-Info.plist */; };
+		59D722352409521E00074F45 /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D722342409521E00074F45 /* MatchesController.swift */; };
+		59D722372409523E00074F45 /* MatchesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D722362409523E00074F45 /* MatchesModels.swift */; };
 		59D95A1423F1120800585B9F /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D95A1123F1120800585B9F /* ChatModels.swift */; };
 		59D95A1523F1120800585B9F /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D95A1223F1120800585B9F /* ChatController.swift */; };
 		59D95A1A23F1124A00585B9F /* 000002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D95A1723F1124900585B9F /* 000002.jpg */; };
@@ -93,6 +95,8 @@
 		17A75E4FCD8DC25EBABC47DD /* Pods-CoffeeAnyone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAnyone.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeAnyone/Pods-CoffeeAnyone.debug.xcconfig"; sourceTree = "<group>"; };
 		5953DD0D23F6FB8A00C25E73 /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		59C424B423F8AA920085F2EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		59D722342409521E00074F45 /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
+		59D722362409523E00074F45 /* MatchesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesModels.swift; sourceTree = "<group>"; };
 		59D95A1123F1120800585B9F /* ChatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
 		59D95A1223F1120800585B9F /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		59D95A1723F1124900585B9F /* 000002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000002.jpg; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				5953DD0D23F6FB8A00C25E73 /* MatchesView.swift */,
+				59D722342409521E00074F45 /* MatchesController.swift */,
+				59D722362409523E00074F45 /* MatchesModels.swift */,
 			);
 			path = Matches;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
 				01D9346E240461C80028C2AF /* UpdateMediaView.swift in Sources */,
+				59D722352409521E00074F45 /* MatchesController.swift in Sources */,
 				DA3A14CF2406DFAD005A8EB9 /* EnvironmentWindowKey.swift in Sources */,
 				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
 				DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */,
@@ -708,6 +715,7 @@
 				DAF14DC123E9F3D700CDCD05 /* TabView.swift in Sources */,
 				01D93468240461800028C2AF /* CaptureCameraView.swift in Sources */,
 				DA3A14BA2406DD62005A8EB9 /* SignInWithAppleDelegates.swift in Sources */,
+				59D722372409523E00074F45 /* MatchesModels.swift in Sources */,
 				DAF14DC423E9F44E00CDCD05 /* TabBarViewController.swift in Sources */,
 				DAF14D9223E9F29900CDCD05 /* ContentView.swift in Sources */,
 				DAF14DE423EA30C000CDCD05 /* Status.swift in Sources */,
