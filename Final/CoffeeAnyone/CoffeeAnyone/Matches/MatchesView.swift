@@ -51,7 +51,7 @@ struct MatchesNav: View {
 
 
 struct MatchesView: View{
-    @ObservedObject var profile = Profile()
+    @ObservedObject var profile = ProfileBody()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var colorScheme
     @State var sayHello = false

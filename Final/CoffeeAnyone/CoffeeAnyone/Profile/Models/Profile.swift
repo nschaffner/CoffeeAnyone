@@ -2,52 +2,39 @@ import SwiftUI
 import Combine
 
 //class for Profile Data
-final class Profile: ObservableObject, Codable {
-    var name: String = UserDefaults.standard.string(forKey: "username") ?? "Elvis Presley"
-    var user_id: String = UserDefaults.standard.string(forKey: "userid") ?? ""
-    var statement: String = UserDefaults.standard.string(forKey: "statement") ?? "Hi I'm awesome because I'm Elvis and everyone wants a hunk a hunk a burning love."
-    var bodyType: String = UserDefaults.standard.string(forKey: "bodytype") ?? "Curvy"
-    var age: String = UserDefaults.standard.string(forKey: "age") ?? "66+"
-    var height:String = UserDefaults.standard.string(forKey: "height") ?? "6'0"
-    var hasKids: String = UserDefaults.standard.string(forKey: "haskids") ?? "Yes"
-    var gender: String = UserDefaults.standard.string(forKey: "gender") ?? "Male"
-    var status: String = UserDefaults.standard.string(forKey: "status") ?? "Separated"
-    var occupation: String = UserDefaults.standard.string(forKey: "job") ?? "Entertainment"
-    var education: String = UserDefaults.standard.string(forKey: "education") ?? "High School"
-    var city: String = UserDefaults.standard.string(forKey: "city") ?? "Memphis"
-    var state: String = UserDefaults.standard.string(forKey: "state") ?? "Tennesse"
-    var hobbies1: String = UserDefaults.standard.string(forKey: "hobbie1") ?? "Food Cooking/Eating"
-    var hobbies2: String = UserDefaults.standard.string(forKey: "hobbie2") ?? "Food Cooking/Eating"
-    var hobbies3: String = UserDefaults.standard.string(forKey: "hobbie3") ?? "Food Cooking/Eating"
-    var hobbies4: String = UserDefaults.standard.string(forKey: "hobbie4") ?? "Food Cooking/Eating"
-    var hobbies5: String = UserDefaults.standard.string(forKey: "hobbie5") ?? "Food Cooking/Eating"
-    var bodyTypePref: String = UserDefaults.standard.string(forKey: "bodytypePref") ?? "Slim"
-    var genderPref: String = UserDefaults.standard.string(forKey: "genderPref") ?? "Female"
-    var educationPref: String = UserDefaults.standard.string(forKey: "educationPref") ?? "Undefined"
-    var agePref: String = UserDefaults.standard.string(forKey: "age") ?? "26-33"
-    var personalitytype:String = UserDefaults.standard.string(forKey: "personalitytype") ?? "ENFP"
-    var lovelang1:String = UserDefaults.standard.string(forKey: "lovelang1") ?? "0"
-    var lovelang2:String = UserDefaults.standard.string(forKey: "lovelang2") ?? "0"
-    var lovelang3:String = UserDefaults.standard.string(forKey: "lovelang3") ?? "0"
-    var lovelang4:String = UserDefaults.standard.string(forKey: "lovelang4") ?? "0"
-    var lovelang5:String = UserDefaults.standard.string(forKey: "lovelang5") ?? "0"
-    var email:String = UserDefaults.standard.string(forKey: "email") ?? ""
-}
-
-    //doing this because I have different cites for different states,
-    //but all need to go into city var not sure how to implement
-    //stackoverflow.com/questions/45319562/swift-passing-different-enum-types-for-same-variable-to-a-class
-    //protocol City {}
-
-    enum GACities: String, CaseIterable, Codable, Hashable {
-        case Atlanta = "Atlanta"
-        case Savanna = "Savanna"
-        case Marietta = "Marietta"
-        case Decatur = "Decatur"
-        case undefined = "Other"
-
-}
-      enum States: String, CaseIterable, Codable, Hashable {
-        case Georgia = "Georgia"
-        case undefined = "Other"
+final class ProfileBody: ObservableObject, Codable {
+      var name: String = UserDefaults.standard.string(forKey: "name") ?? ""
+      var user_id: String = UserDefaults.standard.string(forKey: "userid") ?? ""
+      var statement: String = UserDefaults.standard.string(forKey: "statement") ?? ""
+      var bodyType: String = UserDefaults.standard.string(forKey: "bodytype") ?? ""
+      var age: String = UserDefaults.standard.string(forKey: "age") ?? ""
+      var height:String = UserDefaults.standard.string(forKey: "height") ?? ""
+      var hasKids: String = UserDefaults.standard.string(forKey: "haskids") ?? ""
+      var gender: String = UserDefaults.standard.string(forKey: "gender") ?? ""
+      var status: String = UserDefaults.standard.string(forKey: "status") ?? ""
+      var occupation: String = UserDefaults.standard.string(forKey: "occupation") ?? ""
+      var education: String = UserDefaults.standard.string(forKey: "education") ?? ""
+      var city: String = UserDefaults.standard.string(forKey: "city") ?? ""
+      var state: String = UserDefaults.standard.string(forKey: "state") ?? ""
+      var hobbies1: String = UserDefaults.standard.string(forKey: "hobbies1") ?? ""
+      var hobbies2: String = UserDefaults.standard.string(forKey: "hobbies2") ?? ""
+      var hobbies3: String = UserDefaults.standard.string(forKey: "hobbies3") ?? ""
+      var hobbies4: String = UserDefaults.standard.string(forKey: "hobbies4") ?? ""
+      var hobbies5: String = UserDefaults.standard.string(forKey: "hobbies5") ?? ""
+      var bodyTypePref: String = UserDefaults.standard.string(forKey: "bodytypePref") ?? ""
+      var genderPref: String = UserDefaults.standard.string(forKey: "genderPref") ?? ""
+      var educationPref: String = UserDefaults.standard.string(forKey: "educationPref") ?? ""
+      var agePref: String = UserDefaults.standard.string(forKey: "agePref") ?? "26-33"
+      var IE:String = UserDefaults.standard.string(forKey: "IE") ?? ""
+      var SN:String = UserDefaults.standard.string(forKey: "SN") ?? ""
+      var JP:String = UserDefaults.standard.string(forKey: "JP") ?? ""
+      var personalitytype:String = UserDefaults.standard.string(forKey: "personalitytype") ?? ""
+      var lovelang1:String = UserDefaults.standard.string(forKey: "WA") ?? "0"
+      var lovelang2:String = UserDefaults.standard.string(forKey: "QT") ?? "0"
+      var lovelang3:String = UserDefaults.standard.string(forKey: "RG") ?? "0"
+      var lovelang4:String = UserDefaults.standard.string(forKey: "AS") ?? "0"
+      var lovelang5:String = UserDefaults.standard.string(forKey: "PT") ?? "0"
+      var photo_url:String = UserDefaults.standard.string(forKey: "photo_url") ?? ""
+      var email:String = UserDefaults.standard.string(forKey: "email") ?? ""
+    
 }

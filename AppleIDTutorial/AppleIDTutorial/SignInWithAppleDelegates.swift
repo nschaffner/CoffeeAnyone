@@ -8,6 +8,8 @@
 
 import UIKit
 import AuthenticationServices
+import Combine
+import SwiftUI
 
 class SignInWithAppleDelegates: NSObject {
     private let signInSucceeded: (Result<[String], Error>) -> ()
@@ -48,8 +50,7 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
         UserDefaults.standard.set(authcodeString, forKey: "auth_code")
         print(UserDefaults.standard.string(forKey: "userid") ?? "NOtThere")
         UserDefaults.standard.set(credential.email, forKey: "email")
-        UserDefaults.standard.set(credential.fullName?.givenName, forKey: "username")
-   
+        UserDefaults.standard.set(credential.fullName?.givenName, forKey: "name")
     }
     
     private func signInWithExistingAccount(credential: ASAuthorizationAppleIDCredential) {
