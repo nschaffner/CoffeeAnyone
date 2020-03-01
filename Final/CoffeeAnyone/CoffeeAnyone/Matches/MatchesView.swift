@@ -32,7 +32,7 @@ struct MatchesNav: View {
 
 
 struct MatchesView: View{
-    @ObservedObject var profile = Profile()
+    @ObservedObject var profile = ProfileBody()
     @Environment(\.colorScheme) var colorScheme
     
     

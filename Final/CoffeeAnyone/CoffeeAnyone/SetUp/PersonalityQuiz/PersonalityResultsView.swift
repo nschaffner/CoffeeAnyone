@@ -49,49 +49,49 @@ struct PersonalityResultsView: View {
             Text("Your Type: \(personalityquiz.personalitytype)").fontWeight(.bold)
             //Could I use arrays or dict and function yes but maybe in a refactor
             //wish I could just convert my input into a var like in python using formating.
-            if personalityquiz.personalitytype == "ISTJ" {
+            if UserDefaults.standard.string(forKey: "personalitytype") == "ISTJ" {
                     Text(ISTJ)
-            }else if personalityquiz.personalitytype == "ISTP"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ISTP"{
                     Text(ISTP)
                       
-            }else if personalityquiz.personalitytype == "ISFJ"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ISFJ"{
                     Text(ISFJ)
                         
-            }else if personalityquiz.personalitytype == "ESTJ"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ESTJ"{
                     Text(ESTJ)
                        
-            }else if personalityquiz.personalitytype == "ESFJ"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ESFJ"{
                     Text(ESFJ)
                        
-            }else if personalityquiz.personalitytype == "ISFP"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ISFP"{
                     Text(ISFP)
                        
-            }else if personalityquiz.personalitytype == "ESTP"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ESTP"{
                     Text(ESTP)
                        
-            }else if personalityquiz.personalitytype == "ENFP"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ENFP"{
                     Text(ENFP)
                        
-            }else if personalityquiz.personalitytype == "INTJ"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "INTJ"{
                     Text(INTJ)
                       
-            }else if personalityquiz.personalitytype == "ENTJ"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ENTJ"{
                     Text(ENTJ)
                       
-            }else if personalityquiz.personalitytype == "ENFJ"{
+            }else if UserDefaults.standard.string(forKey: "personalitytype") == "ENFJ"{
                     Text(ENFJ)
                       
             }
              Divider()
     //This is details. Maybe this could be done with navigation to get description details?
-            if personalityquiz.IE == "I" {
+            if UserDefaults.standard.string(forKey: "IE") == "I" {
                 Group{
                     Text("\(introvert)")
                         .fontWeight(.bold)
                     Text(introvertdesc)
                 }
                 
-            }else if personalityquiz.IE == "E"{
+            }else if UserDefaults.standard.string(forKey: "IE") == "E"{
                 Group{
                       Text("\(extravert)")
                         .fontWeight(.bold)
@@ -99,13 +99,13 @@ struct PersonalityResultsView: View {
                 }
             }
             Divider()
-            if personalityquiz.SN == "N" {
+            if UserDefaults.standard.string(forKey: "SN") == "N" {
                 Group{
                     Text(intuiting)
                         .fontWeight(.bold)
                     Text(intuitdesc)
                 }
-            }else if personalityquiz.SN == "S"{
+            }else if UserDefaults.standard.string(forKey: "SN") == "S"{
                 Group{
                     Text(sensing).fontWeight(.bold)
                         .fontWeight(.bold)
@@ -113,13 +113,13 @@ struct PersonalityResultsView: View {
                 }
             }
             Divider()
-            if personalityquiz.FT == "T" {
+            if UserDefaults.standard.string(forKey: "FT") == "T" {
                 Group{
                     Text(thinking).fontWeight(.bold)
                         .fontWeight(.bold)
                     Text(thinkingdesc)
                 }
-            }else if personalityquiz.FT == "F"{
+            }else if UserDefaults.standard.string(forKey: "FT") == "F"{
                 Group{
                     Text(feeling).fontWeight(.bold)
                         .fontWeight(.bold)
@@ -127,13 +127,13 @@ struct PersonalityResultsView: View {
                 }
             }
             Divider()
-            if personalityquiz.JP == "P" {
+            if UserDefaults.standard.string(forKey: "JP") == "P" {
                 Group{
                     Text(perceiving).fontWeight(.bold)
                         .fontWeight(.bold)
                     Text(perceivedesc)
                 }
-            }else if personalityquiz.JP == "J"{
+            }else if UserDefaults.standard.string(forKey: "JP") == "J"{
                 Group{
                     Text(judging).fontWeight(.bold)
                         .font(.subheadline)
@@ -145,8 +145,8 @@ struct PersonalityResultsView: View {
 }
     
 
-struct PersonalityResultsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PersonalityResultsView()
-    }
-}
+//struct PersonalityResultsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PersonalityResultsView()
+//    }
+//}

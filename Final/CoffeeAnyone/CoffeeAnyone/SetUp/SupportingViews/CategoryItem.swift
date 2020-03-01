@@ -7,34 +7,23 @@
 //
 
 import SwiftUI
-//stackoverflow.com/questions/56938805/how-to-pass-one-swiftui-view-as-a-variable-to-another-view-struct
+
 struct CategoryItem: View {
-    //<Content: View>
-    var complete: Bool
-    var stepname: String
-   // let viewBuilder: () -> Content
     var image: String
+    var text: String
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(stepname)
-                .foregroundColor(.primary)
-                .font(.headline)
+        HStack{
             Image(image)
-            //viewBuilder()
                 .renderingMode(.original)
-                 .resizable()
-                 .frame(width: 155, height: 260)
-                 .cornerRadius(5)
-        Spacer()
-           
-        }
-        .padding(.leading, 15)
+                .resizable()
+                .frame(width:80, height:100, alignment: .leading)
+                Text(text)
+            }
     }
 }
 
 struct CategoryItem_Previews: PreviewProvider {
     static var previews: some View {
-       // CategoryItem(complete: false, stepname: "Step 1", viewBuilder: {ProfileView()})
-        CategoryItem(complete:false,stepname:"Step 2",image:"PersonalityQuiz")
+        CategoryItem(image: "coffeecupheart",text: "Click Here for Test")
     }
 }

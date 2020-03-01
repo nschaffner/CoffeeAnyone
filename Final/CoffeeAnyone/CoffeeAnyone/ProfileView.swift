@@ -9,19 +9,20 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject var profile = Profile()
     @State private var changeView = 0
     @State var isNavigationBarHidden: Bool = true
+     //post profile
+    @ObservedObject var http = Http()
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                ProfileHeaderView(name: "\(profile.name)" )
+                ProfileHeaderView(name: "\(UserDefaults.standard.string(forKey: "name") ?? " ")" )
                 HStack{
                     //future edit and camera use buttons
                     Spacer()
                     Button(action: {
                         print("Edit button tapped!")
-                        print("user id: \(self.profile.user_id)")
+                        print("user id: \(UserDefaults.standard.string(forKey: "userid") ?? " ")")
                     }) {
                         Image(systemName: "pencil.circle")
                             .font(.title)
@@ -64,7 +65,9 @@ struct ProfileView: View {
             .navigationBarTitle("Back")
             .navigationBarHidden(isNavigationBarHidden)
             .onAppear {
+                self.http.postProfile()
                 self.isNavigationBarHidden = true
+            
             }
             .onDisappear {
                 self.isNavigationBarHidden = false

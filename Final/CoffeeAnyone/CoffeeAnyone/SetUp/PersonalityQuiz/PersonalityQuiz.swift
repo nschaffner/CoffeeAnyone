@@ -82,6 +82,7 @@ final class PersonaltyQuiz: ObservableObject, Identifiable {
         }
         else {
             self.personalitytype = calculatePersonality()
+            print(self.personalitytype)
         }
     }
     func calculatePersonality() -> String {
@@ -124,6 +125,16 @@ final class PersonaltyQuiz: ObservableObject, Identifiable {
         else {
             self.JP = "J"
         }
+        UserDefaults.standard.set(self.IE, forKey: "IE")
+        print("\(String(describing: UserDefaults.standard.string(forKey: "IE")))")
+        UserDefaults.standard.set(self.SN, forKey: "SN")
+        print("\(String(describing: UserDefaults.standard.string(forKey: "SN")))")
+        UserDefaults.standard.set(self.FT, forKey: "FT")
+        print("\(String(describing: UserDefaults.standard.string(forKey: "FT")))")
+        UserDefaults.standard.set(self.JP, forKey: "JP")
+        print("\(String(describing: UserDefaults.standard.string(forKey: "JP")))")
+        UserDefaults.standard.set(self.IE + self.SN + self.FT + self.JP, forKey: "personalitytype")
+        print("\(String(describing: UserDefaults.standard.string(forKey: "personalitytype")))")
         return self.IE + self.SN + self.FT + self.JP
     }
     

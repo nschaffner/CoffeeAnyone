@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct QuizResultsView: View {
-    @ObservedObject var profile = Profile()
         let extravert = "Extraverted"
          let introvert = "Introverted"
          let thinking = "Thinking"
@@ -45,7 +44,7 @@ struct QuizResultsView: View {
          var body: some View {
             ScrollView{
              VStack {
-                Text("Your Type: \(profile.personalitytype)").fontWeight(.bold)
+                Text("Your Type: \(UserDefaults.standard.string(forKey: "personalitytype") ?? " ")").fontWeight(.bold)
                  //Filler code for now
                 Text(ENFP).padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 Divider()

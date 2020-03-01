@@ -17,6 +17,8 @@ enum Age: String, CaseIterable, Codable, Hashable {
         case sixty = "58-65"
         case seventies = "66+"
         case undefined = "Not Defined"
+    
+    static let allAges = [teens, twenty, thirty, forty, fifty, sixty, seventies, undefined]
 }
 
-let allAges = Age.allCases
+

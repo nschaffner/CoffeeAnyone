@@ -10,7 +10,6 @@ import SwiftUI
 import UIKit
 
 struct ProfileInfoView: View {
-     @ObservedObject var profile = Profile()
     //color does not change properly in dark mode still for Color sometimes
     //using colorScheme makes it changes
 //stackoverflow.com/questions/59694589/change-background-color-when-dark-mode-turns-on-in-swiftui
@@ -20,40 +19,39 @@ struct ProfileInfoView: View {
             ScrollView {
                 Section(header: Text("Personal Statement").bold().background((colorScheme == .dark ? Color.black : Color.white))) {
                     Spacer()
-                    Text(profile.statement)
+                    Text(UserDefaults.standard.string(forKey: "statement") ?? " ")
                         .padding(20)
                     Spacer()
                 }.background(colorScheme == .dark ? Color.black : Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
                 Section(header: Text("Basics").bold()) {
-                    FieldView(fieldname:"Status",fieldvalue: profile.status)
-                    FieldView(fieldname:"Gender",fieldvalue: profile.gender)
-                    FieldView(fieldname:"Occupation",fieldvalue: profile.occupation)
-                    FieldView(fieldname:"Education",fieldvalue: profile.education)
-                    FieldView(fieldname:"Has Kids",fieldvalue:profile.hasKids)
+                    FieldView(fieldname:"Status",fieldvalue: UserDefaults.standard.string(forKey: "status") ?? " ")
+                    FieldView(fieldname:"Gender",fieldvalue: UserDefaults.standard.string(forKey: "gender") ?? " ")
+                    FieldView(fieldname:"Occupation",fieldvalue: UserDefaults.standard.string(forKey: "occupation") ?? " ")
+                    FieldView(fieldname:"Education",fieldvalue: UserDefaults.standard.string(forKey: "education") ?? " ")
+                    FieldView(fieldname:"Has Kids",fieldvalue: UserDefaults.standard.string(forKey: "haskids") ?? " ")
                 }
                 Section(header: Text("Stats").bold()) {
-                    FieldView(fieldname:"Gender",fieldvalue:profile.gender)
-                    FieldView(fieldname:"Age",fieldvalue: profile.age)
-                FieldView(fieldname:"Height",fieldvalue: profile.height)
-                    FieldView(fieldname:"Body Type",fieldvalue: profile.bodyType)
+                    FieldView(fieldname:"Age",fieldvalue: UserDefaults.standard.string(forKey: "age") ?? " ")
+                FieldView(fieldname:"Height",fieldvalue: UserDefaults.standard.string(forKey: "height") ?? " ")
+                    FieldView(fieldname:"Body Type",fieldvalue: UserDefaults.standard.string(forKey: "bodytype") ?? " ")
                 }
                 Section(header: Text("Location").bold()) {
-                    FieldView(fieldname:"Area",fieldvalue: profile.city)
-                    FieldView(fieldname:"State",fieldvalue: profile.state)
+                    FieldView(fieldname:"Area",fieldvalue: UserDefaults.standard.string(forKey: "city") ?? " ")
+                    FieldView(fieldname:"State",fieldvalue: UserDefaults.standard.string(forKey: "state") ?? " ")
                 }
                 Section(header: Text("Hobbies").bold().background((colorScheme == .dark ? Color.black : Color.white))) {
                     VStack{
                     HStack{
-                        Text(profile.hobbies1).padding(.leading,10)
+                        Text(UserDefaults.standard.string(forKey: "hobbies1") ?? " ").padding(.leading,10)
                           Spacer()
-                        Text(profile.hobbies2)
+                        Text(UserDefaults.standard.string(forKey: "hobbies2") ?? " ")
                         Spacer()
-                        Text(profile.hobbies3).padding(.trailing,10)
+                        Text(UserDefaults.standard.string(forKey: "hobbies3") ?? " ").padding(.trailing,10)
                     }.padding(.bottom,10)
                     HStack{
-                        Text(profile.hobbies4).padding(.leading,10)
+                        Text(UserDefaults.standard.string(forKey: "hobbies4") ?? " ").padding(.leading,10)
                         Spacer()
-                        Text(profile.hobbies5)
+                        Text(UserDefaults.standard.string(forKey: "hobbies5") ?? " ")
                         Spacer()
                         }
                     }.padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))

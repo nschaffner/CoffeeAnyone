@@ -10,13 +10,12 @@ import SwiftUI
 
 
 struct PersonalityQuizView: View {
+      @Environment(\.presentationMode) var presentationMode
     @ObservedObject var personalityquiz = PersonaltyQuiz()
     @State var showingResults = false
-    @State var isDone = false
     @State var length: Float = 3
 
     var body: some View {
-    NavigationView {
      HStack {
         VStack(spacing: 20) {
             HStack {
@@ -61,19 +60,14 @@ struct PersonalityQuizView: View {
             .padding()
             .sheet(isPresented: $showingResults, onDismiss: {
                 //go to main page
-                self.isDone = true
+                 self.presentationMode.wrappedValue.dismiss()
             })
                   {
                     PersonalityResultsView(personalityquiz: self.personalityquiz)
                   }
           
-                    //MARK: - NAVIGATION LINKS
-                  NavigationLink(destination: PersonalityQuizView(), isActive: $isDone) {
-                                     EmptyView()
-                                 }
             }
         }
-        }.navigationBarBackButtonHidden(true)
     }
 }
    

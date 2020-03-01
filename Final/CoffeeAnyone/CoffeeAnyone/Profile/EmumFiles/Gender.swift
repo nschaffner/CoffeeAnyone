@@ -12,6 +12,7 @@ enum Gender: String, CaseIterable, Codable, Hashable {
         case female = "Female"
         case male = "Male"
         case nonbinary = "Non-Binary"
-        case undefined = "Undefined"
+        case undefined = "Not Defined"
+
+ static let allGenders = [female, male, nonbinary, undefined]
 }
-let allGenders = Gender.allCases

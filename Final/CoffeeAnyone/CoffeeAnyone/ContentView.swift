@@ -14,12 +14,14 @@ struct ContentView: View {
     var body: some View {
         
                 ZStack{
-           // if UserDefaults.standard.string(forKey:"userid") != nil {
-           //     MainView()
-           // }
+                    
+           if UserDefaults.standard.string(forKey:"userid") != nil  {
+                MainView()
+            }
            
-            if signInWithAppleManager.isUserAuthenticated == .undefined {
-                SignInView()
+            if UserDefaults.standard.string(forKey:"userid") == nil{
+               CategoriesView()
+               // SignInView()
             }
             else if signInWithAppleManager.isUserAuthenticated == .signedIn {
                  MainView()
