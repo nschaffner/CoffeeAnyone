@@ -9,8 +9,6 @@
 import SwiftUI
 import Combine
 
-
-
 struct PrefFormView: View {
     @ObservedObject var selected = Preferences()
 
