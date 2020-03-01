@@ -12,16 +12,18 @@ struct PhotoCaptureView: View {
     
     @Binding var showImagePicker: Bool
     @Binding var image: Image?
+    @Binding var text: Text?
+    
     
     var body: some View {
-        ImagePicker(isShown: $showImagePicker, image: $image)
+        ImagePicker(isShown: $showImagePicker, image: $image, text: $text)
     }
 }
 
 #if DEBUG
 struct PhotoCaptureView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoCaptureView(showImagePicker: .constant(false), image: .constant(Image("")))
+        PhotoCaptureView(showImagePicker: .constant(false), image: .constant(Image("")), text: .constant(Text("")))
     }
 }
 #endif

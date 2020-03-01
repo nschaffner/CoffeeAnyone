@@ -29,13 +29,15 @@ struct UpdateMediaView: View {
 }
 
 struct CameraView: View {
+    
     @State private var showImagePicker: Bool = false
     @State private var image: Image? = nil
+    @State private var text: Text? = nil
     
     var body: some View {
         VStack {
             VStack {
-                        
+                text
                 image?.resizable()
                     .scaledToFit()
                         
@@ -43,12 +45,9 @@ struct CameraView: View {
                     self.showImagePicker = true
                 }
                 .padding()
-                //.font(.title)
-                //.foregroundColor(.gray)
-                //.font(.caption)
                         
             }.sheet(isPresented: self.$showImagePicker) {
-                CameraCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)
+                CameraCaptureView(showImagePicker: self.$showImagePicker, image: self.$image, text: self.$text)
             }
             VStack {
                 NavigationLink(destination: ProfileView()) {
@@ -66,11 +65,12 @@ struct GalleryView: View {
 
     @State private var showImagePicker: Bool = false
     @State private var image: Image? = nil
+    @State private var text: Text? = nil
         
     var body: some View {
         VStack {
             VStack {
-                        
+                text
                 image?.resizable()
                     .scaledToFit()
                         
@@ -80,17 +80,17 @@ struct GalleryView: View {
                 .padding()
                         
             }.sheet(isPresented: self.$showImagePicker) {
-                PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)
+                PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image, text: self.$text)
             }
             VStack {
                     NavigationLink(destination: ProfileView()) {
                        EditButton(image:"camera.circle",text:"Save")
                     }
-                }
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
-                .padding()
             }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .padding()
+        }
     }
 }
 
