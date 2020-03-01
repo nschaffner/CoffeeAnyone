@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 extension Color{
     static let chatGrey = Color("chatGrey")
@@ -19,15 +20,15 @@ struct ChatNav: View {
         UITableView.appearance().separatorStyle = .none
     }
     var body: some View {
-    NavigationView{
-        List(fb.Contacts, id: \.self) { user in
-        NavigationLink(
-        destination:ChatView(contactName:user)){
-      Text(user)
+        NavigationView{
+            List(fb.Contacts, id: \.self) { user in
+                NavigationLink(
+                destination:ChatView(contactName:user)){
+                    Text(user)
+                }
+                .navigationBarTitle("Matches")
+            }.onAppear(perform:fb.getConversations)
         }
-        .navigationBarTitle("Matches")
-        }.onAppear(perform:fb.getConversations)
-      }
     }
 }
 
@@ -51,7 +52,7 @@ struct ChatRow:View{
                                     Text("Remove")
                                     Image(systemName: "trash")
                                 }
-                            }
+                        }
                     }
                 }
             }
@@ -87,14 +88,15 @@ struct ChatView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var composedMessage: String = ""
     @EnvironmentObject var fb: FirebaseSession
+    @ObservedObject private var keyboard = KeyboardResponder()
     
     var contactName:String
     var btnBack : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
-        }) {
-            HStack {
-                Text("Go back")
-            }
+    }) {
+        HStack {
+            Text("Go back")
+        }
         }
     }
     
@@ -112,15 +114,22 @@ struct ChatView: View {
                 Button(action:SendMessage){
                     Text("Send")
                 }
-            }.frame(minHeight: CGFloat(50)).padding()
+            }.frame(minHeight: CGFloat(50)).padding(.leading).padding(.trailing)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: btnBack)
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
+        .padding(.bottom, keyboard.currentHeight )
+        .animation(.easeOut(duration: 0.16))
+            
     }
     
     func SendMessage(){
         fb.sendMessage(text:composedMessage, match:contactName)
         composedMessage = ""
+        closeKeyboard(true)
+    }
+    func closeKeyboard(_ force: Bool) {
+        UIApplication.shared.windows.forEach { $0.endEditing(force)}
     }
 }
 
@@ -137,4 +146,27 @@ struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView(contactName:"Eric")
     }
+}
+
+// Referenced from:
+// https://stackoverflow.com/questions/56491881/move-textfield-up-when-thekeyboard-has-appeared-by-using-swiftui-ios
+final class KeyboardResponder: ObservableObject{
+    private var notificationCenter: NotificationCenter
+    @Published private(set) var currentHeight: CGFloat = 0
+    
+    init(center: NotificationCenter = .default){
+        notificationCenter = center
+        notificationCenter.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyBoardWillShow(notification:Notification){
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{currentHeight = keyboardSize.height
+        }
+        
+    }
+    @objc func keyBoardWillHide(notification:Notification){
+        currentHeight = 0
+    }
+    
 }
