@@ -22,13 +22,13 @@ struct ProfileHeaderView: View {
                     //https://www.youtube.com/watch?v=PYpTto3iQXU
                     if url != ""{
                         AnimatedImage(url: URL(string: url)!)//.frame(height: 200).cornerRadius(25).padding(10)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 3))
-                        .shadow(radius: 10)
-                        .padding( 10)
-                        .frame(height: 200)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                            .shadow(radius: 10)
+                            .padding( 10)
+                            .frame(width: 200, height: 200)
                     }
                     else{
                         Downloader()

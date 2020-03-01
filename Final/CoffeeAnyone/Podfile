@@ -10,6 +10,13 @@ target 'CoffeeAnyone' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'Firebase/Core'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionTextModel'
+  pod 'Firebase/MLVisionFaceModel'
+  pod 'Firebase/MLVisionBarcodeModel'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionLabelModel'
 
   target 'CoffeeAnyoneTests' do
     inherit! :search_paths
