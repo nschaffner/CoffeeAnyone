@@ -112,6 +112,7 @@ def queryRelationship(userid):
             match = list(profiles.fetch())
             match[0]["date"] = entity["date"]
             match[0]['matchtype'] = entity["match_type"]
+            match[0]["id"] = match[0].key.id
             listofMatches.extend(match)
         elif entity['match_id1'] == userid:
             profiles = client.query(kind='profiles')
@@ -119,6 +120,7 @@ def queryRelationship(userid):
             match = list(profiles.fetch())
             match[0]["date"] = entity["date"]
             match[0]['matchtype'] = entity["match_type"]
+            match[0]["id"] = match[0].key.id
             listofMatches.extend(match)
     for entity in results2:
         if entity['match_id2'] == userid:
@@ -127,6 +129,7 @@ def queryRelationship(userid):
             match = list(profiles.fetch())
             match[0]["date"] = entity["date"]
             match[0]['matchtype'] = entity["match_type"]
+            match[0]["id"] = match[0].key.id
             listofMatches.extend(match)
 
         elif entity['match_id1'] != userid:
@@ -135,6 +138,7 @@ def queryRelationship(userid):
             match = list(profiles.fetch())
             match[0]["date"] = entity["date"]
             match[0]['matchtype'] = entity["match_type"]
+            match[0]["id"] = match[0].key.id
             listofMatches.extend(match)
 
     return listofMatches

@@ -208,10 +208,10 @@ def profiles_get_put_patch_delete(id):
     # check that token matches user id
     # if userid != id  Removing this requirement for now
     #   return helper.Unauthorized401()
-    url = str(request.base_url)
     isint = helper.CheckValInt(id)
     if isint is False:
         return helper.BadRequest400()
+    url = str(request.base_url)
     profile_key = client.key("profiles", int(id))
     profile = client.get(key=profile_key)
     if profile is None:
@@ -288,9 +288,6 @@ def profiles_get_put_patch_delete(id):
 def matches_get(id):
     url = str(request.base_url)
     if not id:
-        return helper.BadRequest400()
-    isint = helper.CheckValInt(id)
-    if isint is False:
         return helper.BadRequest400()
     if request.mimetype != 'application/json':
         return helper.NotAccepted406('Content-Type', request.mimetype)
