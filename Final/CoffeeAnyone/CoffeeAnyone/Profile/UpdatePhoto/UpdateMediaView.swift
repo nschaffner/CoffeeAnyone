@@ -12,17 +12,17 @@ struct UpdateMediaView: View {
     var body: some View {
         VStack() {
             VStack{
-                Spacer()
+                //Spacer()
                 NavigationLink(destination: CameraView()) {
                    EditButton(image:"camera.circle",text:"Camera")
                 }
-                Spacer()
+                .padding()
                 NavigationLink(destination: GalleryView()) {
                     EditButton(image:"chevron.down.circle",text:"Camera Gallery")
                 }
-                Spacer()
+                .padding()
             }.padding()
-            Spacer()
+            //Spacer()
         }
             .navigationBarTitle("Edit Photo")
     }
@@ -33,6 +33,7 @@ struct CameraView: View {
     @State private var showImagePicker: Bool = false
     @State private var image: Image? = nil
     @State private var text: Text? = nil
+    @State private var showingAlert = false
     
     var body: some View {
         VStack {
@@ -49,14 +50,23 @@ struct CameraView: View {
             }.sheet(isPresented: self.$showImagePicker) {
                 CameraCaptureView(showImagePicker: self.$showImagePicker, image: self.$image, text: self.$text)
             }
-            VStack {
+            /*VStack {
                 NavigationLink(destination: ProfileView()) {
                    EditButton(image:"camera.circle",text:"Save")
                 }
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-            .padding()
+            .padding()*/
+            //https://www.hackingwithswift.com/books/ios-swiftui/showing-alert-messages
+            VStack {
+                Button("Save") {
+                    self.showingAlert = true
+                }.alert(isPresented: $showingAlert) {
+                    Alert(title: Text(""), message: Text("Your new profile picture has been saved"), dismissButton: .default(Text("OK")))
+                }
+                .padding()
+            }
         }
     }
 }
@@ -66,6 +76,7 @@ struct GalleryView: View {
     @State private var showImagePicker: Bool = false
     @State private var image: Image? = nil
     @State private var text: Text? = nil
+    @State private var showingAlert = false
         
     var body: some View {
         VStack {
@@ -82,14 +93,24 @@ struct GalleryView: View {
             }.sheet(isPresented: self.$showImagePicker) {
                 PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image, text: self.$text)
             }
-            VStack {
+            /*VStack {
                     NavigationLink(destination: ProfileView()) {
                        EditButton(image:"camera.circle",text:"Save")
                     }
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-            .padding()
+            .padding()*/
+            //https://www.hackingwithswift.com/books/ios-swiftui/showing-alert-messages
+            VStack {
+                Button("Save") {
+                    self.showingAlert = true
+                }.alert(isPresented: $showingAlert) {
+                    Alert(title: Text(""), message: Text("Your new profile picture has been saved"), dismissButton: .default(Text("OK")))
+                }
+                .padding()
+            }
+            //.padding()
         }
     }
 }

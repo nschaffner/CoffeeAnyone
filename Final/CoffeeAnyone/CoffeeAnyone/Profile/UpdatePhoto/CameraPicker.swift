@@ -26,10 +26,21 @@ class CameraPickerCoordinator: NSObject, UINavigationControllerDelegate, UIImage
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        let randomInt = Int.random(in: 1...100000)
+        let urlString = "profilePics/\(randomInt).jpg"
+        print(urlString)
+        if (UserDefaults.standard.string(forKey: "photo_url") == nil) {
+            UserDefaults.standard.set(urlString, forKey: "photo_url")
+        }
+        //UserDefaults.standard.set(urlString, forKey: "photo_url")
+        let storedURL = UserDefaults.standard.string(forKey: "photo_url")
+        print(storedURL!)
+        
         //https://www.youtube.com/watch?v=zfJtgq609EE
         let storage = Storage.storage()
         
-        storage.reference(withPath: "profilePics/1.jpg").putData(uiImage.jpegData(compressionQuality: 0.75)!, metadata: nil) { (_, err) in
+        storage.reference(withPath: storedURL!).putData(uiImage.jpegData(compressionQuality: 0.75)!, metadata: nil) { (_, err) in
             
             if err != nil{
                 print((err?.localizedDescription)!)
@@ -38,12 +49,14 @@ class CameraPickerCoordinator: NSObject, UINavigationControllerDelegate, UIImage
             print("Success")
         }
         
-        options.performanceMode = .accurate
-        options.landmarkMode = .all
-        options.classificationMode = .all
-        
+        options.performanceMode = .fast
+        //options.landmarkMode = .all
+        //options.classificationMode = .all
+        //https://firebase.google.com/docs/ml-kit/ios/detect-faces
+        //https://www.appcoda.com/mlkit/
+        let savedImage = uiImage
         let faceDetector = vision.faceDetector(options: options)
-        let newImage = VisionImage(image: uiImage)
+        let newImage = VisionImage(image: savedImage)
         //var newText = "Face Detected"
         //var count = 1
         faceDetector.process(newImage) { faces, error in
