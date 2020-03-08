@@ -30,4 +30,22 @@ struct Results: Codable {
     var hobbies3:String
     var hobbies4:String
     var hobbies5:String
+    var photo_url:String
+    var userid:String
+}
+
+struct Users{
+    let userid: String?
+    let photo_url: String?
+    let userName: String?
+
+    init(userDetails:Dictionary<String, Any>){
+        userid = userDetails["id"] as? String
+        photo_url = userDetails["photo_url"] as? String
+        userName = userDetails["name"] as? String
+    }
+    
+    func getUserName()->String{
+        return self.userName!
+    }
 }
