@@ -8,6 +8,8 @@
 
 import SwiftUI
 import Combine
+import SDWebImageSwiftUI
+import Firebase
 
 extension Color{
     static let chatGrey = Color("chatGrey")
@@ -19,14 +21,15 @@ struct ChatNav: View {
         UITableView.appearance().tableFooterView = UIView()
         UITableView.appearance().separatorStyle = .none
     }
+    var contacts:[String:String] = [:]
     var body: some View {
         NavigationView{
             List(fb.Contacts, id: \.self) { user in
                 NavigationLink(
-                destination:ChatView(contactName:user)){
-                    Text(user)
+                destination:ChatView(photourl:user.photourl, contactName: user.username, contactId:user.userId)){
+                    Text(user.username)
                 }
-                .navigationBarTitle("Matches")
+                .navigationBarTitle("Conversations")
             }.onAppear(perform:fb.getConversations)
         }
     }
@@ -41,7 +44,7 @@ struct ChatRow:View{
             if (chatMessage.senderId as String == contact) {
                 HStack {
                     Group{
-                        Text(chatMessage.senderId)
+                        Text(chatMessage.senderName)
                         Text(chatMessage.text)
                             .padding(10)
                             .foregroundColor(Color.black)
@@ -71,7 +74,7 @@ struct ChatRow:View{
                                     Image(systemName: "trash")
                                 }
                         }
-                        Text(chatMessage.senderId )
+                        Text(chatMessage.senderName)
                     }
                     
                     
@@ -87,10 +90,13 @@ struct ChatRow:View{
 struct ChatView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var composedMessage: String = ""
+    @State var url = ""
     @EnvironmentObject var fb: FirebaseSession
     @ObservedObject private var keyboard = KeyboardResponder()
     
+    var photourl:String
     var contactName:String
+    var contactId:String
     var btnBack : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
     }) {
@@ -102,29 +108,57 @@ struct ChatView: View {
     
     var body: some View {
         VStack {
-            Text(contactName)
+            VStack(alignment: .center){
+                if url != ""{
+                    AnimatedImage(url: URL(string: url)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                        .shadow(radius: 10)
+                        .padding( 10)
+                        .frame(width: 100, height: 100)
+                }
+                else{
+                    Downloader()
+                }
+                Text(contactName)
+            }.onAppear(perform:getImage)
+            
             List {
                 ForEach(fb.Messages, id:\.self){msg in
                     ChatRow(chatMessage: msg, contact:self.contactName)
                 }
                 EmptyView()
-            }.onAppear(perform: {self.fb.loadMsgToView(contactName:self.contactName)})
+            }.onAppear(perform: {self.fb.loadMsgToView(contactid:self.contactId)})
             HStack{
                 TextField("Message...", text: $composedMessage).frame(minHeight: CGFloat(30))
                 Button(action:SendMessage){
                     Text("Send")
                 }
             }.frame(minHeight: CGFloat(50)).padding(.leading).padding(.trailing)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBack)
         }
         .padding(.bottom, keyboard.currentHeight )
         .animation(.easeOut(duration: 0.16))
-            
+        .navigationBarTitle("")
+        .navigationBarItems(leading: btnBack)
     }
     
+    func getImage(){
+        let storage = Storage.storage().reference()
+        storage.child("profilePics/\(photourl).jpg").downloadURL { (url, err) in
+            
+            if err != nil {
+                
+                print((err?.localizedDescription)!)
+                return
+            }
+            
+            self.url = "\(url!)"
+        }
+    }
     func SendMessage(){
-        fb.sendMessage(text:composedMessage, match:contactName)
+        fb.sendMessage(text:composedMessage, match:contactName, contactId:contactId, photourl:photourl)
         composedMessage = ""
         closeKeyboard(true)
     }
@@ -142,14 +176,7 @@ struct TextBubble: Shape{
     }
 }
 
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView(contactName:"Eric")
-    }
-}
-
-// Referenced from:
-// https://stackoverflow.com/questions/56491881/move-textfield-up-when-thekeyboard-has-appeared-by-using-swiftui-ios
+// Referenced from : https://stackoverflow.com/questions/56491881/move-textfield-up-when-thekeyboard-has-appeared-by-using-swiftui-ios
 final class KeyboardResponder: ObservableObject{
     private var notificationCenter: NotificationCenter
     @Published private(set) var currentHeight: CGFloat = 0
