@@ -49,8 +49,9 @@ struct ProfileHeaderView: View {
              }
             //New text begin
             .onAppear {
+                let storedURL = UserDefaults.standard.string(forKey: "photo_url")
                 let storage = Storage.storage().reference()
-                storage.child("profilePics/1.jpg").downloadURL { (url, err) in
+                storage.child(storedURL!).downloadURL { (url, err) in
                     
                     if err != nil {
                         
