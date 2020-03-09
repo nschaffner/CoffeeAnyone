@@ -55,6 +55,7 @@ final class Http: ObservableObject {
         ]
 
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        print(finalBody)
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

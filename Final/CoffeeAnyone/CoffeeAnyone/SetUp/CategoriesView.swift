@@ -132,7 +132,6 @@ struct CategoriesView: View {
          //            Alert(title: Text("Incomplete Profile"), message: Text("Finish your profile to best help us find you matches."), dismissButton: .default(Text("Got it!")))
         //    }
 
-                    
         //}
                 NavigationLink(destination: SignInView(), isActive: $showingSignOn) {
                     EmptyView()
