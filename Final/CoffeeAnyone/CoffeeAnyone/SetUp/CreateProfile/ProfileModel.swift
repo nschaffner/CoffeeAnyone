@@ -19,6 +19,14 @@ final class Profile: ObservableObject {
             print("HI \(String(describing: UserDefaults.standard.string(forKey: "statement")))")
         }
     }
+    @Published var selectedStatus: Status = .undefined {
+         didSet {
+             let selected: String = String(selectedStatus.rawValue)
+             print("Selected \(selected)")
+             UserDefaults.standard.set(selected, forKey: "status")
+             print("HI \(String(describing: UserDefaults.standard.string(forKey: "status")))")
+         }
+     }
     @Published var city: String = "" {
          didSet {
              //let selected: String = String(selectedType.rawValue)

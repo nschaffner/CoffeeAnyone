@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ProfileFormView: View {
     @ObservedObject var selected = Profile()
@@ -19,6 +20,12 @@ struct ProfileFormView: View {
                     .padding()
                 }
                 Section(header: Text("Basics").bold()) {
+                    
+                Picker(selection: $selected.selectedStatus, label: Text("Relationship Status")) {
+                    ForEach(Status.allCases, id: \.self) { stats in
+                        Text("\(stats.rawValue)").tag(stats)
+                    }
+                }
             
                 Picker(selection: $selected.selectedGender, label: Text("Gender")) {
                     ForEach(Gender.allCases, id: \.self) { gender in

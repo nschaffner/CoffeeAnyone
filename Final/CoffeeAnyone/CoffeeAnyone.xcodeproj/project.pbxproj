@@ -30,13 +30,6 @@
 		C9806D7D08DCABAB8B770D2F /* Pods_CoffeeAnyone_CoffeeAnyoneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02487DD3FC4FD8E167B4F10A /* Pods_CoffeeAnyone_CoffeeAnyoneUITests.framework */; };
 		DA21E18A240AC55B0046FCFD /* ProfileFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA21E189240AC55B0046FCFD /* ProfileFormView.swift */; };
 		DA21E18C240AC56D0046FCFD /* PrefFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA21E18B240AC56D0046FCFD /* PrefFormView.swift */; };
-		DA3A14BA2406DD62005A8EB9 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14B92406DD62005A8EB9 /* SignInWithAppleDelegates.swift */; };
-		DA3A14C12406DDCC005A8EB9 /* CircleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14BC2406DDCC005A8EB9 /* CircleLogo.swift */; };
-		DA3A14C42406DDCC005A8EB9 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14BF2406DDCC005A8EB9 /* AppleSignInButton.swift */; };
-		DA3A14C52406DDCC005A8EB9 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14C02406DDCC005A8EB9 /* SignInView.swift */; };
-		DA3A14C82406DE11005A8EB9 /* SignInWithAppleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14C72406DE11005A8EB9 /* SignInWithAppleManager.swift */; };
-		DA3A14CB2406DE2D005A8EB9 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */; };
-		DA3A14CF2406DFAD005A8EB9 /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */; };
 		DA3A14D12406E166005A8EB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A14D02406E166005A8EB9 /* MainView.swift */; };
 		DA5C69C4240853B200D79083 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69C3240853B200D79083 /* CategoriesView.swift */; };
 		DA5C69D02408568900D79083 /* lovelanguageResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69CD2408568900D79083 /* lovelanguageResultsView.swift */; };
@@ -80,6 +73,13 @@
 		DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DF423EA49B800CDCD05 /* CircleImage.swift */; };
 		DAF14DFB23EA546300CDCD05 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */; };
 		DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */; };
+		DAF4E51D2415E8A100965E85 /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E51C2415E8A100965E85 /* EnvironmentWindowKey.swift */; };
+		DAF4E5252415E8D000965E85 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5242415E8D000965E85 /* AppleSignInButton.swift */; };
+		DAF4E52D2415E93C00965E85 /* CircleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E52C2415E93C00965E85 /* CircleLogo.swift */; };
+		DAF4E5312415E95500965E85 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5302415E95500965E85 /* SignInView.swift */; };
+		DAF4E5352415EA0D00965E85 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5342415EA0D00965E85 /* AuthState.swift */; };
+		DAF4E5372415EA1000965E85 /* SignInWithAppleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5362415EA1000965E85 /* SignInWithAppleManager.swift */; };
+		DAF4E5392415EB0200965E85 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5382415EB0200965E85 /* SignInWithAppleDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,13 +125,6 @@
 		DA21E189240AC55B0046FCFD /* ProfileFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFormView.swift; sourceTree = "<group>"; };
 		DA21E18B240AC56D0046FCFD /* PrefFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefFormView.swift; sourceTree = "<group>"; };
 		DA3A14B72406D50F005A8EB9 /* CoffeeAnyone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeAnyone.entitlements; sourceTree = "<group>"; };
-		DA3A14B92406DD62005A8EB9 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInWithAppleDelegates.swift; path = ../../../../AppleIDTutorial/AppleIDTutorial/SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
-		DA3A14BC2406DDCC005A8EB9 /* CircleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleLogo.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Views/CircleLogo.swift; sourceTree = "<group>"; };
-		DA3A14BF2406DDCC005A8EB9 /* AppleSignInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppleSignInButton.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Views/AppleSignInButton.swift; sourceTree = "<group>"; };
-		DA3A14C02406DDCC005A8EB9 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInView.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Views/SignInView.swift; sourceTree = "<group>"; };
-		DA3A14C72406DE11005A8EB9 /* SignInWithAppleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInWithAppleManager.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Models/SignInWithAppleManager.swift; sourceTree = "<group>"; };
-		DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthState.swift; path = ../../../../../AppleIDTutorial/AppleIDTutorial/Models/AuthState.swift; sourceTree = "<group>"; };
-		DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
 		DA3A14D02406E166005A8EB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DA5C69C3240853B200D79083 /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		DA5C69CD2408568900D79083 /* lovelanguageResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = lovelanguageResultsView.swift; path = ../../../../../loveLanguages/loveLanguages/lovelanguageResultsView.swift; sourceTree = "<group>"; };
@@ -181,6 +174,13 @@
 		DAF14DF423EA49B800CDCD05 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		DAF14DFA23EA546300CDCD05 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
+		DAF4E51C2415E8A100965E85 /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
+		DAF4E5242415E8D000965E85 /* AppleSignInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
+		DAF4E52C2415E93C00965E85 /* CircleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLogo.swift; sourceTree = "<group>"; };
+		DAF4E5302415E95500965E85 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		DAF4E5342415EA0D00965E85 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthState.swift; path = Models/AuthState.swift; sourceTree = "<group>"; };
+		DAF4E5362415EA1000965E85 /* SignInWithAppleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInWithAppleManager.swift; path = Models/SignInWithAppleManager.swift; sourceTree = "<group>"; };
+		DAF4E5382415EB0200965E85 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
 		EE115B0FEBB95030AE0DB117 /* Pods-CoffeeAnyone-CoffeeAnyoneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAnyone-CoffeeAnyoneUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeAnyone-CoffeeAnyoneUITests/Pods-CoffeeAnyone-CoffeeAnyoneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE6E74D5B9CBFA1E69A4BA88 /* Pods_CoffeeAnyoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeAnyoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -269,44 +269,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		DA3A14B82406DD0A005A8EB9 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				DA3A14C92406DE1E005A8EB9 /* Enum */,
-				DA3A14C62406DDFA005A8EB9 /* Model */,
-				DA3A14BB2406DD6E005A8EB9 /* Views */,
-				DA3A14B92406DD62005A8EB9 /* SignInWithAppleDelegates.swift */,
-				DA3A14CE2406DFAD005A8EB9 /* EnvironmentWindowKey.swift */,
-			);
-			path = SignIn;
-			sourceTree = "<group>";
-		};
-		DA3A14BB2406DD6E005A8EB9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DA3A14BF2406DDCC005A8EB9 /* AppleSignInButton.swift */,
-				DA3A14BC2406DDCC005A8EB9 /* CircleLogo.swift */,
-				DA3A14C02406DDCC005A8EB9 /* SignInView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DA3A14C62406DDFA005A8EB9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DA3A14C72406DE11005A8EB9 /* SignInWithAppleManager.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DA3A14C92406DE1E005A8EB9 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				DA3A14CA2406DE2D005A8EB9 /* AuthState.swift */,
-			);
-			path = Enum;
-			sourceTree = "<group>";
-		};
 		DA5C69BD2408532100D79083 /* SetUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,8 +355,8 @@
 		DAF14D8C23E9F29900CDCD05 /* CoffeeAnyone */ = {
 			isa = PBXGroup;
 			children = (
+				DAF4E51B2415E88900965E85 /* Signup */,
 				DA5C69BD2408532100D79083 /* SetUp */,
-				DA3A14B82406DD0A005A8EB9 /* SignIn */,
 				DA3A14B72406D50F005A8EB9 /* CoffeeAnyone.entitlements */,
 				59D95A1623F1121200585B9F /* Chat */,
 				5953DD0C23F6FB6700C25E73 /* Matches */,
@@ -515,6 +477,28 @@
 				DAF14DF023EA478C00CDCD05 /* PreferencesView.swift */,
 				DAF14DF223EA47F600CDCD05 /* QuizResultsView.swift */,
 				DAF14DFC23EB363700CDCD05 /* ProfileInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAF4E51B2415E88900965E85 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				DAF4E5382415EB0200965E85 /* SignInWithAppleDelegates.swift */,
+				DAF4E5342415EA0D00965E85 /* AuthState.swift */,
+				DAF4E5362415EA1000965E85 /* SignInWithAppleManager.swift */,
+				DAF4E5232415E8C400965E85 /* Views */,
+				DAF4E51C2415E8A100965E85 /* EnvironmentWindowKey.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		DAF4E5232415E8C400965E85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAF4E5242415E8D000965E85 /* AppleSignInButton.swift */,
+				DAF4E5302415E95500965E85 /* SignInView.swift */,
+				DAF4E52C2415E93C00965E85 /* CircleLogo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -809,11 +793,11 @@
 				DAF14DE623EA30C200CDCD05 /* Hobbies.swift in Sources */,
 				DAD9D0B62408C2C700E00FA5 /* PersonalityQuiz.swift in Sources */,
 				DA5C69D52408578000D79083 /* LoveLangView.swift in Sources */,
+				DAF4E51D2415E8A100965E85 /* EnvironmentWindowKey.swift in Sources */,
 				59D95A2023F119EC00585B9F /* ChatView.swift in Sources */,
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
 				01D9346E240461C80028C2AF /* UpdateMediaView.swift in Sources */,
-				DA3A14CF2406DFAD005A8EB9 /* EnvironmentWindowKey.swift in Sources */,
 				DA21E18A240AC55B0046FCFD /* ProfileFormView.swift in Sources */,
 				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
 				DA5C69D02408568900D79083 /* lovelanguageResultsView.swift in Sources */,
@@ -823,15 +807,15 @@
 				DAB8B9ED240B195C00BCD5E8 /* PrefModel.swift in Sources */,
 				DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */,
 				DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */,
+				DAF4E52D2415E93C00965E85 /* CircleLogo.swift in Sources */,
 				DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */,
 				DAF14DF323EA47F600CDCD05 /* QuizResultsView.swift in Sources */,
-				DA3A14CB2406DE2D005A8EB9 /* AuthState.swift in Sources */,
-				DA3A14C42406DDCC005A8EB9 /* AppleSignInButton.swift in Sources */,
-				DA3A14C52406DDCC005A8EB9 /* SignInView.swift in Sources */,
+				DAF4E5372415EA1000965E85 /* SignInWithAppleManager.swift in Sources */,
 				59D95A1423F1120800585B9F /* ChatModels.swift in Sources */,
 				DAD9D0B42408C2B200E00FA5 /* PersonalityResultsView.swift in Sources */,
 				DAF14DCD23E9F53B00CDCD05 /* ProfileView.swift in Sources */,
 				DAB8B9EF240B1D4D00BCD5E8 /* ProfileModel.swift in Sources */,
+				DAF4E5352415EA0D00965E85 /* AuthState.swift in Sources */,
 				DAF14DDA23EA30AB00CDCD05 /* Age.swift in Sources */,
 				01D9346A240461990028C2AF /* ImagePicker.swift in Sources */,
 				DA21E18C240AC56D0046FCFD /* PrefFormView.swift in Sources */,
@@ -839,6 +823,7 @@
 				DAF14DDE23EA30B500CDCD05 /* Education.swift in Sources */,
 				01D9346C240461B20028C2AF /* PhotoCaptureView.swift in Sources */,
 				DAF14DDC23EA30B100CDCD05 /* BodyType.swift in Sources */,
+				DAF4E5392415EB0200965E85 /* SignInWithAppleDelegates.swift in Sources */,
 				5953DD0E23F6FB8A00C25E73 /* MatchesView.swift in Sources */,
 				DAD9D0B32408C2B200E00FA5 /* PersonalityQuizView.swift in Sources */,
 				DAF14DFB23EA546300CDCD05 /* ProfileHeaderView.swift in Sources */,
@@ -847,10 +832,8 @@
 				DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */,
 				DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */,
 				59D95A1523F1120800585B9F /* ChatController.swift in Sources */,
-				DA3A14C82406DE11005A8EB9 /* SignInWithAppleManager.swift in Sources */,
 				DAF14DC123E9F3D700CDCD05 /* TabView.swift in Sources */,
 				01D93468240461800028C2AF /* CaptureCameraView.swift in Sources */,
-				DA3A14BA2406DD62005A8EB9 /* SignInWithAppleDelegates.swift in Sources */,
 				59D722372409523E00074F45 /* MatchesModels.swift in Sources */,
 				DAF14DC423E9F44E00CDCD05 /* TabBarViewController.swift in Sources */,
 				DAF14D9223E9F29900CDCD05 /* ContentView.swift in Sources */,
@@ -858,11 +841,12 @@
 				DA3A14D12406E166005A8EB9 /* MainView.swift in Sources */,
 				01D7968A2408D5580025A60F /* FacePicker.swift in Sources */,
 				DAF14DE023EA30B800CDCD05 /* Gender.swift in Sources */,
+				DAF4E5312415E95500965E85 /* SignInView.swift in Sources */,
 				DAD9D0B02408928000E00FA5 /* CategoryItem.swift in Sources */,
 				DAB8B9F1240B41AB00BCD5E8 /* HobbiesFormView.swift in Sources */,
+				DAF4E5252415E8D000965E85 /* AppleSignInButton.swift in Sources */,
 				01D934662404614F0028C2AF /* CameraPicker.swift in Sources */,
 				DA5C69D8240858BC00D79083 /* DescriptionView.swift in Sources */,
-				DA3A14C12406DDCC005A8EB9 /* CircleLogo.swift in Sources */,
 				DAF14DF123EA478C00CDCD05 /* PreferencesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
