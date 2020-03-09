@@ -12,10 +12,12 @@ import SwiftUI
 struct CircleLogo: View {
     var body: some View {
         Image("coffeecupheart")
+            .resizable()
             .clipShape(Circle())
             .overlay(
                 Circle().stroke(Color.white, lineWidth: 2))
             .shadow(radius: 10)
+        
     }
 }
 

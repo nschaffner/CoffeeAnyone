@@ -16,7 +16,6 @@ struct CategoriesView: View {
     @State private var showingSignOn = false
     @State private var showingAlert = false
     var body: some View {
-        NavigationView {
                 VStack{
                 ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 10){
@@ -143,8 +142,8 @@ struct CategoriesView: View {
                 nc.navigationBar.barTintColor = UIColor(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0, alpha: 1.0)
                 nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
             })
-        }.accentColor( .black)
         
+        .navigationBarBackButtonHidden(true)
     }
 }
 
