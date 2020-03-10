@@ -14,9 +14,8 @@ struct IntroductionView: View {
         NavigationView {
         ScrollView {
             VStack(alignment: .center) {
-                CircleLogo()
+                CircleLogo().edgesIgnoringSafeArea(.top)
                 .frame(width: 100, height: 100)
-                 Spacer(minLength: 10)
                  Text("Coffee Anyone?")
                      .font(.largeTitle)
                      .padding()
