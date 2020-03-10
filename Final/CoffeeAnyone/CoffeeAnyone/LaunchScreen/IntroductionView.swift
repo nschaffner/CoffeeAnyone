@@ -14,14 +14,14 @@ struct IntroductionView: View {
         NavigationView {
         ScrollView {
             VStack(alignment: .center) {
-                CircleLogo().edgesIgnoringSafeArea(.top)
+                CircleLogo()
                 .frame(width: 100, height: 100)
                  Text("Coffee Anyone?")
                      .font(.largeTitle)
                      .padding()
                 Text("Find the person you are really looking for.")
                 InfoContainer()
-                Spacer(minLength: 30)
+                  Spacer(minLength: 30)
                 Button(action: {
                      self.continuing.toggle()
                     }) {
@@ -37,9 +37,10 @@ struct IntroductionView: View {
                                EmptyView()
                            }
             }
-            
+            Spacer(minLength: 30)
         }
         }.accentColor( .black)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
