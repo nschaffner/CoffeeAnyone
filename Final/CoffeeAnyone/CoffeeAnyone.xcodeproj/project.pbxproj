@@ -80,6 +80,9 @@
 		DAF4E5352415EA0D00965E85 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5342415EA0D00965E85 /* AuthState.swift */; };
 		DAF4E5372415EA1000965E85 /* SignInWithAppleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5362415EA1000965E85 /* SignInWithAppleManager.swift */; };
 		DAF4E5392415EB0200965E85 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E5382415EB0200965E85 /* SignInWithAppleDelegates.swift */; };
+		DAF4E53C2415F65C00965E85 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E53B2415F65C00965E85 /* InfoView.swift */; };
+		DAF4E53E2415F89200965E85 /* InfoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E53D2415F89200965E85 /* InfoContainer.swift */; };
+		DAF4E5402415FDB400965E85 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF4E53F2415FDB400965E85 /* IntroductionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +184,9 @@
 		DAF4E5342415EA0D00965E85 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthState.swift; path = Models/AuthState.swift; sourceTree = "<group>"; };
 		DAF4E5362415EA1000965E85 /* SignInWithAppleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInWithAppleManager.swift; path = Models/SignInWithAppleManager.swift; sourceTree = "<group>"; };
 		DAF4E5382415EB0200965E85 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
+		DAF4E53B2415F65C00965E85 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		DAF4E53D2415F89200965E85 /* InfoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoContainer.swift; sourceTree = "<group>"; };
+		DAF4E53F2415FDB400965E85 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		EE115B0FEBB95030AE0DB117 /* Pods-CoffeeAnyone-CoffeeAnyoneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAnyone-CoffeeAnyoneUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeAnyone-CoffeeAnyoneUITests/Pods-CoffeeAnyone-CoffeeAnyoneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE6E74D5B9CBFA1E69A4BA88 /* Pods_CoffeeAnyoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeAnyoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -355,6 +361,7 @@
 		DAF14D8C23E9F29900CDCD05 /* CoffeeAnyone */ = {
 			isa = PBXGroup;
 			children = (
+				DAF4E53A2415F64100965E85 /* LaunchScreen */,
 				DAF4E51B2415E88900965E85 /* Signup */,
 				DA5C69BD2408532100D79083 /* SetUp */,
 				DA3A14B72406D50F005A8EB9 /* CoffeeAnyone.entitlements */,
@@ -501,6 +508,16 @@
 				DAF4E52C2415E93C00965E85 /* CircleLogo.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DAF4E53A2415F64100965E85 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DAF4E53B2415F65C00965E85 /* InfoView.swift */,
+				DAF4E53D2415F89200965E85 /* InfoContainer.swift */,
+				DAF4E53F2415FDB400965E85 /* IntroductionView.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -798,14 +815,17 @@
 				DAF14DC523E9F44E00CDCD05 /* tabItems.swift in Sources */,
 				DAF14DCA23E9F53B00CDCD05 /* HomeView.swift in Sources */,
 				01D9346E240461C80028C2AF /* UpdateMediaView.swift in Sources */,
+				DAF4E53C2415F65C00965E85 /* InfoView.swift in Sources */,
 				DA21E18A240AC55B0046FCFD /* ProfileFormView.swift in Sources */,
 				DAF14DE223EA30BB00CDCD05 /* Jobs.swift in Sources */,
 				DA5C69D02408568900D79083 /* lovelanguageResultsView.swift in Sources */,
+				DAF4E5402415FDB400965E85 /* IntroductionView.swift in Sources */,
 				DA5C69D32408573400D79083 /* LoveLangQuiz.swift in Sources */,
 				DAF14DFD23EB363700CDCD05 /* ProfileInfoView.swift in Sources */,
 				DA5C69C4240853B200D79083 /* CategoriesView.swift in Sources */,
 				DAB8B9ED240B195C00BCD5E8 /* PrefModel.swift in Sources */,
 				DAF14DEE23EA3E5800CDCD05 /* SegmentView.swift in Sources */,
+				DAF4E53E2415F89200965E85 /* InfoContainer.swift in Sources */,
 				DAF14DD523EA2D1D00CDCD05 /* Profile.swift in Sources */,
 				DAF4E52D2415E93C00965E85 /* CircleLogo.swift in Sources */,
 				DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */,

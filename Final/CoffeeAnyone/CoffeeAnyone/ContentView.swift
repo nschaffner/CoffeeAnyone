@@ -12,7 +12,6 @@ struct ContentView: View {
 
     @EnvironmentObject var signInWithAppleManager : SignInWithAppleManager
         var body: some View {
-            
             ZStack{
                // if UserDefaults.standard.string(forKey:"userid") != nil {
                //     MainView()
@@ -20,7 +19,7 @@ struct ContentView: View {
                
             if signInWithAppleManager.isUserAuthenticated == .undefined {
                     //SignInView()
-                CategoriesView()
+                IntroductionView()
             }
             else if signInWithAppleManager.isUserAuthenticated == .signedIn {
                      MainView()
