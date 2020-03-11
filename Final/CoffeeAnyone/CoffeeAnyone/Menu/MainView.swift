@@ -12,11 +12,11 @@ struct MainView: View {
 
          var body: some View {
              
-         TabView([Text("233")], titles: ["Home","Matches","Chat","Profile"],
-             images: ["tab_home_normal","tab_match_normal","tab_chat_normal",
-                                 "tab_profile_normal"],
-             imageSels: ["tab_home_select","tab_match_select","tab_chat_select",
-                                   "tab_profile_select"])
+         TabView([Text("233")], titles: ["Matches","Chat","Profile","Personality"],
+             images: ["tab_match_normal","tab_chat_normal",
+                                 "tab_profile_normal", "tab_personality_normal"],
+             imageSels: ["tab_match_select","tab_chat_select",
+                                   "tab_profile_select", "tab_personality_select"])
              .edgesIgnoringSafeArea(.top)
          }
          func getIndex(item: TabBarItem) -> Int {

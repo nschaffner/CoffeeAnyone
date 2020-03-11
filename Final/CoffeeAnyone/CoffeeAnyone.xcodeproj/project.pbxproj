@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018A8B352416CC6C0014839A /* PersonalityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A8B342416CC6C0014839A /* PersonalityDescription.swift */; };
+		018A8B372416CC7C0014839A /* LoveLangDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A8B362416CC7C0014839A /* LoveLangDescription.swift */; };
 		01D7968A2408D5580025A60F /* FacePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D796892408D5580025A60F /* FacePicker.swift */; };
 		01D934662404614F0028C2AF /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D934652404614F0028C2AF /* CameraPicker.swift */; };
 		01D93468240461800028C2AF /* CaptureCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D93467240461800028C2AF /* CaptureCameraView.swift */; };
@@ -100,6 +102,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		018A8B342416CC6C0014839A /* PersonalityDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityDescription.swift; sourceTree = "<group>"; };
+		018A8B362416CC7C0014839A /* LoveLangDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLangDescription.swift; sourceTree = "<group>"; };
 		01D796892408D5580025A60F /* FacePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacePicker.swift; sourceTree = "<group>"; };
 		01D934652404614F0028C2AF /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		01D93467240461800028C2AF /* CaptureCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCameraView.swift; sourceTree = "<group>"; };
@@ -214,6 +218,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		018A8B332416CC2E0014839A /* QuizInfo */ = {
+			isa = PBXGroup;
+			children = (
+				018A8B342416CC6C0014839A /* PersonalityDescription.swift */,
+				018A8B362416CC7C0014839A /* LoveLangDescription.swift */,
+			);
+			path = QuizInfo;
+			sourceTree = "<group>";
+		};
 		01D93464240461340028C2AF /* UpdatePhoto */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +415,7 @@
 				DAF14DCE23EA2CD700CDCD05 /* Profile */,
 				DAF14DC923E9F53B00CDCD05 /* ProfileView.swift */,
 				DAF14DC623E9F53B00CDCD05 /* HomeView.swift */,
+				018A8B332416CC2E0014839A /* QuizInfo */,
 				DAF14DBF23E9F3B100CDCD05 /* Menu */,
 				DAF14D8D23E9F29900CDCD05 /* AppDelegate.swift */,
 				DAF14D8F23E9F29900CDCD05 /* SceneDelegate.swift */,
@@ -846,8 +860,10 @@
 				DAF14DD423EA2D1D00CDCD05 /* Http.swift in Sources */,
 				DAF14D9023E9F29900CDCD05 /* SceneDelegate.swift in Sources */,
 				DAF14DF523EA49B800CDCD05 /* CircleImage.swift in Sources */,
+				018A8B372416CC7C0014839A /* LoveLangDescription.swift in Sources */,
 				59D95A1523F1120800585B9F /* ChatController.swift in Sources */,
 				DA3A14C82406DE11005A8EB9 /* SignInWithAppleManager.swift in Sources */,
+				018A8B352416CC6C0014839A /* PersonalityDescription.swift in Sources */,
 				DAF14DC123E9F3D700CDCD05 /* TabView.swift in Sources */,
 				01D93468240461800028C2AF /* CaptureCameraView.swift in Sources */,
 				DA3A14BA2406DD62005A8EB9 /* SignInWithAppleDelegates.swift in Sources */,
