@@ -12,17 +12,17 @@ struct IntroductionView: View {
     @State private var continuing = false
     var body: some View {
         NavigationView {
-        ScrollView {
-            VStack(alignment: .center) {
-                CircleLogo()
-                .frame(width: 100, height: 100)
-                 Text("Coffee Anyone?")
-                     .font(.largeTitle)
-                     .padding()
-                Text("Find the person you are really looking for.")
-                InfoContainer()
-                  Spacer(minLength: 30)
-                Button(action: {
+            ScrollView {
+                VStack(alignment: .center) {
+                    CircleLogo()
+                        .frame(width: 100, height: 100)
+                    Text("Coffee Anyone?")
+                        .font(.largeTitle)
+                        .padding()
+                    Text("Find the person you are really looking for.")
+                    InfoContainer()
+                    Spacer(minLength: 30)
+                    Button(action: {
                      self.continuing.toggle()
                     }) {
                         Text("Continue")
@@ -33,14 +33,13 @@ struct IntroductionView: View {
                         .cornerRadius(10)
                     }
                       .padding(.horizontal)
-                NavigationLink(destination: CategoriesView(), isActive: $continuing) {
+                    NavigationLink(destination: CategoriesView(), isActive: $continuing) {
                                EmptyView()
-                           }
-            }
+                    }
+                }
             Spacer(minLength: 30)
-        }
+            }
         }.accentColor( .black)
-        .edgesIgnoringSafeArea(.top)
     }
 }
 
