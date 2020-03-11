@@ -20,88 +20,89 @@ struct CategoriesView: View {
                 ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 10){
                 if UserDefaults.standard.string(forKey: "name") == nil {
-                    NavigationLink(destination: ProfileFormView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Complete Your Basic Profile")
-                    }
-                }
-                if UserDefaults.standard.string(forKey: "name") != nil {
-                    NavigationLink(destination: ProfileFormView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Change Existing Profile")
-                    }
-                }
-                if UserDefaults.standard.string(forKey: "hobbies1") == nil {
-                        NavigationLink(destination: HobbiesFormView())
-                        {
-                            CategoryItem(image:"coffeecupheart", text:"Add Your Hobbies")
-                        }
-                    }
-                if UserDefaults.standard.string(forKey: "hobbies1") != nil {
-                        NavigationLink(destination: HobbiesFormView())
-                        {
-                            CategoryItem(image:"coffeecupheart", text:"Change Hobbies")
-                        }
-                    }
-           
-                if UserDefaults.standard.string(forKey: "agePref") != nil {
-                    NavigationLink(destination: PrefFormView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Change Match Preferences")
-                    }
-                }
-                if UserDefaults.standard.string(forKey: "agePref") == nil {
-                    NavigationLink(destination: PrefFormView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Complete Match Preferences")
-                    }
-                }
-             
-                if UserDefaults.standard.string(forKey: "WA") != nil {
-                     NavigationLink(destination: LoveLangView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Retake Love Languages Quiz")
-                    }
-                }
-                if UserDefaults.standard.string(forKey: "WA") == nil {
-                    NavigationLink(destination: LoveLangView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Complete Love Languages Quiz")
-                    }
-                }
-                   
-                 
-                if UserDefaults.standard.string(forKey: "personalitytype") == nil {
-                    NavigationLink(destination: PersonalityQuizView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Complete Personality Quiz")
-                    }
+                         NavigationLink(destination: ProfileFormView())
+                         {
+                             CategoryItem(image:"changeprofileimage", text:"Complete Your Basic Profile")
+                         }
+                     }
+                     if UserDefaults.standard.string(forKey: "name") != nil {
+                         NavigationLink(destination: ProfileFormView())
+                         {
+                             CategoryItem(image:"changeprofileimage", text:"Change Existing Profile")
+                         }
+                     }
+                     if UserDefaults.standard.string(forKey: "hobbies1") == nil {
+                             NavigationLink(destination: HobbiesFormView())
+                             {
+                                 CategoryItem(image:"hobbieicon", text:"Add Your Hobbies")
+                             }
+                         }
+                     if UserDefaults.standard.string(forKey: "hobbies1") != nil {
+                             NavigationLink(destination: HobbiesFormView())
+                             {
+                                 CategoryItem(image:"hobbieicon", text:"Change Hobbies")
+                             }
+                         }
                 
-                }
-                if UserDefaults.standard.string(forKey: "personalitytype") != nil {
-                     NavigationLink(destination: PersonalityQuizView())
-                    {
-                        CategoryItem(image:"coffeecupheart", text:"Retake Personality Quiz")
-                    }
-                }
-            }
-            VStack(alignment: .leading){
-                if UserDefaults.standard.string(forKey:"photo_url") == nil {
-                  NavigationLink(destination: UpdateMediaView())
-                   {
-                        CategoryItem(image:"coffeecupheart", text:"Add Profile Photo")
-                    }
+                     if UserDefaults.standard.string(forKey: "agePref") != nil {
+                         NavigationLink(destination: PrefFormView())
+                         {
+                             CategoryItem(image:"matches", text:"Change Match Preferences")
+                         }
+                     }
+                     if UserDefaults.standard.string(forKey: "agePref") == nil {
+                         NavigationLink(destination: PrefFormView())
+                         {
+                             CategoryItem(image:"matches", text:"Complete Match Preferences")
+                         }
+                     }
+                  
+                     if UserDefaults.standard.string(forKey: "WA") != nil {
+                          NavigationLink(destination: LoveLangView())
+                         {
+                             CategoryItem(image:"lovelanguage", text:"Retake Love Languages Quiz")
+                         }
+                     }
+                     if UserDefaults.standard.string(forKey: "WA") == nil {
+                         NavigationLink(destination: LoveLangView())
+                         {
+                             CategoryItem(image:"lovelanguage", text:"Complete Love Languages Quiz")
+                         }
+                     }
+                        
+                      
+                     if UserDefaults.standard.string(forKey: "personalitytype") == nil {
+                         NavigationLink(destination: PersonalityQuizView())
+                         {
+                             CategoryItem(image:"personalityimage", text:"Complete Personality Quiz")
+                         }
                      
-                }
-             
-                if UserDefaults.standard.string(forKey:"photo_url") != nil {
-                    NavigationLink(destination: UpdateMediaView())
-                    {
+                     }
+                     if UserDefaults.standard.string(forKey: "personalitytype") != nil {
+                          NavigationLink(destination: PersonalityQuizView())
+                         {
+                             CategoryItem(image:"personalityimage", text:"Retake Personality Quiz     ")
+                         }
+                     }
+                         
+                 }
+                 VStack(alignment: .leading, spacing: 10){
+                     if UserDefaults.standard.string(forKey:"photo_url") == nil {
+                       NavigationLink(destination: UpdateMediaView())
+                        {
+                             CategoryItem(image:"profileimage", text:"Add Profile Photo                       ")
+                         }
+                          
+                     }
+                  
+                     if UserDefaults.standard.string(forKey:"photo_url") != nil {
+                         NavigationLink(destination: UpdateMediaView())
+                         {
 
-                        CategoryItem(image:"coffeecupheart", text:"Edit Profile Photo")
-                    }
-                }
-              }
+                             CategoryItem(image:"profileimage", text:"Edit Profile Photo          ")
+                         }
+                     }
+                   }
                 Button(action: {
                     print("Done")
                     //UserDefaults.standard.string(forKey:"photo_id") != nil&& UserDefaults.standard.string(forKey: "personalitytype") != nil

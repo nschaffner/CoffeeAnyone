@@ -16,7 +16,7 @@ struct CategoryItem: View {
             Image(image)
                 .renderingMode(.original)
                 .resizable()
-                .frame(width:80, height:100, alignment: .leading)
+                .frame(width:80, height:80, alignment: .leading)
                 Text(text)
             }
     }
