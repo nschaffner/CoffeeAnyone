@@ -59,6 +59,8 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
             print("Unable to fetch identity token")
             return
         }
+        UserDefaults.standard.set(credential.user, forKey: "userid")
+        print("UserID\(credential.user)")
         guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
             print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
             return
@@ -66,7 +68,7 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
         self.signInSucceeded(.success([credential.user, (credential.email ?? "Not available"), (credential.email ?? "Not available")]))
         
        print("ID TOKEN \(idTokenString)")
-    }
+        UserDefaults.standard.set(idTokenString, forKey: "id_token")    }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
 

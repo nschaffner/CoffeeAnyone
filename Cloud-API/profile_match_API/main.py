@@ -138,12 +138,12 @@ def profile_post_get(page=1):
 
         #checks if this user is already in system
         duplicate = helper.CheckIfDuplicate('profiles', 'userid', content["userid"])
-        if duplicate == 1:
+        if duplicate:
             #Create a PUT if profile exists
-            profile_key = client.key("profiles", id)
+            profile_key = client.key("profiles", duplicate)
             profiles = client.get(key=profile_key)
 
-        elif duplicate != 1:
+        elif not duplicate:
             profiles = datastore.entity.Entity(key=client.key('profiles'))
 
         else:
