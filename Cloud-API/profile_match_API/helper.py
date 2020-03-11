@@ -45,9 +45,9 @@ def CheckIfDuplicate(kind,attribute,value):
     query.add_filter(attribute, '=', str(value))
     object = list(query.fetch())
     if object:
-        return 1
+        return object[0].key.id
     else:
-        return 0
+        return None
 
 def Forbidden403PUT(object1,object2):
     error_message = f'The {object1} is already assigned to this {object2}'
@@ -69,6 +69,7 @@ def GetUserID(id_token):
 
 def GetToken(req):
     bearer_token = request.headers['Authorization']
+    print(bearer_token)
     token = bearer_token.rsplit(' ', 1)[1]
     return token
 

@@ -133,37 +133,42 @@ def profile_post_get(page=1):
         if not content:
             return helper.BadRequest400()
         #check that token matches user id
-        #if userid != content["userid"]:  Removing this requirement for now
-        #   return helper.Unauthorized401()
+        if userid != content["userid"]:
+           return helper.Unauthorized401()
 
         #checks if this user is already in system
         duplicate = helper.CheckIfDuplicate('profiles', 'userid', content["userid"])
-        if duplicate == 1:
-            return helper.Duplicate403("user profile", "user profile")
+        if duplicate:
+            #Create a PUT if profile exists
+            profile_key = client.key("profiles", duplicate)
+            profiles = client.get(key=profile_key)
 
-        # Error Checks on input json has the correct # of input para
-        if len(content) == 30:
+        elif not duplicate:
             profiles = datastore.entity.Entity(key=client.key('profiles'))
-            profiles.update(
-                {
-                    "name": content["name"],"statement": content["statement"],"bodytype": content["bodytype"],
-                    'userid': content["userid"], "age": content["age"],"height": content["height"],"haskids": content["haskids"],
-                    "gender": content["gender"], "status": content["status"], "occupation": content["occupation"],
-                    "education": content["education"], "city": content["city"], "state": content["state"], "hobbies1": content["hobbies1"],
-                    "hobbies2": content["hobbies2"], "hobbies3": content["hobbies3"], "hobbies4": content["hobbies4"],
-                    "hobbies5": content["hobbies5"], "bodytypePref": content["bodytypePref"], "genderPref": content["genderPref"],
-                    "educationPref": content["educationPref"], "agePref": content["agePref"],"personalitytype": content["personalitytype"],
-                    "lovelang1": content["lovelang1"],"lovelang2": content["lovelang2"],"lovelang3": content["lovelang3"],
-                    "lovelang4": content["lovelang4"],"lovelang5": content["lovelang5"],"photo_url": content["photo_url"],
-                    "email": content["email"]
-                }
-            )
-            client.put(profiles)
-            #now find matches
-            helper.MakeMatches(content["userid"],content["genderPref"],content["gender"],content["agePref"],content["age"],content["educationPref"],
+
+        else:
+            return helper.BadRequest400()
+
+        profiles.update(
+            {
+                "name": content["name"],"statement": content["statement"],"bodytype": content["bodytype"],
+                'userid': content["userid"], "age": content["age"],"height": content["height"],"haskids": content["haskids"],
+                "gender": content["gender"], "status": content["status"], "occupation": content["occupation"],
+                "education": content["education"], "city": content["city"], "state": content["state"], "hobbies1": content["hobbies1"],
+                "hobbies2": content["hobbies2"], "hobbies3": content["hobbies3"], "hobbies4": content["hobbies4"],
+                "hobbies5": content["hobbies5"], "bodytypePref": content["bodytypePref"], "genderPref": content["genderPref"],
+                "educationPref": content["educationPref"], "agePref": content["agePref"],"personalitytype": content["personalitytype"],
+                "lovelang1": content["lovelang1"],"lovelang2": content["lovelang2"],"lovelang3": content["lovelang3"],
+                "lovelang4": content["lovelang4"],"lovelang5": content["lovelang5"],"photo_url": content["photo_url"],
+                "email": content["email"]
+            }
+        )
+        client.put(profiles)
+        #now find matches
+        helper.MakeMatches(content["userid"],content["genderPref"],content["gender"],content["agePref"],content["age"],content["educationPref"],
                                content["education"],content["bodytypePref"],content["bodytype"])
-            #return profile information for verification
-            return jsonify(id=profiles.key.id,name=content["name"],statement=content["statement"],bodytype=content["bodytype"],userid=content['userid'],
+        #return profile information for verification
+        return jsonify(id=profiles.key.id,name=content["name"],statement=content["statement"],bodytype=content["bodytype"],userid=content['userid'],
                            age=content["age"],height=content["height"],haskids=content["haskids"],gender=content["gender"],
                            status=content["status"],occupation=content["occupation"],education=content["education"],city=content["city"],
                            state=content["state"],hobbies1=content["hobbies1"],hobbies2=content["hobbies2"],hobbies3=content["hobbies3"],
@@ -171,8 +176,7 @@ def profile_post_get(page=1):
                            educationPref=content["educationPref"],agePref=content["agePref"],personalitytype=content["personalitytype"],
                            lovelang1=content["lovelang1"],lovelang2=content["lovelang2"],lovelang3=content["lovelang3"],lovelang4=content["lovelang4"],
                            lovelang5=content["lovelang5"], email=content["email"], photo_url=content["photo_url"], self=url+"/"+str(profiles.key.id)),'201 Created'
-        else:
-            return helper.BadRequest400()
+
 
     elif request.method == 'GET':
         page_num = request.args.get('pages')
@@ -206,8 +210,8 @@ def profiles_get_put_patch_delete(id):
     except ValueError:
         return helper.Unauthorized401()
     # check that token matches user id
-    # if userid != id  Removing this requirement for now
-    #   return helper.Unauthorized401()
+    if userid != id:
+       return helper.Unauthorized401()
     isint = helper.CheckValInt(id)
     if isint is False:
         return helper.BadRequest400()
