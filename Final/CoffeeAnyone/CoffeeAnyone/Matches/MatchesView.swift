@@ -7,25 +7,44 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+import Firebase
 
 struct MatchesNav: View {
     @EnvironmentObject var fb: FirebaseSession
     @State var results = [Results]()
-
-
-    var body: some View {
-    NavigationView{
-        List(results, id: \.name) { user in
-            NavigationLink(destination:MatchesView(user:user)){
-                Text(user.name)
-            }
-        }
-        .navigationBarTitle("Matches")
-    }.onAppear(perform:loadData)
-      }
+    @State var url = ""
+    @State var person:Users?
+    @State var urls = [String:String]()
     
+    var body: some View {
+        NavigationView{
+            List(results, id: \.name) { user in
+                NavigationLink(destination:MatchesView(user:user, url:self.urls["\(user.photo_url)"] ?? "", photourl:"\(user.photo_url)", userid:"\(user.userid)")){
+                    HStack{
+                        if self.urls != [:]{
+                            AnimatedImage(url: URL(string:self.urls["\(user.photo_url)"] ?? ""))
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                                .shadow(radius: 1)
+                                .padding( 10)
+                                .frame(width: 60, height: 60)
+                        }
+                        else{
+                            Downloader()
+                        }
+                    Text(user.name)
+                    }.onAppear(perform:self.getImage)
+                }
+            }
+            .navigationBarTitle("Matches")
+        }.onAppear(perform:loadData)
+    }
+
     func loadData(){
-        let url = URL(string: "https://abetterdatingapp.appspot.com/profiles")
+        let url = URL(string: "https://abetterdatingapp.appspot.com/matches/\(UserDefaults.standard.string(forKey: "userid") ?? "")")
         var request = URLRequest(url: url!)
         request.addValue("Bearer \(UserDefaults.standard.string(forKey: "id_token") ?? "")", forHTTPHeaderField: "Authorization")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -36,9 +55,10 @@ struct MatchesNav: View {
             print(data!)
             print(response!)
             if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
+                if let decodedResponse = try? JSONDecoder().decode([Results].self, from: data) {
                     DispatchQueue.main.async {
-                        self.results = decodedResponse.results
+                        print(decodedResponse)
+                        self.results = decodedResponse
                     }
                     return
                 }
@@ -46,9 +66,20 @@ struct MatchesNav: View {
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
     }
+    
+    func getImage(){
+        let storage = Storage.storage().reference()
+        for photoResults in self.results{
+            storage.child("profilePics/\(photoResults.photo_url).jpg").downloadURL { (url, err) in
+                if err != nil {
+                    print((err?.localizedDescription)!)
+                    return
+                }
+                self.urls["\(photoResults.photo_url)"] = "\(url!)"
+            }
+        }
+    }
 }
-
-
 
 struct MatchesView: View{
     @ObservedObject var profile = ProfileBody()
@@ -56,7 +87,11 @@ struct MatchesView: View{
     @Environment(\.colorScheme) var colorScheme
     @State var sayHello = false
     
+
     var user:Results
+    var url:String
+    var photourl:String
+    var userid:String
     
     var btnBack : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
@@ -72,9 +107,16 @@ struct MatchesView: View{
             VStack(alignment: .center){
                 HStack(alignment: .top){
                     Spacer()
-                    CircleImage(image:Image("youngelvis"))
-                        .padding( 10)
-                        .frame(height: 200)
+                     if url != ""{
+                       AnimatedImage(url: URL(string: url)!)
+                           .resizable()
+                           .aspectRatio(contentMode: .fill)
+                           .clipShape(Circle())
+                           .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                           .shadow(radius: 10)
+                           .padding( 10)
+                           .frame(width: 200, height: 200)
+                       }
                     Spacer()
                  }
                 Text(user.name)
@@ -88,7 +130,7 @@ struct MatchesView: View{
             
             HStack{
                 Spacer()
-                NavigationLink(destination:ChatView(contactName: user.name)){
+                NavigationLink(destination:ChatView(photourl:photourl, contactName: user.name, contactId:userid)){
                     Text("Chat with Me!")
                 }
                 Spacer()
@@ -97,7 +139,7 @@ struct MatchesView: View{
                     self.sayHello = false
                 })
                 .sheet(isPresented:$sayHello){
-                    ChatView(contactName: self.user.name)
+                    ChatView(photourl:self.url, contactName: self.user.name, contactId:self.userid)
                 }
 
                 ScrollView {
@@ -107,7 +149,6 @@ struct MatchesView: View{
                         Text(user.statement)
                             .padding(20)
                             Spacer()
-                            
                         }
                     }.background(colorScheme == .dark ? Color.black : Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
                         
@@ -123,6 +164,7 @@ struct MatchesView: View{
                         FieldView(fieldname:"Height",fieldvalue: user.height)
                         FieldView(fieldname:"Body Type",fieldvalue: user.bodytype)
                     }
+                    
                     Section(header: Text("Hobbies").bold()) {
                         VStack{
                         HStack{
@@ -132,6 +174,7 @@ struct MatchesView: View{
                             Spacer()
                             Text(user.hobbies3).padding(.trailing,10)
                         }.padding(.bottom,10)
+                            
                         HStack{
                             Text(user.hobbies4).padding(.leading,10)
                             Spacer()
@@ -140,15 +183,11 @@ struct MatchesView: View{
                             }
                         }.padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                     }.background(colorScheme == .dark ? Color.black : Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
-
                 }
             }.navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack)
         }
-
-
-}
-
+    }
 
 struct MatchesView_Previews: PreviewProvider {
     static var previews: some View {
