@@ -99,7 +99,7 @@ struct CategoriesView: View {
                          NavigationLink(destination: UpdateMediaView())
                          {
 
-                             CategoryItem(image:"profileimage", text:"Edit Profile Photo          ")
+                             CategoryItem(image:"profileimage", text:"Edit Profile Photo                     ")
                          }
                      }
                    }

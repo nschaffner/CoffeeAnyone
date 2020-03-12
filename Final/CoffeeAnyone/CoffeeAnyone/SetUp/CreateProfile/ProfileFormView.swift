@@ -11,6 +11,7 @@ import Combine
 
 struct ProfileFormView: View {
     @ObservedObject var selected = Profile()
+    @ObservedObject private var keyboard = KeyboardResponder()
     var body: some View {
         Form {
                 VStack {
@@ -73,7 +74,8 @@ struct ProfileFormView: View {
                 }
             }
 
-        }
+        }        .padding(.bottom, keyboard.currentHeight )
+        .animation(.easeOut(duration: 0.16))
     }
 }
 
