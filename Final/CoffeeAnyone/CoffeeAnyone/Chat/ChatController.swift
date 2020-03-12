@@ -185,7 +185,8 @@ class FirebaseSession: ObservableObject{
     }
     
     func loadMsgToView(contactid:String){
-        receiveMessage(contact:contactid)
+        let contact = contactid.replacingOccurrences(of: ".", with: "%")
+        receiveMessage(contact:contact)
     }
     
     func deleteMessage(messageId:String, convoId:String){

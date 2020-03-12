@@ -17,23 +17,89 @@ extension Color{
 
 struct ChatNav: View {
     @EnvironmentObject var fb: FirebaseSession
+    @State var results = [Results]()
+    @State var url = ""
+    @State var person:Users?
+    @State var urls = [String:String]()
     init() {
         UITableView.appearance().tableFooterView = UIView()
         UITableView.appearance().separatorStyle = .none
     }
     var contacts:[String:String] = [:]
     var body: some View {
-        NavigationView{
-            List(fb.Contacts, id: \.self) { user in
-                NavigationLink(
-                destination:ChatView(photourl:user.photourl, contactName: user.username, contactId:user.userId)){
-                    Text(user.username)
+//        NavigationView{
+//            List(fb.Contacts, id: \.self) { user in
+//                NavigationLink(
+//                destination:ChatView(photourl:user.photourl, contactName: user.username, contactId:user.userId)){
+//                    Text(user.username)
+//                }
+//                .navigationBarTitle("Conversations")
+//            }.onAppear(perform:fb.getConversations)
+//        }
+        
+            NavigationView{
+                List(results, id: \.name) { user in
+                    NavigationLink(destination:ChatView(photourl:"\(user.photo_url)", contactName: user.name, contactId:"\(user.userid)")){
+                        HStack{
+                            if self.urls != [:]{
+                                AnimatedImage(url: URL(string:self.urls["\(user.photo_url)"] ?? ""))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                                    .shadow(radius: 1)
+                                    .padding( 10)
+                                    .frame(width: 60, height: 60)
+                            }
+                            else{
+                                Downloader()
+                            }
+                        Text(user.name)
+                        }.onAppear(perform:self.getImage)
+                    }
                 }
-                .navigationBarTitle("Conversations")
-            }.onAppear(perform:fb.getConversations)
+                .navigationBarTitle("Matches")
+            }.onAppear(perform:loadData)
+        }
+
+        func loadData(){
+            let url = URL(string: "https://abetterdatingapp.appspot.com/matches/\(UserDefaults.standard.string(forKey: "userid") ?? "")")
+            var request = URLRequest(url: url!)
+            request.addValue("Bearer \(UserDefaults.standard.string(forKey: "id_token") ?? "")", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "GET"
+            
+            print(request)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                print(data!)
+                print(response!)
+                if let data = data {
+                    if let decodedResponse = try? JSONDecoder().decode([Results].self, from: data) {
+                        DispatchQueue.main.async {
+                            print(decodedResponse)
+                            self.results = decodedResponse
+                        }
+                        return
+                    }
+                }
+                print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+            }.resume()
+        }
+        
+        func getImage(){
+            let storage = Storage.storage().reference()
+            for photoResults in self.results{
+                storage.child("profilePics/\(photoResults.photo_url).jpg").downloadURL { (url, err) in
+                    if err != nil {
+                        print((err?.localizedDescription)!)
+                        return
+                    }
+                    self.urls["\(photoResults.photo_url)"] = "\(url!)"
+                }
+            }
         }
     }
-}
+
 
 struct ChatRow:View{
     @EnvironmentObject var fb: FirebaseSession
