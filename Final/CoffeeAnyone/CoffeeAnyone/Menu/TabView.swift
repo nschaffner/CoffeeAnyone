@@ -16,10 +16,10 @@ struct TabView<Page: View>: View {
     
     init(_ views: [Page], titles: [String], images:[String], imageSels:[String]) {
         
-        let vc0 = UIHostingController(rootView: HomeView())
-        let vc1 = UIHostingController(rootView: MatchesNav())
-        let vc2 = UIHostingController(rootView: ChatNav())
-        let vc3 = UIHostingController(rootView: ProfileView())
+        let vc0 = UIHostingController(rootView: MatchesNav())
+        let vc1 = UIHostingController(rootView: ChatNav())
+        let vc2 = UIHostingController(rootView: ProfileView())
+        let vc3 = UIHostingController(rootView: HomeView())
         self.viewControllers = [vc0,vc1,vc2,vc3] as! [UIHostingController<Page>]
         self.titles = titles
         self.imgs = images
@@ -38,8 +38,8 @@ struct TabView_Previews : PreviewProvider {
     static var previews: some View {
         TabView([Text("haha"),Text("hah1"),Text("haa")],
                   titles: ["tab1","tab2","tab3"],
-                  images: ["tab_home_normal","tab_chat_normal","tab_profile_normal"],
-                  imageSels: ["tab_home_select","tab_chat_select","tab_profile_select"])
+                  images: ["tab_personality_normal","tab_chat_normal","tab_profile_normal"],
+                  imageSels: ["tab_personality_select","tab_chat_select","tab_profile_select"])
     }
 }
 #endif

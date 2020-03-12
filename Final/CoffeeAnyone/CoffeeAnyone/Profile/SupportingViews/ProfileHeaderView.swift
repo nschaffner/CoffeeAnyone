@@ -50,16 +50,21 @@ struct ProfileHeaderView: View {
             //New text begin
             .onAppear {
                 let storedURL = UserDefaults.standard.string(forKey: "photo_url")
-                let storage = Storage.storage().reference()
-                storage.child(storedURL!).downloadURL { (url, err) in
-                    
-                    if err != nil {
+                if(storedURL != nil) {
+                    let storage = Storage.storage().reference()
+                    storage.child("profilePics/\(storedURL!).jpg").downloadURL { (url, err) in
                         
-                        print((err?.localizedDescription)!)
-                        return
+                        if err != nil {
+                            
+                            print((err?.localizedDescription)!)
+                            return
+                        }
+                        
+                        self.url = "\(url!)"
                     }
-                    
-                    self.url = "\(url!)"
+                }
+                else {
+                    self.url = "https://dummyimage.com/600x400/D3D3D3/D3D3D3.jpg"
                 }
             }
             //Next text end

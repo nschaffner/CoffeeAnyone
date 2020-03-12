@@ -28,10 +28,10 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
         let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         let randomInt = Int.random(in: 1...100000)
-        let urlString = "profilePics/\(randomInt).jpg"
-        print(urlString)
+        //let urlString = "profilePics/\(randomInt).jpg"
+        print(randomInt)
         if (UserDefaults.standard.string(forKey: "photo_url") == nil) {
-            UserDefaults.standard.set(urlString, forKey: "photo_url")
+            UserDefaults.standard.set(randomInt, forKey: "photo_url")
         }
         //UserDefaults.standard.set(urlString, forKey: "photo_url")
         let storedURL = UserDefaults.standard.string(forKey: "photo_url")
@@ -40,7 +40,7 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
         //https://www.youtube.com/watch?v=zfJtgq609EE
         let storage = Storage.storage()
         
-        storage.reference(withPath: storedURL!).putData(uiImage.jpegData(compressionQuality: 0.75)!, metadata: nil) { (_, err) in
+        storage.reference(withPath: "profilePics/\(storedURL!).jpg").putData(uiImage.jpegData(compressionQuality: 0.75)!, metadata: nil) { (_, err) in
             
             if err != nil{
                 print((err?.localizedDescription)!)
@@ -61,13 +61,13 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
         //var count = 1
         faceDetector.process(newImage) { faces, error in
             guard error == nil, let faces = faces, !faces.isEmpty else {
-                print("Print: No Face Detected")
+                print("No Face Detected")
                 //newText = "No Face Detected"
-                self.text = Text("No Face Detected")
+                self.text = Text("Please upload a picture that includes your face")
                 return
             }
             print("Print: Face Detected")
-            self.text = Text("Face Detected")
+            self.text = Text("")
         }
         
         //if count == 0 {
