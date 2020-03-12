@@ -68,7 +68,9 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
         self.signInSucceeded(.success([credential.user, (credential.email ?? "Not available"), (credential.email ?? "Not available")]))
         
        print("ID TOKEN \(idTokenString)")
-        UserDefaults.standard.set(idTokenString, forKey: "id_token")    }
+        UserDefaults.standard.set(idTokenString, forKey: "id_token")
+        UserDefaults.standard.set(credential.user, forKey: "userid")
+    }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
 

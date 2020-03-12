@@ -37,6 +37,8 @@
 		DA5C69D52408578000D79083 /* LoveLangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69D42408578000D79083 /* LoveLangView.swift */; };
 		DA5C69D8240858BC00D79083 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C69D7240858BC00D79083 /* DescriptionView.swift */; };
 		DA61DBCC23EEF2170059669B /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61DBCB23EEF2170059669B /* FieldView.swift */; };
+		DA85DAD32419FF3D008D7BCD /* PersonalityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85DAD12419FF3C008D7BCD /* PersonalityDescription.swift */; };
+		DA85DAD42419FF3D008D7BCD /* LoveLangDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85DAD22419FF3C008D7BCD /* LoveLangDescription.swift */; };
 		DAB8B9ED240B195C00BCD5E8 /* PrefModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8B9EC240B195C00BCD5E8 /* PrefModel.swift */; };
 		DAB8B9EF240B1D4D00BCD5E8 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8B9EE240B1D4D00BCD5E8 /* ProfileModel.swift */; };
 		DAB8B9F1240B41AB00BCD5E8 /* HobbiesFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8B9F0240B41AB00BCD5E8 /* HobbiesFormView.swift */; };
@@ -135,6 +137,8 @@
 		DA5C69D42408578000D79083 /* LoveLangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLangView.swift; sourceTree = "<group>"; };
 		DA5C69D7240858BC00D79083 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		DA61DBCB23EEF2170059669B /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		DA85DAD12419FF3C008D7BCD /* PersonalityDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityDescription.swift; sourceTree = "<group>"; };
+		DA85DAD22419FF3C008D7BCD /* LoveLangDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoveLangDescription.swift; sourceTree = "<group>"; };
 		DAB8B9EC240B195C00BCD5E8 /* PrefModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefModel.swift; sourceTree = "<group>"; };
 		DAB8B9EE240B1D4D00BCD5E8 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		DAB8B9F0240B41AB00BCD5E8 /* HobbiesFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesFormView.swift; sourceTree = "<group>"; };
@@ -336,6 +340,15 @@
 			path = SupportingViews;
 			sourceTree = "<group>";
 		};
+		DA85DAD02419FF3C008D7BCD /* PersonalityInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DA85DAD12419FF3C008D7BCD /* PersonalityDescription.swift */,
+				DA85DAD22419FF3C008D7BCD /* LoveLangDescription.swift */,
+			);
+			path = PersonalityInfo;
+			sourceTree = "<group>";
+		};
 		DAF14D8123E9F29900CDCD05 = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +374,7 @@
 		DAF14D8C23E9F29900CDCD05 /* CoffeeAnyone */ = {
 			isa = PBXGroup;
 			children = (
+				DA85DAD02419FF3C008D7BCD /* PersonalityInfo */,
 				DAF4E53A2415F64100965E85 /* LaunchScreen */,
 				DAF4E51B2415E88900965E85 /* Signup */,
 				DA5C69BD2408532100D79083 /* SetUp */,
@@ -835,6 +849,7 @@
 				DAD9D0B42408C2B200E00FA5 /* PersonalityResultsView.swift in Sources */,
 				DAF14DCD23E9F53B00CDCD05 /* ProfileView.swift in Sources */,
 				DAB8B9EF240B1D4D00BCD5E8 /* ProfileModel.swift in Sources */,
+				DA85DAD42419FF3D008D7BCD /* LoveLangDescription.swift in Sources */,
 				DAF4E5352415EA0D00965E85 /* AuthState.swift in Sources */,
 				DAF14DDA23EA30AB00CDCD05 /* Age.swift in Sources */,
 				01D9346A240461990028C2AF /* ImagePicker.swift in Sources */,
@@ -864,6 +879,7 @@
 				DAF4E5312415E95500965E85 /* SignInView.swift in Sources */,
 				DAD9D0B02408928000E00FA5 /* CategoryItem.swift in Sources */,
 				DAB8B9F1240B41AB00BCD5E8 /* HobbiesFormView.swift in Sources */,
+				DA85DAD32419FF3D008D7BCD /* PersonalityDescription.swift in Sources */,
 				DAF4E5252415E8D000965E85 /* AppleSignInButton.swift in Sources */,
 				01D934662404614F0028C2AF /* CameraPicker.swift in Sources */,
 				DA5C69D8240858BC00D79083 /* DescriptionView.swift in Sources */,
