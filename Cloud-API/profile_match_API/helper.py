@@ -78,6 +78,21 @@ def GetEmail(id_token):
     email = decoded.get('email')
     return email
 
+def DeleteUser(profileid):
+    # delete profile matches relationships
+    query1 = client.query(kind='profile_matches')
+    query2 = client.query(kind='profile_matches')
+    query1.add_filter('match_id1', '=', profileid)
+    query2.add_filter('match_id2', '=', profileid)
+    results = list(query1.fetch())
+    results2 = list(query2.fetch())
+    for e in results:
+        profile_match_key = client.key("profile_matches", e.key.id)
+        client.delete(profile_match_key)
+    for e in results2:
+        profile_match_key = client.key("profile_matches", e.key.id)
+        client.delete(profile_match_key)
+
 def PaginationResultsAndLink(url,page,entity):
     offset = (page-1)*config.LIMIT
     # get each entity in enity
