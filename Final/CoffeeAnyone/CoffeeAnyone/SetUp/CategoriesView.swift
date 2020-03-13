@@ -105,19 +105,15 @@ struct CategoriesView: View {
                    }
                 Button(action: {
                     print("Done")
-                    //UserDefaults.standard.string(forKey:"photo_id") != nil&& UserDefaults.standard.string(forKey: "personalitytype") != nil
-                    //&& UserDefaults.standard.string(forKey: "agePref") != nil
-                   // && UserDefaults.standard.string(forKey: "WA") != nil
-                   // && UserDefaults.standard.string(forKey: "name") != nil
-               //     if UserDefaults.standard.string(forKey: "personalitytype") != nil &&
-                //        UserDefaults.standard.string(forKey: "WA") != nil &&
-                //        UserDefaults.standard.string(forKey: "agePref") != nil
-                //    {
+                    if UserDefaults.standard.string(forKey:"photo_url") != nil && UserDefaults.standard.string(forKey: "gender") != nil
+                    && UserDefaults.standard.string(forKey: "agePref") != nil
+                   && UserDefaults.standard.string(forKey: "genderPref") != nil
+                    {
                         self.showingSignOn.toggle()
-                //    }
-                //    else {
-                //       self.showingAlert.toggle()
-                //    }
+                    }
+                    else {
+                       self.showingAlert.toggle()
+                    }
                     
                 }) {
                 Text("Submit")
@@ -128,11 +124,10 @@ struct CategoriesView: View {
                     .cornerRadius(10)
                 }
                 
-         //   .alert(isPresented: $showingAlert) {
-         //            Alert(title: Text("Incomplete Profile"), message: Text("Finish your profile to best help us find you matches."), dismissButton: .default(Text("Got it!")))
-        //    }
+            .alert(isPresented: $showingAlert) {
+                     Alert(title: Text("Incomplete Profile"), message: Text("Finish your profile to best help us find you matches."), dismissButton: .default(Text("Got it!")))
+            }
 
-        //}
                 NavigationLink(destination: SignInView(), isActive: $showingSignOn) {
                     EmptyView()
                 }
