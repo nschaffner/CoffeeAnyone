@@ -40,17 +40,17 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
                  print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                  return
                }
-        
-        self.signInSucceeded(.success([credential.user, (credential.email ?? "Not available"), (credential.fullName?.givenName ?? "Not available"), (credential.fullName?.familyName ?? "Not available")]))
-         print("ID TOKEN \(idTokenString)")
-        print("authorization code \(authcodeString)")
-        //store this information locally
+                //store this information locally
         UserDefaults.standard.set(credential.user, forKey: "userid")
         UserDefaults.standard.set(idTokenString, forKey: "id_token")
         UserDefaults.standard.set(authcodeString, forKey: "auth_code")
         print(UserDefaults.standard.string(forKey: "userid") ?? "NOtThere")
         UserDefaults.standard.set(credential.email, forKey: "email")
         UserDefaults.standard.set(credential.fullName?.givenName, forKey: "name")
+        self.signInSucceeded(.success([credential.user, (credential.email ?? "Not available"), (credential.fullName?.givenName ?? "Not available"), (credential.fullName?.familyName ?? "Not available")]))
+         print("ID TOKEN \(idTokenString)")
+        print("authorization code \(authcodeString)")
+
     }
     
     private func signInWithExistingAccount(credential: ASAuthorizationAppleIDCredential) {
@@ -61,15 +61,17 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
         }
         UserDefaults.standard.set(credential.user, forKey: "userid")
         print("UserID\(credential.user)")
+        UserDefaults.standard.set(credential.fullName?.givenName, forKey: "name")
         guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
             print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
             return
         }
+        UserDefaults.standard.set(idTokenString, forKey: "id_token")
         self.signInSucceeded(.success([credential.user, (credential.email ?? "Not available"), (credential.email ?? "Not available")]))
         
        print("ID TOKEN \(idTokenString)")
-        UserDefaults.standard.set(idTokenString, forKey: "id_token")
-        UserDefaults.standard.set(credential.user, forKey: "userid")
+        
+
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {

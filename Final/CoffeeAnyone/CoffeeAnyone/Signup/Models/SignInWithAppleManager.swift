@@ -9,7 +9,7 @@ import SwiftUI
 import AuthenticationServices
 
 class SignInWithAppleManager: ObservableObject {
-    
+    @ObservedObject var http = Http()
     @Published var isUserAuthenticated: AuthState = .undefined
     let userIdentifierKey = ""
   
@@ -39,6 +39,8 @@ class SignInWithAppleManager: ObservableObject {
                     print("Credential state: .authorized")
                     self.isUserAuthenticated = .signedIn
                     completion(.signedIn)
+                    //Trying to post profile after user is signed in
+                    self.http.postProfile()
                     break
                 case .revoked:
                     // The Apple ID credential is revoked. Show SignIn UI Here.
