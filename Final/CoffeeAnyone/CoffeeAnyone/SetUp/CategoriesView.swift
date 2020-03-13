@@ -107,7 +107,14 @@ struct CategoriesView: View {
                     print("Done")
                     if UserDefaults.standard.string(forKey:"photo_url") != nil && UserDefaults.standard.string(forKey: "gender") != nil
                     && UserDefaults.standard.string(forKey: "agePref") != nil
-                   && UserDefaults.standard.string(forKey: "genderPref") != nil
+                    && UserDefaults.standard.string(forKey: "age") != nil
+                    && UserDefaults.standard.string(forKey: "genderPref") != nil
+                    && UserDefaults.standard.string(forKey: "personalitytype") != nil
+                    && UserDefaults.standard.string(forKey: "WA") != nil
+                    && UserDefaults.standard.string(forKey: "QT") != nil
+                    && UserDefaults.standard.string(forKey: "RG") != nil
+                    && UserDefaults.standard.string(forKey: "AS") != nil
+                    && UserDefaults.standard.string(forKey: "PT") != nil
                     {
                         self.showingSignOn.toggle()
                     }
