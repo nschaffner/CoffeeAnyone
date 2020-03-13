@@ -18,7 +18,7 @@ struct UpdateMediaView: View {
                 }
                 .padding()
                 NavigationLink(destination: GalleryView()) {
-                    EditButton(image:"chevron.down.circle",text:"Camera Gallery")
+                    EditButton(image:"person.2.square.stack",text:"Camera Gallery")
                 }
             .padding()
             }.padding()
