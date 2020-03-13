@@ -61,14 +61,14 @@ struct PersonalityDescView: View {
                         .padding(10)
                         .multilineTextAlignment(.center)
                     Text("Favorite World").fontWeight(.bold)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0))
                         .padding(.top, 10)
                     Text("Do you prefer to focus on the outer world or on your own inner world? This is called Extroversion (E) or Introversion (I).")
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(10)
                         //.multilineTextAlignment(.center)
                     Text("Information").fontWeight(.bold)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0))
                         .padding(.top, 10)
                     Text("Do you prefer to focus on the basic information you take in or do you prefer to interpret and add meaning? This is called Sensing (S) or Intuition (N).")
                         .fixedSize(horizontal: false, vertical: true)
@@ -77,14 +77,14 @@ struct PersonalityDescView: View {
                 }
                 VStack {
                     Text("Descriptions").fontWeight(.bold)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0))
                         .padding(.top, 10)
                     Text("When making decisions, do you prefer to first look at logic and consistency or first look at the people and special circumstances? This is called Thinking (T) or Feeling (F).")
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(10)
                         //.multilineTextAlignment(.center)
                     Text("Structure").fontWeight(.bold)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0))
                         .padding(.top, 10)
                     Text("In dealing with the outside world, do you prefer to get things decided or do you prefer to stay open to new information and options? This is called Judging (J) or Perceiving (P).")
                         .fixedSize(horizontal: false, vertical: true)
@@ -95,10 +95,16 @@ struct PersonalityDescView: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(10)
                         .multilineTextAlignment(.center)
-                    Button("Read Personality Quiz Descriptions") {
-                            self.showPersonalitySheet = true
-                        }
-                        .padding(10)
+                     Button(action: {self.showPersonalitySheet = true}) {
+                                   HStack {
+                                       Image("tab_personality_normal")
+                                       Text("Read Personality Quiz Descriptions")
+                                   }
+                               }
+                               .padding()
+                               .foregroundColor(.white)
+                               .background(Color(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0))
+                               .cornerRadius(.infinity)
                                 
                 }.sheet(isPresented: self.$showPersonalitySheet) {
                         PersonalityDescription()
@@ -115,6 +121,8 @@ struct LoveLangDescView: View {
     var body: some View {
         VStack {
             Text("Love Languages Quiz Description").fontWeight(.bold)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(10)
                 .font(.title)
                 .multilineTextAlignment(.center)
             Text("")
@@ -122,10 +130,16 @@ struct LoveLangDescView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(10)
                 .multilineTextAlignment(.center)
-            Button("Read Love Language Descriptions") {
-                self.showLoveSheet = true
+            Button(action: {self.showLoveSheet = true}) {
+                HStack {
+                    Image("hearticon")
+                    Text("Read Love Languages Quiz Descriptions")
                 }
-                .padding()
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(Color(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0))
+            .cornerRadius(.infinity)
         }.sheet(isPresented: self.$showLoveSheet) {
                 LoveLangDescription()
             }
