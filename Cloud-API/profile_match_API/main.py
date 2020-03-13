@@ -139,13 +139,15 @@ def profile_post_get(page=1):
         #checks if this user is already in system
         duplicate = helper.CheckIfDuplicate('profiles', 'userid', content["userid"])
         if duplicate:
-            #Create a PUT if profile exists
+            # delete profile matches relationships
             profile_key = client.key("profiles", duplicate)
+            profile = client.get(key=profile_key)
+            helper.DeleteUser(profile["userid"])
+            # Create a PUT if profile exists
             profiles = client.get(key=profile_key)
 
         elif not duplicate:
             profiles = datastore.entity.Entity(key=client.key('profiles'))
-
         else:
             return helper.BadRequest400()
 
@@ -231,18 +233,7 @@ def profiles_get_put_patch_delete(id):
 
     elif request.method == 'DELETE':
         #delete profile matches relationships
-        query1 = client.query(kind='profile_matches')
-        query2 = client.query(kind='profile_matches')
-        query1.add_filter('match_id1', '=', profile["userid"])
-        query2.add_filter('match_id2', '=', profile["userid"])
-        results = list(query1.fetch())
-        results2 = list(query2.fetch())
-        for e in results:
-            profile_match_key = client.key("profile_matches", e.key.id)
-            client.delete(profile_match_key)
-        for e in results2:
-            profile_match_key = client.key("profile_matches", e.key.id)
-            client.delete(profile_match_key)
+        helper.DeleteUser(profile["userid"])
         client.delete(profile_key)
         return jsonify(),"204 No Content"
         #fully edit the profile
