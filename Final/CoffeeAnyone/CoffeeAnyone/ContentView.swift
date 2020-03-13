@@ -13,20 +13,20 @@ struct ContentView: View {
     @EnvironmentObject var signInWithAppleManager : SignInWithAppleManager
         var body: some View {
             ZStack{
-               // if UserDefaults.standard.string(forKey:"userid") != nil {
-               //     MainView()
-               // }
-               
-            if signInWithAppleManager.isUserAuthenticated == .undefined {
-                    //SignInView()
+             if UserDefaults.standard.string(forKey:"userid") != nil {
+                MainView()
+            }
+            if UserDefaults.standard.string(forKey:"userid") == nil {
                 IntroductionView()
             }
+            //if signInWithAppleManager.isUserAuthenticated == .undefined {
+            //    IntroductionView()
+           // }
             else if signInWithAppleManager.isUserAuthenticated == .signedIn {
-                     MainView()
+                MainView()
             }
             else if signInWithAppleManager.isUserAuthenticated == .signedOut{
-                     //SignInView()
-                MainView()
+                SignInView()
             }
           
         }
