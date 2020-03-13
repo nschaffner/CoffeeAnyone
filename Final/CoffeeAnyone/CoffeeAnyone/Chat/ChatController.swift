@@ -99,7 +99,7 @@ class FirebaseSession: ObservableObject{
     func sendMessage(text:String, match:String, contactId:String, photourl:String){
         let ref = K.refs.databaseUsers
         let userName = UserName!
-        let userId = " \(UserDefaults.standard.string(forKey: "userid") ?? "")".replacingOccurrences(of: ".", with: "%")
+        let userId = "\(UserDefaults.standard.string(forKey: "userid") ?? "")".replacingOccurrences(of: ".", with: "%")
         let matchName = match
         let contact = contactId.replacingOccurrences(of: ".", with: "%")
         ref.child(userId).child("conversations").observeSingleEvent(of: .value, with: {(snapshot) in
@@ -125,7 +125,7 @@ class FirebaseSession: ObservableObject{
     }
     
     func receiveMessage(contact:String){
-        let userId = " \(UserDefaults.standard.string(forKey: "userid") ?? "")".replacingOccurrences(of: ".", with: "%")
+        let userId = "\(UserDefaults.standard.string(forKey: "userid") ?? "")".replacingOccurrences(of: ".", with: "%")
         let conversationId = K.refs.databaseUsers.child(userId).child("conversations").child(contact).child("conversationId").queryOrderedByKey()
         conversationId.observe(.value, with: { (snapshot) in
             let messageDictionary = snapshot.value as? [String : AnyObject] ?? [:]

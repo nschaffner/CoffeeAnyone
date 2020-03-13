@@ -85,7 +85,7 @@ struct MatchesView: View{
     @ObservedObject var profile = ProfileBody()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var colorScheme
-    @State var sayHello = false
+    @State var sayHello: Int? = nil
     
 
     var user:Results
@@ -97,7 +97,9 @@ struct MatchesView: View{
         self.presentationMode.wrappedValue.dismiss()
         }) {
             HStack {
-                Text("Go back")
+                Image(systemName: "chevron.left")
+                 .font(Font.title.weight(.semibold))
+                Text("Back")
             }
         }
     }
@@ -129,19 +131,24 @@ struct MatchesView: View{
             )
             
             HStack{
-                Spacer()
-                NavigationLink(destination:ChatView(photourl:photourl, contactName: user.name, contactId:userid)){
-                    Text("Chat with Me!")
-                }
-                Spacer()
-                }
-            .onAppear(perform:{
-                    self.sayHello = false
-                })
-                .sheet(isPresented:$sayHello){
-                    ChatView(photourl:self.url, contactName: self.user.name, contactId:self.userid)
-                }
 
+                NavigationLink(destination:ChatView(photourl:photourl, contactName: user.name, contactId:userid), tag:1, selection:$sayHello){
+                    Spacer()
+                    Button(action: {self.sayHello = 1}) {
+                        HStack {
+                            Image(systemName: "bubble.right.fill")
+                            Text("Chat with \(user.name)")
+                        }
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color(red: 12.0 / 255.0, green: 121.0 / 255.0, blue: 150.0 / 255.0))
+                    .cornerRadius(.infinity)
+                    Spacer()
+                }
+                
+                }
+            
                 ScrollView {
                     Section(header: Text("Personal Statement").bold().background((colorScheme == .dark ? Color.black : Color.white))) {
                         HStack{

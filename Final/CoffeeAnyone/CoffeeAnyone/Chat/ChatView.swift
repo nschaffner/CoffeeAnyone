@@ -27,16 +27,6 @@ struct ChatNav: View {
     }
     var contacts:[String:String] = [:]
     var body: some View {
-//        NavigationView{
-//            List(fb.Contacts, id: \.self) { user in
-//                NavigationLink(
-//                destination:ChatView(photourl:user.photourl, contactName: user.username, contactId:user.userId)){
-//                    Text(user.username)
-//                }
-//                .navigationBarTitle("Conversations")
-//            }.onAppear(perform:fb.getConversations)
-//        }
-        
             NavigationView{
                 List(results, id: \.name) { user in
                     NavigationLink(destination:ChatView(photourl:"\(user.photo_url)", contactName: user.name, contactId:"\(user.userid)")){
@@ -58,7 +48,7 @@ struct ChatNav: View {
                         }.onAppear(perform:self.getImage)
                     }
                 }
-                .navigationBarTitle("Matches")
+                .navigationBarTitle("Chat")
             }.onAppear(perform:loadData)
         }
 
@@ -107,7 +97,7 @@ struct ChatRow:View{
     var contact:String
     var body: some View{
         Group {
-            if (chatMessage.senderId as String == contact) {
+            if (chatMessage.senderId as String == "\(contact)".replacingOccurrences(of: ".", with: "%")) {
                 HStack {
                     Group{
                         Text(chatMessage.senderName)
@@ -167,7 +157,9 @@ struct ChatView: View {
         self.presentationMode.wrappedValue.dismiss()
     }) {
         HStack {
-            Text("Go back")
+            Image(systemName: "chevron.left")
+             .font(Font.title.weight(.semibold))
+            Text("Back")
         }
         }
     }
@@ -193,7 +185,7 @@ struct ChatView: View {
             
             List {
                 ForEach(fb.Messages, id:\.self){msg in
-                    ChatRow(chatMessage: msg, contact:self.contactName)
+                    ChatRow(chatMessage: msg, contact:self.contactId)
                 }
                 EmptyView()
             }.onAppear(perform: {self.fb.loadMsgToView(contactid:self.contactId)})
