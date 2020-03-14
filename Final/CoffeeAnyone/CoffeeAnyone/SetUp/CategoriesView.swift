@@ -90,7 +90,7 @@ struct CategoriesView: View {
                      if UserDefaults.standard.string(forKey:"photo_url") == nil {
                        NavigationLink(destination: UpdateMediaView())
                         {
-                             CategoryItem(image:"profileimage", text:"Add Profile Photo                       ")
+                             CategoryItem(image:"profileimage", text:"Add Profile Photo                         ")
                          }
                           
                      }

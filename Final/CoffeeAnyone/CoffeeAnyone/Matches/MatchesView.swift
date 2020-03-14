@@ -36,6 +36,7 @@ struct MatchesNav: View {
                             Downloader()
                         }
                     Text(user.name)
+                        
                     }.onAppear(perform:self.getImage)
                 }
             }
@@ -122,6 +123,8 @@ struct MatchesView: View{
                     Spacer()
                  }
                 Text(user.name)
+                .fontWeight(.regular)
+                .foregroundColor( Color.black)
                 .font(.body)
                 .bold()
                 .padding(.bottom,10)
@@ -160,13 +163,12 @@ struct MatchesView: View{
                     }.background(colorScheme == .dark ? Color.black : Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0))
                         
                     Section(header: Text("\(user.name)'s Info").bold()) {
-                        FieldView(fieldname:"Status",fieldvalue: user.name)
+                        FieldView(fieldname:"Name",fieldvalue: user.name)
                         FieldView(fieldname:"Location",fieldvalue: user.city)
                         FieldView(fieldname:"Gender",fieldvalue: user.gender)
                         FieldView(fieldname:"Occupation",fieldvalue: user.occupation)
                         FieldView(fieldname:"Education",fieldvalue: user.education)
                         FieldView(fieldname:"Has Kids",fieldvalue:user.haskids)
-                        FieldView(fieldname:"Gender",fieldvalue:user.hobbies1)
                         FieldView(fieldname:"Age",fieldvalue: user.age)
                         FieldView(fieldname:"Height",fieldvalue: user.height)
                         FieldView(fieldname:"Body Type",fieldvalue: user.bodytype)

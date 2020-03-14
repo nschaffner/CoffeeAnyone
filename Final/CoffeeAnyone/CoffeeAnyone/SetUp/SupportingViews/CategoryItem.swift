@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct CategoryItem: View {
+    @Environment(\.colorScheme) var colorScheme
     var image: String
     var text: String
     var body: some View {
@@ -18,6 +19,8 @@ struct CategoryItem: View {
                 .resizable()
                 .frame(width:80, height:80, alignment: .leading)
                 Text(text)
+                    .fontWeight(.bold)
+                    .foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
             }
     }
 }
