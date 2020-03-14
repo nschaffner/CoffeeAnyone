@@ -9,55 +9,121 @@
 import SwiftUI
 
 struct QuizResultsView: View {
-        let extravert = "Extraverted"
-         let introvert = "Introverted"
-         let thinking = "Thinking"
-         let feeling = "Feeling"
-         let sensing = "Sensing"
-         let intuiting = "Intuitive"
-         let introvertdesc = "You prefer quiet contemplation and reflection."
-         let extraverteddesc = "You prefer spending your time interacting with the outside world."
-         let perceiving = "Perceiving"
-         let judging = "Judging"
-         let judgedesc = "You have a mental process for receiving information and like to plan and organise"
-         let perceivedesc = "You prefer to take information without evaluation and act in a flexable manner"
-         let thinkingdesc = "You approach life in a rational, analytical way."
-         let feelingdesc = "You identify the emotional value in events and objects."
-         let sensingdesc = "You focus on the facts and hard data."
-         let intuitdesc = "You can see possibilities that are not immediately obvious."
-         let ISTJ = "Introverted Sensing with Extraverted Thinking"
-         let ISTP = "Introverted Thinking with Extraverted Sensing"
-         let ISFJ = "Introverted Sensing with Extraverted Feeling"
-         let ESTJ = "Extraverted Thinking with Introverted Sensing"
-         let ESFJ = "Extraverted Feeling with Introverted Sensing"
-         let ISFP = "Introverted Feeling with Extraverted Sensing"
-         let ESTP = "Extraverted Sensing with Introverted Thinking"
-         let ESFP = "Extraverted Sensing with Introverted Feeling"
-         let INFP = "Introverted Feeling with Extraverted Intuiting"
-         let ENTP = "Extraverted Intuiting with Introverted Thinking"
-         let ENFP = "Extraverted Intuiting with Introverted Feeling"
-         let INTJ = "Introverted Intuiting with Extraverted Thinking"
-         let INFJ = "Introverted Intuiting with Extraverted Feeling"
-         let ENTJ = "Extraverted Thinking with Introverted Intuiting"
-         let ENFJ = "Extraverted Feeling with Introverted Thinking"
 
-         var body: some View {
-            ScrollView{
+    let ISTJ = "Introverted Sensing with Extraverted Thinking"
+    let ISTP = "Introverted Thinking with Extraverted Sensing"
+    let ISFJ = "Introverted Sensing with Extraverted Feeling"
+    let INTP = "Introverted Intuiting with Extraverted Intuiting"
+    let ESTJ = "Extraverted Thinking with Introverted Sensing"
+    let ESFJ = "Extraverted Feeling with Introverted Sensing"
+    let ISFP = "Introverted Feeling with Extraverted Sensing"
+    let ESTP = "Extraverted Sensing with Introverted Thinking"
+    let ESFP = "Extraverted Sensing with Introverted Feeling"
+    let INFP = "Introverted Feeling with Extraverted Intuiting"
+    let ENTP = "Extraverted Intuiting with Introverted Thinking"
+    let ENFP = "Extraverted Intuiting with Introverted Feeling"
+    let INTJ = "Introverted Intuiting with Extraverted Thinking"
+    let INFJ = "Introverted Intuiting with Extraverted Feeling"
+    let ENTJ = "Extraverted Thinking with Introverted Intuiting"
+    let ENFJ = "Extraverted Feeling with Introverted Thinking"
+    var WAVal1 = UserDefaults.standard.string(forKey: "WA")
+    var QTVal1 = UserDefaults.standard.string(forKey: "QT")
+    var RGVal1 = UserDefaults.standard.string(forKey: "RG")
+    var ASVal1 = UserDefaults.standard.string(forKey: "AS")
+    var PTVal1 = UserDefaults.standard.string(forKey: "PT")
+
+    var body: some View {
+        ScrollView{
              VStack {
-                Text("Your Type: \(UserDefaults.standard.string(forKey: "personalitytype") ?? " ")").fontWeight(.bold)
+                Text("Your Personality Type: \(UserDefaults.standard.string(forKey: "personalitytype") ?? " ")").fontWeight(.bold)
                  //Filler code for now
-                Text(ENFP).padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                //Text(ENFP).padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 Divider()
          //This is details. Maybe this could be done with navigation to get description details?
+            }
+            VStack {
                 Group{
-                    Text("\(extravert)")
+                    Text("Your Love Languages").fontWeight(.bold)
+                    /*Text("Words of Affirmation:")
                         .fontWeight(.bold)
-                    Text(extraverteddesc)
+                    Text("\(WAVal1!)")
+                        .font(Font.system(size: 16))
+                        //.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        //.frame(height: 50)
+                    Text("Quality Time:")
+                        .fontWeight(.bold)
+                    Text("\(QTVal1!)")
+                        .font(Font.system(size: 16))
+                        //.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        //.frame(height: 50)
+                    Text("Receiving Gifts:")
+                        .fontWeight(.bold)
+                    Text("\(RGVal1!)")
+                        .font(Font.system(size: 16))
+                        //.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        //.frame(height: 50)
+                    Text("Acts of Service:")
+                        .fontWeight(.bold)
+                    Text("\(ASVal1!)")
+                        .font(Font.system(size: 16))
+                        //.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        //.frame(height: 50)
+                    Text("Physical Touch:")
+                        .fontWeight(.bold)
+                    Text("\(PTVal1!)")
+                        .font(Font.system(size: 16))
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        .frame(height: 50)*/
+                }
+                Text("")
+                Group {
+                    Text("Physical Touch:")
+                        .fontWeight(.bold)
+                    Text("\(PTVal1!)")
                         .font(Font.system(size: 16))
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                         .frame(height: 50)
                 }
                 Divider()
+                Group {
+                    Text("Acts of Service:")
+                        .fontWeight(.bold)
+                    Text("\(ASVal1!)")
+                        .font(Font.system(size: 16))
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        .frame(height: 50)
+                }
+            }
+            VStack {
+                Divider()
+                Group {
+                    Text("Receiving Gifts:")
+                        .fontWeight(.bold)
+                    Text("\(RGVal1!)")
+                        .font(Font.system(size: 16))
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        .frame(height: 50)
+                }
+                Divider()
+                Group {
+                    Text("Quality Time:")
+                        .fontWeight(.bold)
+                    Text("\(QTVal1!)")
+                        .font(Font.system(size: 16))
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        .frame(height: 50)
+                }
+                Divider()
+                Group {
+                    Text("Words of Affirmation:")
+                        .fontWeight(.bold)
+                    Text("\(WAVal1!)")
+                        .font(Font.system(size: 16))
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        .frame(height: 50)
+                }
+            }
+                /*Divider()
                 Group{
                     Text(intuiting)
                         .fontWeight(.bold)
@@ -65,7 +131,7 @@ struct QuizResultsView: View {
                     .font(Font.system(size: 16))
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                     .frame(height: 50)
-                     }
+                }
                 Divider()
                 Group{
                     Text(feeling).fontWeight(.bold)
@@ -85,9 +151,8 @@ struct QuizResultsView: View {
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                     .frame(height: 50)
                         
-                }
-            }
-            }
+                }*/
+        }
     }
 }
 
