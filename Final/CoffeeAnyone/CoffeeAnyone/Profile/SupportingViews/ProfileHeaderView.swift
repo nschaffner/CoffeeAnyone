@@ -43,7 +43,8 @@ struct ProfileHeaderView: View {
                 Text(name)
                 .font(.body)
                 .bold()
-                        
+                .fontWeight(.regular)
+                .foregroundColor( Color.black)
                  .padding(.bottom,10)
                  
              }

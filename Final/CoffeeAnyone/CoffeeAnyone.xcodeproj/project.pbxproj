@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01D7968A2408D5580025A60F /* FacePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D796892408D5580025A60F /* FacePicker.swift */; };
 		01D934662404614F0028C2AF /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D934652404614F0028C2AF /* CameraPicker.swift */; };
 		01D93468240461800028C2AF /* CaptureCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D93467240461800028C2AF /* CaptureCameraView.swift */; };
 		01D9346A240461990028C2AF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D93469240461990028C2AF /* ImagePicker.swift */; };
@@ -105,7 +104,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01D796892408D5580025A60F /* FacePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacePicker.swift; sourceTree = "<group>"; };
 		01D934652404614F0028C2AF /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		01D93467240461800028C2AF /* CaptureCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCameraView.swift; sourceTree = "<group>"; };
 		01D93469240461990028C2AF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				01D93469240461990028C2AF /* ImagePicker.swift */,
 				01D9346B240461B20028C2AF /* PhotoCaptureView.swift */,
 				01D9346D240461C80028C2AF /* UpdateMediaView.swift */,
-				01D796892408D5580025A60F /* FacePicker.swift */,
 			);
 			path = UpdatePhoto;
 			sourceTree = "<group>";
@@ -874,7 +871,6 @@
 				DAF14D9223E9F29900CDCD05 /* ContentView.swift in Sources */,
 				DAF14DE423EA30C000CDCD05 /* Status.swift in Sources */,
 				DA3A14D12406E166005A8EB9 /* MainView.swift in Sources */,
-				01D7968A2408D5580025A60F /* FacePicker.swift in Sources */,
 				DAF14DE023EA30B800CDCD05 /* Gender.swift in Sources */,
 				DAF4E5312415E95500965E85 /* SignInView.swift in Sources */,
 				DAD9D0B02408928000E00FA5 /* CategoryItem.swift in Sources */,
