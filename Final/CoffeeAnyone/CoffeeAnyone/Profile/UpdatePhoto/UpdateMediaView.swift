@@ -30,6 +30,9 @@ struct UpdateMediaView: View {
 
 struct CameraView: View {
     
+    //https://www.hackingwithswift.com/books/ios-swiftui/importing-an-image-into-swiftui-using-uiimagepickercontroller
+    //https://www.iosapptemplates.com/blog/swiftui/photo-camera-swiftui
+    //https://www.youtube.com/watch?v=W60nnRFUGaI
     @State private var showImagePicker: Bool = false
     @State private var image: Image? = nil
     @State private var text: Text? = nil
@@ -73,6 +76,9 @@ struct CameraView: View {
 
 struct GalleryView: View {
 
+    //https://www.hackingwithswift.com/books/ios-swiftui/importing-an-image-into-swiftui-using-uiimagepickercontroller
+    //https://www.iosapptemplates.com/blog/swiftui/photo-camera-swiftui
+    //https://www.youtube.com/watch?v=W60nnRFUGaI
     @State private var showImagePicker: Bool = false
     @State private var image: Image? = nil
     @State private var text: Text? = nil
