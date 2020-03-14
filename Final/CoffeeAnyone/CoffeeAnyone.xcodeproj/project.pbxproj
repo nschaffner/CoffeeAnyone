@@ -130,7 +130,7 @@
 		DA3A14B72406D50F005A8EB9 /* CoffeeAnyone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeAnyone.entitlements; sourceTree = "<group>"; };
 		DA3A14D02406E166005A8EB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DA5C69C3240853B200D79083 /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		DA5C69CD2408568900D79083 /* lovelanguageResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = lovelanguageResultsView.swift; path = ../../../../../loveLanguages/loveLanguages/lovelanguageResultsView.swift; sourceTree = "<group>"; };
+		DA5C69CD2408568900D79083 /* lovelanguageResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lovelanguageResultsView.swift; sourceTree = "<group>"; };
 		DA5C69D22408573400D79083 /* LoveLangQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLangQuiz.swift; sourceTree = "<group>"; };
 		DA5C69D42408578000D79083 /* LoveLangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLangView.swift; sourceTree = "<group>"; };
 		DA5C69D7240858BC00D79083 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
