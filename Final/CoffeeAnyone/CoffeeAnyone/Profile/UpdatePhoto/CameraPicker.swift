@@ -10,7 +10,9 @@ import SwiftUI
 import Firebase
 
 class CameraPickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+    //https://www.hackingwithswift.com/books/ios-swiftui/importing-an-image-into-swiftui-using-uiimagepickercontroller
+    //https://www.iosapptemplates.com/blog/swiftui/photo-camera-swiftui
+    //https://www.youtube.com/watch?v=W60nnRFUGaI
     @Binding var isShown: Bool
     @Binding var image: Image?
     @Binding var text: Text?
