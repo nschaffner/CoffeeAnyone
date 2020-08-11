@@ -9,7 +9,6 @@ This particular project came from embracing the idea that people do have a type 
 This project could be funded through directed advertisement or through membership fees, or both. Advertisements shown may be based on user location and interests/hobbies for places to meet for dates. Membership fees could be taken through in-app purchase API with auto renewable options.
 
 ## Getting Started ##
----
 These instructions will get the `CoffeeAnyone` application running on your local machine for development and testing purposes. 
 
 ### Prerequisites
@@ -52,7 +51,6 @@ The third of the four tabs within the `CoffeeAnyone` application is the “Profi
 The fourth of the four tabs within the `CoffeeAnyone` application is the “Personality” page. The personality page contains a description of the two assessments that the user took when creating their profile. To learn more about the personality quiz, they can select the “More Info” link under the personality quiz. Within this new view, they can learn about the four areas that the personality quiz assesses. At the bottom of the view, the user can tap on the “Read Personality Quiz Descriptions” to learn about your specific personality type. To learn more about the love languages quiz, they can select the “More Info” link under the love languages quiz. Within this new view, they can learn about what the love language scores indicate. At the bottom of the view, the user can tap on the “Read Love Language Descriptions” to learn about your specific love languages.
 
 ## Built With
----
 * [Swift](https://swift.org)
 * [SwiftUI](https://developer.apple.com/documentation/swiftui)
 * [Firebase](https://firebase.google.com)
@@ -60,7 +58,6 @@ The fourth of the four tabs within the `CoffeeAnyone` application is the “Pers
 * [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI)
 
 ## Special Thanks
----
 * [icons8](icons8.com)
 * [Open Extended Jungian Type Scale](http://www.jungtype.com/index.htm)
 * [Myers-Briggs Type Indicator](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
